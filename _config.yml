@@ -1,8 +1,11 @@
-title: CA-CDR-V2
+title: Projects
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
 url: https://projects.manleviet.info
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+    manleviet on GitHub: https://github.com/manleviet
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true
