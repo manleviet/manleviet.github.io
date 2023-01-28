@@ -1,11 +1,13 @@
 ---
+layout: default
 title: CA-CDR-V2
-layout: home
-parent: Home
-nav_order: 1
+nav_order: 3
+has_children: true
+permalink: ca-cdr-v2
 ---
 
 ## Welcome to CA-CDR-V2
+{: .no_toc }
 
 Maven packages for Consistency-based Algorithms for Conflict Detection and Resolution (CA-CDR).
 
@@ -15,14 +17,30 @@ This repository publishes our implementations for some/our consistency-based alg
 which can be utilized in all three phases of KBE, i.e., design, testing and debugging, and configuration.
 *If you use my implementations in your research, please cite the papers listed in the References.*
 
-## Table of Contents
+<!-- <details open markdown="block"> -->
+<!--     <summary> -->
+<!--         Table of contents -->
+<!--     </summary> -->
+<!--     {: .text-delta } -->
+<!-- 1. TOC -->
+<!-- {:toc} -->
+<!-- </details> -->
 
-- [List of algorithms](#list-of-algorithms)
-- [What the CA-CDR library provide](#what-the-ca-cdr-library-provide)
-- [How to get the CA-CDR packages](#how-to-get-the-ca-cdr-packages)
-- [References](#references)
+<!-- --- -->
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+<!-- - [List of algorithms](#list-of-algorithms) -->
+<!-- - [What the CA-CDR library provide](#what-the-ca-cdr-library-provide) -->
+<!-- - [How to get the CA-CDR packages](#how-to-get-the-ca-cdr-packages) -->
+<!-- - [References](#references) -->
 
 ## List of algorithms:
+
 1. [QuickXPlain](https://github.com/manleviet/CA-CDR/blob/main/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/QuickXPlain.java) [1]
 2. [FastDiag](https://github.com/manleviet/CA-CDR/blob/main/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/FastDiagV2.java) [2]
 3. [MSS-based FastDiag](https://github.com/manleviet/CA-CDR/blob/main/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/FastDiagV3.java)
@@ -40,28 +58,25 @@ which can be utilized in all three phases of KBE, i.e., design, testing and debu
 15. (coming soon) FastDiagP
 
 ### Examples
+{: .no_toc }
 
 There are some test models in [here](https://github.com/manleviet/CDRModel/tree/main/src/main/java/at/tugraz/ist/ase/cdrmodel/test/model) and some examples, showing how to use these algorithms, in [here](https://github.com/manleviet/CA-CDR/tree/main/src/test/java/at/tugraz/ist/ase/cacdr/algorithms).
 
-## What the CA-CDR library provide
+## What the CA-CDR-V2 library provide
 
-In this repository, I published eight Maven packages, and two apps as the followings:
+The library is organized in 7 Maven packages as the followings:
 
 | *Maven packages*                                       | *description*                            |
 |----------------------------------------------|------------------------------------------|
-| [at.tugraz.ist.ase.ca-cdr-v2](https://github.com/manleviet/CA-CDR-V2/packages/1417091)     | provides implementations of Consistency-based Algorithms for Conflict Detection and Resolution (CA-CDR) and a ChocoConsistencyChecker |
-| [at.tugraz.ist.ase.cdrmodel-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408661) | provides an programmatic approach to manage/prepare the constraints/test cases for consistency-based algorithms |
-| [at.tugraz.ist.ase.choco-kb-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408660)    | provides classes managing CSP (Choco) representations of a knowlege base/feature model |
-| [at.tugraz.ist.ase.fm-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408657)         | provides the management functionalities for basic feature models |
-| [at.tugraz.ist.ase.eval-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408656)      | provides a performance evaluator, i.e., counters and timers, which could be used to measure the performance of algorithms |
-| [at.tugraz.ist.ase.test-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408658)         | provides core functionalities related to knolwedge base testing and debugging tasks |
-| [at.tugraz.ist.ase.csp2choco-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408654) | provides a translator which enables converting CSP constraints into Choco Solver commands |
-| [at.tugraz.ist.ase.common-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408257) | a Maven package for utility functions |
+| [ca-cdr-v2](https://github.com/manleviet/CA-CDR-V2/packages/1417091)     | provides implementations of Consistency-based Algorithms for Conflict Detection and Resolution (CA-CDR) and a ChocoConsistencyChecker |
+| [cdrmodel-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408661) | provides an programmatic approach to manage/prepare the constraints/test cases for consistency-based algorithms |
+| [choco-kb-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408660)    | provides classes managing CSP (Choco) representations of a knowlege base/feature model |
+| [fm-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408657)         | provides the management functionalities for basic feature models |
+| [eval-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408656)      | provides a performance evaluator, i.e., counters and timers, which could be used to measure the performance of algorithms |
+| [csp2choco-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408654) | provides a translator which enables converting CSP constraints into Choco Solver commands |
+| [common-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408257) | a Maven package for utility functions |
 
-| *apps*                                       | *description*                            |
-|----------------------------------------------|------------------------------------------|
-| [kbstatistics](https://github.com/manleviet/CA-CDR-V2/releases/tag/kbstatistics-v1.3.1) | calculate statistics of given knowledge bases |
-| [fm-gen](https://github.com/manleviet/CA-CDR-V2/releases/tag/fm-gen-v1.3) | generates synthesized feature models using the [Betty framework](https://www.isa.us.es/betty/welcome) |
+<!-- provides core functionalities related to knolwedge base testing and debugging tasks -->
 
 ## How to get the CA-CDR packages
 

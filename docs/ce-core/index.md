@@ -1,9 +1,9 @@
 ---
+layout: default
 title: CECore
-layout: home
-parent: Home
-nav_order: 2
+nav_order: 4
 has_children: true
+permalink: ce-core
 ---
 
 # CECore
