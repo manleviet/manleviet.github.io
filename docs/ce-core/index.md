@@ -13,5 +13,39 @@ has_toc: true
 v1.1.2-alpha-10
 {: .label .label-green }
 
-A Maven package for core components of a knowledge-based configuration environment
+**CECore** is a Java library providing core components of the knowledge-based configuration environment.
+It is structured in 5 following Maven packages:
 
+| *package*                                       | *description*                            |
+|----------------------------------------------|------------------------------------------|
+| [ce-core]     | common and utility classes |
+| [ce] | provides a knolwedge-based configurator |
+| [fma]    | provides a mechnism to automatically generate property-based test cases for feature models and allows the automated determination of faulty constraints in the feature model |
+| [heuristics]         | provides an implementation of Matrix Factorization Based Variable and Value Ordering Heuristics for Constraint Solving |
+| [mf]      | provides an implementation of Matrix Factorization using the Mahout library. |
+
+The following diagram shows the packages' dependency.
+
+```mermaid
+flowchart BT
+    subgraph CA-CDR-V2
+        A([ca-cdr-v2])
+        style A text-transform:lowercase;
+        B([eval-v2])
+    end
+    A --> C([ce-core])
+    B --> D([mf])
+    subgraph CECore
+        C --> E([heuristics])
+        D --> E
+        E --> F([ce])
+        F --> G([fma])
+    end
+```
+
+<!-- Links -->
+[ce-core]: https://github.com/manleviet/CECore/packages/1538019
+[ce]: https://github.com/manleviet/CECore/packages/1538662
+[fma]: https://github.com/manleviet/CECore/packages/1564988
+[heuristics]: https://github.com/manleviet/CECore/packages/1538660
+[mf]: https://github.com/manleviet/CECore/packages/1538658
