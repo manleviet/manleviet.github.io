@@ -23,7 +23,10 @@ This repository publishes our implementations for some/our consistency-based alg
 which can be utilized in all three phases of KBE, i.e., design, testing and debugging,
 and configuration.
 
-*If you use my implementations in your research, please cite the papers listed in the References.*
+{: .important-title }
+> Citing
+>
+> If you use my implementations in your research, please cite the papers listed in the [References].
 
 <!-- --- -->
 
@@ -76,3 +79,6 @@ The library is organized in 7 Maven packages as the followings:
 | [common-v2](https://github.com/manleviet/CA-CDR-V2/packages/1408257) | a Maven package for utility functions |
 
 <!-- provides core functionalities related to knolwedge base testing and debugging tasks -->
+
+<!-- Links -->
+[References]: /docs/references
