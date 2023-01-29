@@ -4,11 +4,12 @@ title: Home
 nav_order: 1
 ---
 
-This site provides the documentation of the following **Java** libraries and apps:
-1. **[CA-CDR-V2]**
-2. **[CECore]**
-3. **[KBStatistics]**
-4. **[FMGen]**
+This site provides the documentation of the following Java libraries and apps:
+
+1. [CA-CDR-V2]
+2. [CECore]
+3. [KBStatistics]
+4. [FMGen]
 
 To use **CA-CDR-V2** and **CECore** libraries, please first follow the guide in [Get packages].
 
