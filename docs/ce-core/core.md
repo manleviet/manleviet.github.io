@@ -2,7 +2,7 @@
 layout: default
 title: Core Library
 parent: CECore
-nav_order: 2
+nav_order: 1
 permalink: ce-core/core
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: Heuristics for Choco Solver
 parent: CECore
-nav_order: 2
+nav_order: 4
 permalink: ce-core/heuristics
 ---
 

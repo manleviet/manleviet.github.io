@@ -4,7 +4,7 @@ title: CA-CDR-V2
 nav_order: 3
 has_children: true
 permalink: ca-cdr-v2
-has_toc: false
+has_toc: true
 ---
 
 # CA-CDR-V2

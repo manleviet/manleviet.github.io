@@ -2,7 +2,7 @@
 layout: default
 title: Matrix Factorization
 parent: CECore
-nav_order: 2
+nav_order: 3
 permalink: ce-core/mf
 ---
 
