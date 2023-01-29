@@ -4,7 +4,7 @@ title: CECore
 nav_order: 4
 has_children: true
 permalink: ce-core
-has_toc: false
+has_toc: true
 ---
 
 # CECore

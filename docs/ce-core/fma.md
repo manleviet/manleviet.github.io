@@ -1,12 +1,12 @@
 ---
 layout: default
-title: fma
+title: Feature Model Analysis
 parent: CECore
 nav_order: 2
 permalink: ce-core/fma
 ---
 
-# fma package
+# Feature Model Analysis
 {: .no_toc }
 {: .d-inline-block }
 
