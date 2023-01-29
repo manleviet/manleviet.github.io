@@ -18,7 +18,8 @@ In this page, you'll find how to import these Maven packages into your Java proj
 
 In your Maven project, please add the below script in the `settings.xml` file.
 
-```xml
+{% capture code %}
+{% highlight xml linenos %}
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -31,12 +32,17 @@ In your Maven project, please add the below script in the `settings.xml` file.
         </server>
     </servers>
 </settings>
-```
+{% endhighlight %}
+{% endcapture %}
+{% include fix_linenos.html code=code %}
+{% assign code = nil %}
+
 Replacing `USERNAME` with your GitHub username, and `TOKEN` with your personal access token (see [Creating a personal access token]).
 
 Add also the below script into the `pom.xml` file:
 
-```xml
+{% capture code %}
+{% highlight xml linenos %}
 <profiles>
     <profile>
         <id>github-maven-repository</id>
@@ -48,19 +54,26 @@ Add also the below script into the `pom.xml` file:
         </repositories>
     </profile>
 </profiles>
-```
+{% endhighlight %}
+{% endcapture %}
+{% include fix_linenos.html code=code %}
+{% assign code = nil %}
 
 ## Add the packages to your project
 
 Please add the following dependency into the `pom.xml` file:
 
-```xml
+{% capture code %}
+{% highlight xml linenos %}
 <dependency>
     <groupId>at.tugraz.ist.ase</groupId>
     <artifactId>ARTIFACT_ID</artifactId>
     <version>VERSION</version>
 </dependency>
-```
+{% endhighlight %}
+{% endcapture %}
+{% include fix_linenos.html code=code %}
+{% assign code = nil %}
 
 Replacing `ARTIFACT_ID` and `VERSION` with the corresponding information from the following table.
 
