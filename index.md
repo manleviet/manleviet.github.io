@@ -23,6 +23,11 @@ To use **CA-CDR-V2** and **CECore** libraries, please first follow the guide in 
 - Report and discuss issues on [CA-CDR-V2 GitHub] and [CECore GitHub].
 - We welcome contributions from anyone.
 
+## Citing
+
+If you use our implementations in your research,
+please cite the corresponding papers listed in the [References].
+
 <!-- Links  -->
 [CA-CDR-V2]: ca-cdr-v2
 [CECore]: ce-core
@@ -33,3 +38,4 @@ To use **CA-CDR-V2** and **CECore** libraries, please first follow the guide in 
 [Tamim]: https://github.com/taburg
 [CA-CDR-V2 GitHub]: https://github.com/manleviet/CA-CDR-V2/issues
 [CECore GitHub]: https://github.com/manleviet/CECore/issues
+[References]: /docs/references
