@@ -7,6 +7,7 @@ permalink: ca-cdr-v2/fm-package
 ---
 
 # fm-package
+{: .no_toc }
 {: .d-inline-block }
 
 v1.3.9-alpha-52
@@ -24,28 +25,35 @@ Other types of feature models should be implemented in other packages to keep th
 4. Supports to arbitrary constraints with complex operators (e.g., /\\, \\/, not, ->, <->).
 5. Supports common feature model formats found in the literature, i.e., [SPLOT](http://www.splot-research.org), [FeatureIDE](https://featureide.github.io).
 
-## Contents
+---
 
-- [How to read a feature model from a file](#how-to-read-a-feature-model-from-a-file)
-- [How to encode a feature model](#how-to-encode-a-feature-model)
-- [How to use the _**generic**_ feature model with your custom features, relationships, and constraints](#how-to-use-the-generic-feature-model-with-your-custom-features-relationships-and-constraints)
-- [What does the package provide?](#what-does-the-package-provide)
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 ## How to read a feature model from a file
 
 The following code shows the **simplest way** to read a feature model from a file.
 This way, the parser will use the [_built-in builders_](#feature-relationship-and-constraint-builders) to create the feature model.
 
-```java
+{% capture code %}
+{% highlight java linenos %}
 // create a parser for the given file
 // getIntance returns a parser that uses the built-in builders
 FMParserFactory<Feature, AbstractRelationship<Feature>, CTConstraint> factory = FMParserFactory.getInstance();
-    @Cleanup("dispose")
-    FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint> parser = factory.getParser("filename");
+@Cleanup("dispose")
+FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint> parser = factory.getParser("filename");
 
 // parse the feature model file
 FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint> fm = parser.parse("path/to/file");
-    ```
+{% endhighlight %}
+{% endcapture %}
+{% include fix_linenos.html code=code %}
+{% assign code = nil %}
 
 Another example shows a **complete way** to read a feature model from a given file.
 First, we need to create _builders_ on the basis of the [_built-in builders_](#feature-relationship-and-constraint-builders).
@@ -55,7 +63,8 @@ Finally, we can use the parser to read the feature model from a file.
 In this way, if you want to construct a feature model with your custom features, relationships, and constraints,
 you only need to provide your custom builders at the first step.
 
-```java
+{% capture code %}
+{% highlight java linenos %}
 // create builders for features, relationships, and constraints using built-in builders
 IFeatureBuildable featureBuilder = new FeatureBuilder();
 IConfRuleTranslatable ruleTranslator = new ConfRuleTranslator();
@@ -64,17 +73,21 @@ IConstraintBuildable constraintBuilder = new ConstraintBuilder(ruleTranslator);
 
 // create a parser for the given file
 FMParserFactory<Feature, AbstractRelationship<Feature>, CTConstraint> factory = FMParserFactory.getInstance(featureBuilder, relationshipBuilder, constraintBuilder);
-    @Cleanup("dispose")
-    FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint> parser = factory.getParser("filename");
+@Cleanup("dispose")
+FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint> parser = factory.getParser("filename");
 
 // parse the feature model file
 FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint> fm = parser.parse("path/to/file");
-```
+{% endhighlight %}
+{% endcapture %}
+{% include fix_linenos.html code=code %}
+{% assign code = nil %}
 
 The below code shows an example in which we read an anomaly-aware feature model from a file.
 Particularly, the feature builder is customized to create anomaly-aware features.
 
-```java
+{% capture code %}
+{% highlight java linenos %}
 // create a custom builder for features
 IFeatureBuildable featureBuilder = new AnomalyAwareFeatureBuilder();
 // create built-in builders for relationships and constraints
@@ -84,12 +97,15 @@ IConstraintBuildable constraintBuilder = new ConstraintBuilder(ruleTranslator);
 
 // create a parser for the given file
 FMParserFactory<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint> factory = FMParserFactory.getInstance(featureBuilder, relationshipBuilder, constraintBuilder);
-    @Cleanup("dispose")
-    FeatureModelParser<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint> parser = factory.getParser("filename");
+@Cleanup("dispose")
+FeatureModelParser<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint> parser = factory.getParser("filename");
 
 // parse the feature model file
 FeatureModel<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint> fm = parser.parse("path/to/file");
-```
+{% endhighlight %}
+{% endcapture %}
+{% include fix_linenos.html code=code %}
+{% assign code = nil %}
 
 ### Other examples
 
@@ -101,7 +117,8 @@ FeatureModel<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTC
 
 The following code shows how to build a feature model from scratch.
 
-```java
+{% capture code %}
+{% highlight java linenos %}
 // create builders for features, relationships, and constraints using built-in builders
 IFeatureBuildable featureBuilder = new FeatureBuilder();
 IConfRuleTranslatable ruleTranslator = new ConfRuleTranslator();
@@ -138,7 +155,10 @@ fm.addOptionalRelationship(ABtesting, statistics);
 fm.addRequires(ABtesting, statistics);
 fm.addExcludes(ABtesting, nonlicense);
 fm.addExcludes(ABtesting, root);
-```
+{% endhighlight %}
+{% endcapture %}
+{% include fix_linenos.html code=code %}
+{% assign code = nil %}
 
 ## How to use the _**generic**_ feature model with your custom features, relationships, and constraints
 

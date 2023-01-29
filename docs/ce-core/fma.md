@@ -7,10 +7,21 @@ permalink: ce-core/fma
 ---
 
 # fma package
+{: .no_toc }
 {: .d-inline-block }
 
 v1.1.2-alpha-10
 {: .label .label-green }
+
+---
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 ## Simple usage of the package
 

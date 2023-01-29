@@ -7,23 +7,36 @@ permalink: ca-cdr-v2/chocokb-package
 ---
 
 # chocokb-package
+{: .no_toc }
 {: .d-inline-block }
 
 v1.3.9-alpha-52
 {: .label .label-green }
+
+---
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 | **groupID**    | **_at.tugraz.ist.ase_** |
 |----------------|-------------------------|
 | **artifactID** | **_choco-kb-v2_**       |
 | **version**    | **_1.3.9-alpha-42_**    |
 
-## FMKB class
+## `FMKB`
+
 In the current version of this package, the [**FMKB**](https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/fm/FMKB.java)
 class is generic.
 
 The following code shows how to create a FMKB object with a feature model as an input.
 
-```java
+{% capture code %}
+{% highlight java linenos %}
 File fileFM = new File("src/test/resources/smartwatch.sxfm");
 
 // create a parser for the given file
@@ -35,9 +48,12 @@ FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint> fm = parser.p
 
 // create a FMKB object with the given feature model and requires to generate the negation of constraints
 FMKB<Feature, AbstractRelationship<Feature>, CTConstraint> kb = new FMKB<>(fm, true);
-```
+{% endhighlight %}
+{% endcapture %}
+{% include fix_linenos.html code=code %}
+{% assign code = nil %}
 
-### Other examples
+## Other examples
 
 - [Unit tests](https://github.com/manleviet/CA-CDR-V2/tree/21-uses-generics-for-feature-model/chocokb-package/src/test/java/at/tugraz/ist/ase/kb/fm)
 

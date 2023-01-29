@@ -28,13 +28,15 @@ and configuration.
 >
 > If you use my implementations in your research, please cite the papers listed in the [References].
 
-<!-- --- -->
+---
 
 ## Table of Contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
+
+---
 
 ## List of algorithms:
 
