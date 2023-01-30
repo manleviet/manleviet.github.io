@@ -5,7 +5,10 @@ nav_order: 2
 permalink: get_packages
 ---
 
-We publish **CA-CDR-V2** and **CECore** libraries in Maven packages hosted by GitHub.
+# How to get the packages
+{: .no_toc }
+
+We publish **CA-CDR-V2** and **CECore** libraries in Maven packages hosted by GitHub Packages.
 In this page, you'll find how to import these Maven packages into your Java project.
 
 ## Table of Contents
@@ -14,7 +17,7 @@ In this page, you'll find how to import these Maven packages into your Java proj
 1. TOC
 {:toc}
 
-## How to get the packages
+## Authenticating to GitHub Packages
 
 In your Maven project, please add the below script in the `settings.xml` file.
 
@@ -39,6 +42,8 @@ In your Maven project, please add the below script in the `settings.xml` file.
 
 Replacing `USERNAME` with your GitHub username, and `TOKEN` with your personal access token (see [Creating a personal access token]).
 
+## Connecting to our repositories
+
 Add also the below script into the `pom.xml` file:
 
 {% capture code %}
@@ -59,9 +64,9 @@ Add also the below script into the `pom.xml` file:
 {% include fix_linenos.html code=code %}
 {% assign code = nil %}
 
-## Add the packages to your project
+## Installing the packages
 
-Please add the following dependency into the `pom.xml` file:
+Add the package dependencies to the `dependencies` element of your project `pom.xml` file.
 
 {% capture code %}
 {% highlight xml linenos %}
@@ -86,11 +91,36 @@ Replacing `ARTIFACT_ID` and `VERSION` with the corresponding information from th
 | - | [eval-v2]      | *1.3.8* | *1.3.9-alpha-52* | provides a performance evaluator, i.e., counters and timers, which could be used to measure the performance of algorithms |
 | - | [csp2choco-v2] | *1.3.8* | *1.3.9-alpha-52* | provides a translator which enables converting CSP constraints into Choco Solver commands |
 | - | [common-v2] | *1.3.8* | *1.3.9-alpha-52* | a Maven package for utility functions |
-|CECore | [ce-core]     | *1.1.1* | *1.1.2-alpha-10* | common and utility classes |
+|CECore | [ce-core]     | *1.1.1* | *1.1.2-alpha-10* | core and utility classes |
 | - | [ce] | *1.1.1* | *1.1.2-alpha-10* | provides a knolwedge-based configurator |
 | -  | [fma]    | *1.1.1* | *1.1.2-alpha-10* | provides a mechnism to automatically generate property-based test cases for feature models and allows the automated determination of faulty constraints in the feature model |
 | - | [heuristics]         | *1.1.1* | *1.1.2-alpha-10* | provides an implementation of Matrix Factorization Based Variable and Value Ordering Heuristics for Constraint Solving |
 | - | [mf]      | *1.1.1* | *1.1.2-alpha-10* | provides an implementation of Matrix Factorization using the Mahout library. |
+
+## Dependency of two libraries
+
+```mermaid
+flowchart BT
+    subgraph CA-CDR-V2
+        A([common-v2]) --> B([csp2choco-v2])
+        A --> C([fm-v2])
+        A --> D([eval-v2])
+        E([sxfm]) --> C
+        C --> F([choco-kb-v2])
+        D --> F
+        F --> G([cdrmodel-v2])
+        B --> G
+        G --> H([ca-cdr-v2])
+    end
+    H --> I([ce-core])
+    D --> J([mf])
+    subgraph CECore
+        I --> K([heuristics])
+        J --> K
+        K --> L([ce])
+        L --> M([fma])
+    end
+```
 
 <!-- Links -->
 [ca-cdr-v2]: https://github.com/manleviet/CA-CDR-V2/packages/1417091

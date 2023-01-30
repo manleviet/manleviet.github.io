@@ -82,5 +82,45 @@ The library is organized in 7 Maven packages as the followings:
 
 <!-- provides core functionalities related to knolwedge base testing and debugging tasks -->
 
+The following diagram shows the packages' dependency.
+
+```mermaid
+flowchart BT
+    subgraph Third-party libraries
+        A([opencsv])
+        B([choco-solver])
+        C([jakarta.mail])
+        D([args4j])
+        E([guava])
+        F([lombok])
+        G([slf4j-api])
+        Q([json])
+        H([antlr4])
+        K([javatuples])
+    end
+    A --> L([common-v2])
+    B --> L
+    C --> L
+    D --> L
+    E --> L
+    F --> L
+    G --> L
+    H --> M([csp2choco-v2])
+    K --> M
+    Q --> O([fm-v2])
+    H --> O
+    subgraph CA-CDR-V2
+        L --> M
+        L --> O
+        L --> N([eval-v2])
+        P([sxfm]) --> O
+        O --> R([choco-kb-v2])
+        N --> R
+        R --> S([cdrmodel-v2])
+        M --> S
+        S --> T([ca-cdr-v2])
+    end
+```
+
 <!-- Links -->
 [References]: /docs/references

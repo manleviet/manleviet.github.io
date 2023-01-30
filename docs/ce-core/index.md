@@ -18,7 +18,7 @@ It is structured in 5 following Maven packages:
 
 | *package*                                       | *description*                            |
 |----------------------------------------------|------------------------------------------|
-| [ce-core]     | common and utility classes |
+| [ce-core]     | core and utility classes |
 | [ce] | provides a knolwedge-based configurator |
 | [fma]    | provides a mechnism to automatically generate property-based test cases for feature models and allows the automated determination of faulty constraints in the feature model |
 | [heuristics]         | provides an implementation of Matrix Factorization Based Variable and Value Ordering Heuristics for Constraint Solving |
@@ -30,11 +30,16 @@ The following diagram shows the packages' dependency.
 flowchart BT
     subgraph CA-CDR-V2
         A([ca-cdr-v2])
-        style A text-transform:lowercase;
         B([eval-v2])
+    end
+    subgraph Apache Mahout
+        H([mahout-core])
+        K([mahout-math])
     end
     A --> C([ce-core])
     B --> D([mf])
+    H --> D([mf])
+    K --> D([mf])
     subgraph CECore
         C --> E([heuristics])
         D --> E
