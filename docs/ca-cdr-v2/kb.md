@@ -1,32 +1,24 @@
 ---
 layout: default
-title: chocokb-package
+title: Knowledge Bases
 parent: CA-CDR-V2
-nav_order: 3
-permalink: ca-cdr-v2/chocokb-package
+nav_order: 1
+permalink: ca-cdr-v2/kb
 ---
 
-# chocokb-package
+# Knowledge bases
 {: .no_toc }
 {: .d-inline-block }
 
 v1.3.9-alpha-52
-{: .label .label-green }
+{: .label .label-purple }
 
----
-
-## Table of Contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
-
-| **groupID**    | **_at.tugraz.ist.ase_** |
-|----------------|-------------------------|
-| **artifactID** | **_choco-kb-v2_**       |
-| **version**    | **_1.3.9-alpha-42_**    |
+<dl>
+    <dt><strong>groupID</strong></dt>
+    <dd><em>at.tugraz.ist.ase</em></dd>
+    <dt><strong>artifactID</strong></dt>
+    <dd><em>choco-kb-v2</em></dd>
+</dl>
 
 ## `FMKB`
 
@@ -48,10 +40,10 @@ FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint> fm = parser.p
 
 // create a FMKB object with the given feature model and requires to generate the negation of constraints
 FMKB<Feature, AbstractRelationship<Feature>, CTConstraint> kb = new FMKB<>(fm, true);
-{% endhighlight %}
-{% endcapture %}
-{% include fix_linenos.html code=code %}
-{% assign code = nil %}
+    {% endhighlight %}
+    {% endcapture %}
+    {% include fix_linenos.html code=code %}
+    {% assign code = nil %}
 
 ## Other examples
 

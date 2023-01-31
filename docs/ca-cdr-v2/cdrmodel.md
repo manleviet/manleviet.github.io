@@ -1,17 +1,24 @@
 ---
 layout: default
-title: cdrmodel-package
+title: CDRModels
 parent: CA-CDR-V2
 nav_order: 3
-permalink: ca-cdr-v2/cdrmodel-package
+permalink: ca-cdr-v2/cdrmodel
 ---
 
-# cdrmodel-package
+# CDRModels
 {: .no_toc }
 {: .d-inline-block }
 
 v1.3.9-alpha-52
-{: .label .label-green }
+{: .label .label-purple }
+
+<dl>
+    <dt><strong>groupID</strong></dt>
+    <dd><em>at.tugraz.ist.ase</em></dd>
+    <dt><strong>artifactID</strong></dt>
+    <dd><em>cdrmodel-v2</em></dd>
+</dl>
 
 ---
 

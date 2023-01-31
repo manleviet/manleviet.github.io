@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Common Utils
+title: Performance Evaluation
 parent: CA-CDR-V2
-nav_order: 7
-permalink: ca-cdr-v2/common-utils
+nav_order: 6
+permalink: ca-cdr-v2/eval
 ---
 
-# Common utils
+# Performance Evaluation
 {: .no_toc }
 {: .d-inline-block }
 
@@ -17,8 +17,8 @@ v1.3.9-alpha-52
     <dt><strong>groupID</strong></dt>
     <dd><em>at.tugraz.ist.ase</em></dd>
     <dt><strong>artifactID</strong></dt>
-    <dd><em>common-v2</em></dd>
-</dl>
+    <dd><em>eval-v2</em></dd>
+    </dl>
 
 ---
 

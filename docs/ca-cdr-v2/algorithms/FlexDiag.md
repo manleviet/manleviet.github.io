@@ -8,7 +8,8 @@ permalink: ca-cdr-v2/algorithms/flexdiag
 ---
 
 # FlexDiag
+{: .no_toc }
 {: .d-inline-block }
 
 v1.3.9-alpha-52
-{: .label .label-green }
+{: .label .label-purple }

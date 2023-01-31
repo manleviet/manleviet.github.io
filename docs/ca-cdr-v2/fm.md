@@ -1,19 +1,26 @@
 ---
 layout: default
-title: fm-package
+title: Feature Models
 parent: CA-CDR-V2
 nav_order: 2
-permalink: ca-cdr-v2/fm-package
+permalink: ca-cdr-v2/fm
 ---
 
-# fm-package
+# Feature Models
 {: .no_toc }
 {: .d-inline-block }
 
 v1.3.9-alpha-52
-{: .label .label-green }
+{: .label .label-purple }
 
-The package follows the following objectives:
+<dl>
+    <dt><strong>groupID</strong></dt>
+    <dd><em>at.tugraz.ist.ase</em></dd>
+    <dt><strong>artifactID</strong></dt>
+    <dd><em>fm-v2</em></dd>
+</dl>
+
+_fm_ follows the following objectives:
 
 1. Provides a _generic_ mechanism that helps to easily obtain custom feature models, e.g., attribute-based feature models,
 cardinality-based feature models, anomaly-aware feature models, etc.
@@ -35,7 +42,9 @@ Other types of feature models should be implemented in other packages to keep th
 
 ---
 
-## How to read a feature model from a file
+## How tos
+
+### Reading a feature model from a file
 
 The following code shows the **simplest way** to read a feature model from a file.
 This way, the parser will use the [_built-in builders_](#feature-relationship-and-constraint-builders) to create the feature model.
@@ -44,12 +53,15 @@ This way, the parser will use the [_built-in builders_](#feature-relationship-an
 {% highlight java linenos %}
 // create a parser for the given file
 // getIntance returns a parser that uses the built-in builders
-FMParserFactory<Feature, AbstractRelationship<Feature>, CTConstraint> factory = FMParserFactory.getInstance();
+FMParserFactory<Feature, AbstractRelationship<Feature>, CTConstraint>
+    factory = FMParserFactory.getInstance();
 @Cleanup("dispose")
-FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint> parser = factory.getParser("filename");
+FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint>
+    parser = factory.getParser("filename");
 
 // parse the feature model file
-FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint> fm = parser.parse("path/to/file");
+FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint>
+    fm = parser.parse("path/to/file");
 {% endhighlight %}
 {% endcapture %}
 {% include fix_linenos.html code=code %}
@@ -57,7 +69,7 @@ FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint> fm = parser.p
 
 Another example shows a **complete way** to read a feature model from a given file.
 First, we need to create _builders_ on the basis of the [_built-in builders_](#feature-relationship-and-constraint-builders).
-Then, we can use the builders to create an **FMParserFactory**.
+Then, we can use the builders to create an [`FMParserFactory`].
 We can create a parser for a given feature model format with the factory.
 Finally, we can use the parser to read the feature model from a file.
 In this way, if you want to construct a feature model with your custom features, relationships, and constraints,
@@ -72,12 +84,15 @@ IRelationshipBuildable relationshipBuilder = new RelationshipBuilder(ruleTransla
 IConstraintBuildable constraintBuilder = new ConstraintBuilder(ruleTranslator);
 
 // create a parser for the given file
-FMParserFactory<Feature, AbstractRelationship<Feature>, CTConstraint> factory = FMParserFactory.getInstance(featureBuilder, relationshipBuilder, constraintBuilder);
+FMParserFactory<Feature, AbstractRelationship<Feature>, CTConstraint>
+    factory = FMParserFactory.getInstance(featureBuilder, relationshipBuilder, constraintBuilder);
 @Cleanup("dispose")
-FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint> parser = factory.getParser("filename");
+FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint>
+    parser = factory.getParser("filename");
 
 // parse the feature model file
-FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint> fm = parser.parse("path/to/file");
+FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint>
+    fm = parser.parse("path/to/file");
 {% endhighlight %}
 {% endcapture %}
 {% include fix_linenos.html code=code %}
@@ -96,24 +111,32 @@ IRelationshipBuildable relationshipBuilder = new RelationshipBuilder(ruleTransla
 IConstraintBuildable constraintBuilder = new ConstraintBuilder(ruleTranslator);
 
 // create a parser for the given file
-FMParserFactory<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint> factory = FMParserFactory.getInstance(featureBuilder, relationshipBuilder, constraintBuilder);
+FMParserFactory<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint>
+    factory = FMParserFactory.getInstance(featureBuilder, relationshipBuilder, constraintBuilder);
 @Cleanup("dispose")
-FeatureModelParser<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint> parser = factory.getParser("filename");
+FeatureModelParser<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint>
+    parser = factory.getParser("filename");
 
 // parse the feature model file
-FeatureModel<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint> fm = parser.parse("path/to/file");
+FeatureModel<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTConstraint>
+    fm = parser.parse("path/to/file");
 {% endhighlight %}
 {% endcapture %}
 {% include fix_linenos.html code=code %}
 {% assign code = nil %}
 
-### Other examples
+{: .highlight }
+For more details related to anomaly-aware feature model, please refer to **CECore**'s [Feature Model Analysis].
 
-1. [Unit tests of 5 parsers](https://github.com/manleviet/CA-CDR-V2/tree/21-uses-generics-for-feature-model/fm-package/src/test/java/at/tugraz/ist/ase/fm/parser)
-2. [**KBStatistics**](https://github.com/manleviet/CA-CDR-V2/blob/6b140f7dc922d14e8066f122f187738adc3c6433/app-KBStatistics/src/main/java/at/tugraz/ist/ase/kb/app/KBStatistics.java#L162) (the function _processFM_)
-3. [**FMAnalyzerTest**](https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/test/java/at/tugraz/ist/ase/fma/FMAnalyzerTest.java)
+[`AutomatedAnalysisBuilder`] and [`AutomatedAnalysisExplanation`] are utility classes that provides useful and shortcut ways to build built-in analyses
+and explanations.
 
-## How to encode a feature model
+{: .important-title }
+> Example
+>
+> [Unit tests of 5 parsers], [function _processFM_ in `KBStatistics`], and [`FMAnalyzerTest`]
+
+### Encoding a feature model
 
 The following code shows how to build a feature model from scratch.
 
@@ -160,7 +183,7 @@ fm.addExcludes(ABtesting, root);
 {% include fix_linenos.html code=code %}
 {% assign code = nil %}
 
-## How to use the _**generic**_ feature model with your custom features, relationships, and constraints
+### Using the _**generic**_ feature model with your custom features, relationships, and constraints
 
 There are two requirements to use the _**generic**_ feature model:
 
@@ -184,7 +207,7 @@ is inherited from the base class [**Feature**](https://github.com/manleviet/CA-C
 and the class [**AnomalyAwareFeatureBuilder**](https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/anomaly/AnomalyAwareFeatureBuilder.java)
 is inherited from the base class [**IFeatureBuildable**](https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fm-package/src/main/java/at/tugraz/ist/ase/fm/builder/IFeatureBuildable.java).
 
-## What does the package provide?
+## What the package provide
 
 ### Generic FeatureModel class
 
@@ -299,3 +322,10 @@ The feature model file should contain the following sections:
 5. A constraints section starting with a "CONSTRAINTS:" line that contains the list of cross-tree constraints, each constraint in a new line
 
 An example of the feature model file in the descriptive format is available in the [**resources**](https://github.com/manleviet/CA-CDR-V2/tree/21-uses-generics-for-feature-model/fm-package/src/test/resources) folder.
+
+<!-- Links -->
+[Unit tests of 5 parsers]: https://github.com/manleviet/CA-CDR-V2/tree/21-uses-generics-for-feature-model/fm-package/src/test/java/at/tugraz/ist/ase/fm/parser
+[function _processFM_ in `KBStatistics`]: https://github.com/manleviet/CA-CDR-V2/blob/6b140f7dc922d14e8066f122f187738adc3c6433/app-KBStatistics/src/main/java/at/tugraz/ist/ase/kb/app/KBStatistics.java#L162
+[`FMAnalyzerTest`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/test/java/at/tugraz/ist/ase/fma/FMAnalyzerTest.java
+[`FMParserFactory`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/fm-package/src/main/java/at/tugraz/ist/ase/fm/parser/FMParserFactory.java
+[Feature Model Analysis]: /ce-core/fma
