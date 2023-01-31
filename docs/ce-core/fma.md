@@ -23,9 +23,9 @@ v1.1.2-alpha-10
 
 ---
 
-## Simple usage of the package
+## Simple usage
 
-The following example shows simple usage of the package:
+The following example shows a simple usage:
 
 {% capture code %}
 {% highlight java linenos %}
