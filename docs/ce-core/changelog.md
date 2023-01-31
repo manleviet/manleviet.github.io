@@ -2,12 +2,10 @@
 layout: default
 title: Changelog
 parent: CECore
-nav_order: 6
+nav_order: 7
 permalink: ce-core/changelog
 ---
 
 # Changelog
-{: .d-inline-block }
 
-v1.1.2-alpha-10
-{: .label .label-green }
+TBD

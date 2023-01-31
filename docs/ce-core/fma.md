@@ -11,7 +11,14 @@ permalink: ce-core/fma
 {: .d-inline-block }
 
 v1.1.2-alpha-10
-{: .label .label-green }
+{: .label .label-purple }
+
+<dl>
+    <dt><strong>groupID</strong></dt>
+    <dd><em>at.tugraz.ist.ase</em></dd>
+    <dt><strong>artifactID</strong></dt>
+    <dd><em>fma</em></dd>
+</dl>
 
 ---
 
@@ -23,13 +30,19 @@ v1.1.2-alpha-10
 
 ---
 
-## Simple usage
+## Introduction
+
+TBD
+
+## How tos
+
+### Simple usage
 
 The following example shows a simple usage:
 
 {% capture code %}
 {% highlight java linenos %}
-File fileFM = new File("src/test/resources/basic_featureide_redundant1.xml");
+File fileFM = new File("src/test/resources/basic_featureide_multiple1.xml");
 
 // 1. Create the factory for anomaly feature models
 IFeatureBuildable featureBuilder = new AnomalyAwareFeatureBuilder();
@@ -50,8 +63,8 @@ FMAnalyzer analyzer = new FMAnalyzer(featureModel);
 
 // 5. Select analysis operations to be performed
 EnumSet<AnomalyType> options = EnumSet.of(AnomalyType.DEAD,
-    AnomalyType.FULLMANDATORY,
-    AnomalyType.REDUNDANT);
+                                        AnomalyType.FULLMANDATORY,
+                                        AnomalyType.REDUNDANT);
 
 // 6. Generate VoidFMAnalysis, DeadFeatureAnalysis, FullMandatoryAnalysis, and RedundancyAnalysis
 // And Run the analyzer
@@ -78,13 +91,18 @@ EnumSet<AnomalyType> options = EnumSet.allOf(AnomalyType.class);
 {% include fix_linenos.html code=code %}
 {% assign code = nil %}
 
-## Usage of the `FMAnalyzer`'s `run()` method
+{: .note-title }
+> Example
+>
+> [testMultiple_1]
 
-Use this method if you read test cases from a file.
+### Usage of `FMAnalyzer`'s `run` method
+
+Use `run` method if you read test cases from a file.
 
 {% capture code %}
 {% highlight java linenos %}
-File fileFM = new File("src/test/resources/basic_featureide_redundant1.xml");
+File fileFM = new File("src/test/resources/basic_featureide_multiple1.xml");
 
 // 1. Create the factory for anomaly feature models
 IFeatureBuildable featureBuilder = new AnomalyAwareFeatureBuilder();
@@ -103,7 +121,16 @@ FeatureModel<AnomalyAwareFeature, AbstractRelationship<AnomalyAwareFeature>, CTC
 FMAnalyzer analyzer = new FMAnalyzer(featureModel);
 
 // 5. Read test cases from a file and add to analyzer
-...
+EnumSet<AnomalyType> options = EnumSet.allOf(AnomalyType.class);
+
+// read pre-generated test cases from a file
+XMLAssumptionAwareTestSuiteReader reader = new XMLAssumptionAwareTestSuiteReader(featureModel);
+XMLAssumptionAwareTestCaseBuilder builder = new XMLAssumptionAwareTestCaseBuilder(featureModel);
+@Cleanup InputStream is = getInputStream(FMAnalyzerTest.class.getClassLoader(), "testsuite_multiple1.xml");
+TestSuite testSuite = reader.read(is, builder);
+// generates analyses and add them to the analyzer
+AutomatedAnalysisBuilder analysisBuilder = new AutomatedAnalysisBuilder();
+analysisBuilder.build(featureModel, testSuite, analyzer);
 
 // 6. Run the analyzer
 // (true - trigger the corresponding explanator if the assumption is violated)
@@ -112,14 +139,14 @@ analyzer.run(true);
 
 // 8. Print the result
 EnumSet<AnomalyType> options = EnumSet.allOf(AnomalyType.class);
-    AutomatedAnalysisExplanation explanation = new AutomatedAnalysisExplanation();
-    System.out.println(explanation.getDescriptiveExplanation(analyzer.getAnalyses(), options));
+AutomatedAnalysisExplanation explanation = new AutomatedAnalysisExplanation();
+System.out.println(explanation.getDescriptiveExplanation(analyzer.getAnalyses(), options));
 {% endhighlight %}
 {% endcapture %}
 {% include fix_linenos.html code=code %}
 {% assign code = nil %}
 
-## [`AutomatedAnalysisBuilder`] and [`AutomatedAnalysisExplanation`]
+### Usage of [`AutomatedAnalysisBuilder`] and [`AutomatedAnalysisExplanation`]
 
 These classes are utility classes that provides useful and shortcut ways to build built-in analyses
 and to explain the results of analyses.
@@ -168,7 +195,7 @@ System.out.println(explanation.getDescriptiveExplanation(analyzer.getAnalyses(),
 > [`CompactExplanation`] provides explanations for four analyses, including `DeadFeatureAnalysis`, `FalseOptionalAnalysis`,
 > `FullMandatoryAnalysis`, and `ConditionallyDeadAnalysis`.
 
-## How to monitor the progress of analysis
+### Monitoring the progress of analysis
 
 Before executing the analyzer, you can register a listener to monitor the progress of analysis.
 
@@ -182,33 +209,41 @@ analyzer.run(true);
 {% include fix_linenos.html code=code %}
 {% assign code = nil %}
 
-In this way, the program will print the progress of analysis to the console.
+[`ProgressMonitor`] as default will print the progress of analysis to the console. By conforming the interface [`IAnalysisMonitor`].
 
 _Example_: [testLargeModel_2]
 
-## How to add a new analysis operation
+### Implementing your new analysis operation
 
-1. Create a new enum type that conforms the interface [`IAnomalyType`].
+1. Create a new enum type that conforms the interface [`IAnomalyType`]. Ex: [`AnomalyType`].
 2. Create a new "Assumptions" class that conforms the class [`IFMAnalysisAssumptionCreatable`].
-Assumptions classes are used to generate test cases for the analysis operation.
+Assumptions classes are used to generate test cases for the analysis operation. Ex: [`DeadFeatureAssumptions`].
 3. Create a new "Analysis" class that extends the class [`AbstractFMAnalysis`].
-Analysis classes are used to perform the analysis operation.
+Analysis classes are used to perform the analysis operation. Ex: [`DeadFeatureAnalysis`].
 4. Create a new "Explanator" class that extends the class [`AbstractAnomalyExplanator`].
-Explanator classes are used to identify diagnoses for violated assumptions.
+Explanator classes identify diagnoses for violated assumptions. Ex: [`DeadFeatureExplanator`].
 5. Create a new "Builder" class that conforms the class [`IAnalysisBuildable`].
-Builder classes are used to generate analyses.
-6. Create a new "Explanation" class that conforms the class [`IAnalysisExplanation`].
-Explanation classes are used to generate explanations for the analysis results.
+Builder classes generate analyses. Ex: [`DeadFeatureAnalysisBuilder`].
+6. Create a new "Explanation" class conforming the class [`IAnalysisExplanation`].
+Explanation classes take charge in generating explanations for the analysis results. Ex: [`CompactExplanation`].
 
 <!-- Links -->
+[testMultiple_1]: https://github.com/manleviet/CECore/blob/1cf8589f3dcf98993ccf3e70beda99dfaf52d8ab/fma-package/src/test/java/at/tugraz/ist/ase/fma/FMAnalyzerTest.java#L1353
+
 [`AutomatedAnalysisBuilder`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/builder/AutomatedAnalysisBuilder.java
 [`AutomatedAnalysisExplanation`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/explanation/AutomatedAnalysisExplanation.java
 [`DeadFeatureAnalysisBuilder`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/builder/DeadFeatureAnalysisBuilder.java
 [`CompactExplanation`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/explanation/CompactExplanation.java
 [`IAnomalyType`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/anomaly/IAnomalyType.java
+[`AnomalyType`]: https://github.com/manleviet/CECore/blob/main/fma-package/src/main/java/at/tugraz/ist/ase/fma/anomaly/AnomalyType.java
 [`IFMAnalysisAssumptionCreatable`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/assumption/IFMAnalysisAssumptionCreatable.java
+[`DeadFeatureAssumptions`]: https://github.com/manleviet/CECore/blob/main/fma-package/src/main/java/at/tugraz/ist/ase/fma/assumption/DeadFeatureAssumptions.java
 [`AbstractFMAnalysis`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/analysis/AbstractFMAnalysis.java
+[`DeadFeatureAnalysis`]: https://github.com/manleviet/CECore/blob/main/fma-package/src/main/java/at/tugraz/ist/ase/fma/analysis/DeadFeatureAnalysis.java
 [`AbstractAnomalyExplanator`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/explanator/AbstractAnomalyExplanator.java
+[`DeadFeatureExplanator`]: https://github.com/manleviet/CECore/blob/main/fma-package/src/main/java/at/tugraz/ist/ase/fma/explanator/DeadFeatureExplanator.java
 [`IAnalysisBuildable`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/builder/IAnalysisBuildable.java
+[`DeadFeatureAnalysisBuilder`]: https://github.com/manleviet/CECore/blob/main/fma-package/src/main/java/at/tugraz/ist/ase/fma/builder/DeadFeatureAnalysisBuilder.java
 [`IAnalysisExplanation`]: https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/fma/src/main/java/at/tugraz/ist/ase/fma/explanation/IAnalysisExplanable.java
+[`CompactExplanation`]: https://github.com/manleviet/CECore/blob/main/fma-package/src/main/java/at/tugraz/ist/ase/fma/explanation/CompactExplanation.java
 [testLargeModel_2]: https://github.com/manleviet/CA-CDR-V2/blob/720fd21afa83caac8c2d8604632b7c595e6e8abe/fma/src/test/java/at/tugraz/ist/ase/fma/FMAnalyzerTest.java#L785

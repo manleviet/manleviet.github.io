@@ -11,7 +11,16 @@ permalink: ce-core/heuristics
 {: .d-inline-block }
 
 v1.1.2-alpha-10
-{: .label .label-green }
+{: .label .label-purple }
+
+<dl>
+    <dt><strong>groupID</strong></dt>
+    <dd><em>at.tugraz.ist.ase</em></dd>
+    <dt><strong>artifactID</strong></dt>
+    <dd><em>heuristics</em></dd>
+</dl>
+
+TBD
 
 ---
 
