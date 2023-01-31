@@ -49,8 +49,8 @@ flowchart BT
 ```
 
 <!-- Links -->
-[ce-core]: https://github.com/manleviet/CECore/packages/1538019
-[ce]: https://github.com/manleviet/CECore/packages/1538662
-[fma]: https://github.com/manleviet/CECore/packages/1564988
-[heuristics]: https://github.com/manleviet/CECore/packages/1538660
-[mf]: https://github.com/manleviet/CECore/packages/1538658
+[ce-core]: core
+[ce]: ce
+[fma]: fma
+[heuristics]: heuristics
+[mf]: mf
