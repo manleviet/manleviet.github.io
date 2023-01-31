@@ -11,7 +11,7 @@ has_toc: true
 {: .d-inline-block }
 
 v1.1.2-alpha-10
-{: .label .label-green }
+{: .label .label-purple }
 
 **CECore** is a Java library providing core components of the knowledge-based configuration environment.
 It is structured in 5 following Maven packages:

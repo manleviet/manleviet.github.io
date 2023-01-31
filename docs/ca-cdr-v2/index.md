@@ -12,7 +12,7 @@ has_toc: true
 {: .d-inline-block }
 
 v1.3.9-alpha-52
-{: .label .label-green }
+{: .label .label-purple }
 
 This is a Java library for Consistency-based Algorithms for Conflict Detection and Resolution (CA-CDR).
 It provides 7 Maven packages hosted by GitHub.
@@ -22,11 +22,6 @@ Intelligent mechanisms are urgently needed, especially in large-scale knowledge 
 This repository publishes our implementations for some/our consistency-based algorithms,
 which can be utilized in all three phases of KBE, i.e., design, testing and debugging,
 and configuration.
-
-{: .important-title }
-> Citing
->
-> If you use my implementations in your research, please cite the papers listed in the [References].
 
 ---
 
@@ -123,4 +118,4 @@ flowchart BT
 ```
 
 <!-- Links -->
-[References]: /docs/references
+[References]: /references
