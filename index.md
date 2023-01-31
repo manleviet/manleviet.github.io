@@ -18,7 +18,7 @@ To use **CA-CDR-V2** and **CECore** libraries, please first follow the guide in 
 **CA-CDR-V2** and **CECore** are used by the following projects:
 
 1. [FMTesting] - A Eclipse plug-in for feature model testing and debugging
-2. [FlamaPy] - a python implementation of **CA-CDR-V2**'s algorithms
+2. A python implementation of **CA-CDR-V2**'s algorithms can be found in [FlamaPy]
 3. A Restful Webservice for developing product configurators with the following state-of-art technologies:
     - Domain reduction - decreases options that an user can select on the basis of previous selections of the user
     - Matrix Factorization-based Configuration and Recommendation - identifies Value Variable Heuristics on the basis of user requirements
@@ -59,6 +59,6 @@ please cite the corresponding papers listed in the [References].
 [Tamim]: https://github.com/taburg
 [CA-CDR-V2 GitHub]: https://github.com/manleviet/CA-CDR-V2/issues
 [CECore GitHub]: https://github.com/manleviet/CECore/issues
-[References]: /docs/references
+[References]: references
 [FMTesting]: https://github.com/AIG-ist-tugraz/FMTesting
 [FlamaPy]: https://flamapy.github.io
