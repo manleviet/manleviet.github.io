@@ -5,7 +5,7 @@ parent: CA-CDR-V2
 nav_order: 6
 has_children: true
 permalink: ca-cdr-v2/algorithms
-<!-- has_toc: true -->
+has_toc: false
 ---
 
 # Algorithms
@@ -23,6 +23,8 @@ v1.3.9-alpha-52
 </dl>
 
 ## List of algorithms:
+
+_ca-cdr-v2_ provides the following algorithms:
 
 1. [QuickXPlain](quickxplain) [1]
 2. [FastDiag](fastdiag) [2]
