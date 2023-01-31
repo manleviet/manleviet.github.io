@@ -92,7 +92,7 @@ Replacing `ARTIFACT_ID` and `VERSION` with the corresponding information from th
 | - | [csp2choco-v2] | *1.3.8* | *1.3.9-alpha-52* | provides a translator which enables converting CSP constraints into Choco Solver commands |
 | - | [common-v2] | *1.3.8* | *1.3.9-alpha-52* | a Maven package for utility functions |
 |CECore | [ce-core]     | *1.1.1* | *1.1.2-alpha-10* | core and utility classes |
-| - | [ce] | *1.1.1* | *1.1.2-alpha-10* | provides a knolwedge-based configurator |
+| - | [ce] | *1.1.1* | *1.1.2-alpha-10* | provides a compact knolwedge-based configurator |
 | -  | [fma]    | *1.1.1* | *1.1.2-alpha-10* | provides a mechnism to automatically generate property-based test cases for feature models and allows the automated determination of faulty constraints in the feature model |
 | - | [heuristics]         | *1.1.1* | *1.1.2-alpha-10* | provides an implementation of Matrix Factorization Based Variable and Value Ordering Heuristics for Constraint Solving |
 | - | [mf]      | *1.1.1* | *1.1.2-alpha-10* | provides an implementation of Matrix Factorization using the Mahout library. |
