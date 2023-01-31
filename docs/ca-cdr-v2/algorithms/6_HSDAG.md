@@ -5,6 +5,7 @@ parent: Algorithms
 grand_parent: CA-CDR-V2
 nav_order: 6
 permalink: ca-cdr-v2/algorithms/hsdag
+nav_exclude: true
 ---
 
 # HSDAG
@@ -13,3 +14,6 @@ permalink: ca-cdr-v2/algorithms/hsdag
 
 v1.3.9-alpha-52
 {: .label .label-purple }
+
+TBD
+{: .label .label-yellow }

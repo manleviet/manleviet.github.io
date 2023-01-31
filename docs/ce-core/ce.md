@@ -13,7 +13,7 @@ permalink: ce-core/ce
 v1.1.2-alpha-10
 {: .label .label-purple }
 
-<dl>
+<dl style="background:#FEFBE7; border:solid 1px black; width:400px;">
     <dt><strong>groupID</strong></dt>
     <dd><em>at.tugraz.ist.ase</em></dd>
     <dt><strong>artifactID</strong></dt>
@@ -21,6 +21,7 @@ v1.1.2-alpha-10
 </dl>
 
 TBD
+{: .label .label-yellow }
 
 <!-- Supports two modes: -->
 <!-- 1. Compact mode -->

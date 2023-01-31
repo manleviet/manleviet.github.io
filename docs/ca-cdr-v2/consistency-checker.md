@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Common Utils
+title: Consistency Checker
 parent: CA-CDR-V2
-nav_order: 8
-permalink: ca-cdr-v2/common-utils
+nav_order: 5
+permalink: ca-cdr-v2/consistency-checker
 ---
 
-# Common utils
+# Consistency Checker
 {: .no_toc }
 {: .d-inline-block }
 
@@ -17,8 +17,10 @@ v1.3.9-alpha-52
     <dt><strong>groupID</strong></dt>
     <dd><em>at.tugraz.ist.ase</em></dd>
     <dt><strong>artifactID</strong></dt>
-    <dd><em>common-v2</em></dd>
+    <dd><em>ca-cdr-v2</em></dd>
 </dl>
+
+_ca-cdr-v2_ provides a [Choco Consistency Checker](https://github.com/manleviet/CA-CDR-V2/blob/main/ca-cdr-package/src/main/java/at/tugraz/ist/ase/cacdr/checker/ChocoConsistencyChecker.java), supporting the consistency checks for sets of constraints or sets of test cases.
 
 TBD
 {: .label .label-yellow }
@@ -32,3 +34,4 @@ TBD
 {:toc}
 
 ---
+

@@ -7,5 +7,7 @@ permalink: ce-core/changelog
 ---
 
 # Changelog
+{: .d-inline-block }
 
-TBD
+coming soon
+{: .label .label-yellow }

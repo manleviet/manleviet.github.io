@@ -1,23 +1,23 @@
 ---
 layout: default
-title: Heuristics for Choco Solver
-parent: CECore
-nav_order: 4
-permalink: ce-core/heuristics
+title: TestCase and TestSuite
+parent: CA-CDR-V2
+nav_order: 3
+permalink: ca-cdr-v2/testing
 ---
 
-# Heuristics for Choco Solver
+# TestCase and TestSuite
 {: .no_toc }
 {: .d-inline-block }
 
-v1.1.2-alpha-10
+v1.3.9-alpha-52
 {: .label .label-purple }
 
 <dl style="background:#FEFBE7; border:solid 1px black; width:400px;">
     <dt><strong>groupID</strong></dt>
     <dd><em>at.tugraz.ist.ase</em></dd>
     <dt><strong>artifactID</strong></dt>
-    <dd><em>heuristics</em></dd>
+    <dd><em>cdrmodel-v2</em></dd>
 </dl>
 
 TBD

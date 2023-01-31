@@ -13,7 +13,7 @@ permalink: ce-core/fma
 v1.1.2-alpha-10
 {: .label .label-purple }
 
-<dl>
+<dl style="background:#FEFBE7; border:solid 1px black; width:400px;">
     <dt><strong>groupID</strong></dt>
     <dd><em>at.tugraz.ist.ase</em></dd>
     <dt><strong>artifactID</strong></dt>
@@ -33,6 +33,7 @@ v1.1.2-alpha-10
 ## Introduction
 
 TBD
+{: .label .label-yellow }
 
 ## How tos
 

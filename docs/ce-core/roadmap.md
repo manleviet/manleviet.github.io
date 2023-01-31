@@ -7,5 +7,7 @@ permalink: ce-core/roadmap
 ---
 
 # CECore roadmap
+{: .d-inline-block }
 
-TBD
+coming soon
+{: .label .label-yellow }

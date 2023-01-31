@@ -2,7 +2,7 @@
 layout: default
 title: CDRModels
 parent: CA-CDR-V2
-nav_order: 3
+nav_order: 4
 permalink: ca-cdr-v2/cdrmodel
 ---
 
@@ -13,7 +13,7 @@ permalink: ca-cdr-v2/cdrmodel
 v1.3.9-alpha-52
 {: .label .label-purple }
 
-<dl>
+<dl style="background:#FEFBE7; border:solid 1px black; width:400px;">
     <dt><strong>groupID</strong></dt>
     <dd><em>at.tugraz.ist.ase</em></dd>
     <dt><strong>artifactID</strong></dt>
