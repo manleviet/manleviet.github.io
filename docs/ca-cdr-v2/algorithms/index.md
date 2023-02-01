@@ -26,16 +26,16 @@ v1.3.9-alpha-52
 
 _ca-cdr-v2_ provides the following algorithms:
 
-1. [QuickXPlain](quickxplain) [1]
-2. [FastDiag](fastdiag) [2]
-3. [MSS-based FastDiag](mss_fastdiag) [15]
-4. [FlexDiag](flexdiag) [3]
-5. [HS-tree](hstree) [8]
-6. [HSDAG](hsdag) [9]
-7. [DirectDebug](directdebug) [4, 5, 6, 7]
-8. [DirectDiag](directdiag)
-9. [WipeOutR_T](wipeoutr_t) [12, 13]
-10. [WipeOutR_FM](wipeoutr_fm) [12, 13]
+1. [QuickXPlain](algorithms/quickxplain) [1]
+2. [FastDiag](algorithms/fastdiag) [2]
+3. [MSS-based FastDiag](algorithms/mss_fastdiag) [15]
+4. [FlexDiag](algorithms/flexdiag) [3]
+5. [HS-tree](algorithms/hstree) [8]
+6. [HSDAG](algorithms/hsdag) [9]
+7. [DirectDebug](algorithms/directdebug) [4, 5, 6, 7]
+8. [DirectDiag](algorithms/directdiag)
+9. [WipeOutR_T](algorithms/wipeoutr_t) [12, 13]
+10. [WipeOutR_FM](algorithms/wipeoutr_fm) [12, 13]
 11. AggregatedTest [14] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
 12. LevelWiseParallelHSDAG [10, 11] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
 13. FullParallelHSDAG [10, 11] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
