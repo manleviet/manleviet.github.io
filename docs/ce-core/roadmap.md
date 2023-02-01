@@ -7,7 +7,9 @@ permalink: ce-core/roadmap
 ---
 
 # CECore roadmap
-{: .d-inline-block }
+<!-- {: .d-inline-block } -->
 
-coming soon
-{: .label .label-yellow }
+<!-- coming soon -->
+<!-- {: .label .label-yellow } -->
+
+- [ ] More feature model analysis operations
