@@ -69,7 +69,7 @@ Besides, it could represent a preference of a user requirement, e.g., `Modell = 
 - Utility functions for variables ([`VariableUtils`]) and constraints ([`ConstraitUtils`])
 
 {: .highlight }
-Negative constraints are used in the algorithms [WipeOutR_T](wipeoutr_t), [WipeOutR_FM](wipeoutr_fm).
+Negative constraints are used in the algorithms [WipeOutR_T](algorithms/wipeoutr_t), [WipeOutR_FM](algorithms/wipeoutr_fm).
 
 ## How tos
 
