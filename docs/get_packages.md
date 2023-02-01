@@ -84,7 +84,7 @@ Replacing `ARTIFACT_ID` and `VERSION` with the corresponding information from th
 _Legend_: <span>stable version</span>{: .label .label-green .fs-1 } <span>latest version</span>{: .label .label-purple .fs-1 }
 
 |*library* | *artifact_id*                                       | *versions* | *description*                            |
-|---|----------------------------------------------|------------------------------------------|---|---|
+|:---|:----------------------------------------------|:------------------------------------------|:---|
 | **CA-CDR-V2** | [ca-cdr-v2]  | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | provides implementations of Consistency-based Algorithms for Conflict Detection and Resolution (CA-CDR) and a ChocoConsistencyChecker |
 | - | [cdrmodel-v2] | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | provides an programmatic approach to manage/prepare the constraints/test cases for consistency-based algorithms |
 | - | [choco-kb-v2]    | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | provides classes managing CSP (Choco) representations of a knowlege base/feature model |

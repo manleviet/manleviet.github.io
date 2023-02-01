@@ -18,7 +18,7 @@ v1.3
 The tool supports the following parameters:
 
 | parameter |required|default value| description |
-|---|---|---|---|
+|:---|:---|:---|:---|
 |-h|no| - | prints the app's usage info |
 |`-c`|yes| - |number of relationships and cross tree constraints|
 |`-fm`|yes| - |number of generated feature models|

@@ -28,7 +28,7 @@ and _configuration_.
 The library is organized in 7 following Maven packages:
 
 | *package*                                       | *description*                            |
-|----------------------------------------------|------------------------------------------|
+|:----------------------------------------------|:------------------------------------------|
 | [ca-cdr-v2]     | provides implementations of Consistency-based Algorithms for Conflict Detection and Resolution (CA-CDR) and a ChocoConsistencyChecker |
 | [cdrmodel-v2] | provides an programmatic approach to manage/prepare the constraints/test cases for consistency-based algorithms |
 | [choco-kb-v2]    | provides classes managing CSP (Choco) representations of a knowlege base/feature model |

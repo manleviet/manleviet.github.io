@@ -20,7 +20,7 @@ v1.1.2-alpha-10
 It is structured in 5 following Maven packages:
 
 | *package*                                       | *description*                            |
-|----------------------------------------------|------------------------------------------|
+|:----------------------------------------------|:------------------------------------------|
 | [ce-core]     | core and utility classes |
 | [ce] | provides a compact knolwedge-based configurator |
 | [fma]    | provides a mechnism to automatically generate property-based test cases for feature models and allows the automated determination of faulty constraints in the feature model |
