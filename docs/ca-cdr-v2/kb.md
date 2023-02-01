@@ -25,7 +25,7 @@ _choco-kb-v2_ provides classes managing a (Choco) CSP representation of a knowle
 
 {: .highlight }
 Feature model is a type of knowledge represention.
-For more details related to what **CA-CDR-V2** supports for feature models, we refer to [Feature model].
+For more details related to what **CA-CDR-V2** supports for feature models, we refer to [Feature models].
 
 ---
 
@@ -130,7 +130,7 @@ TBD
 {: .label .label-yellow }
 
 <!-- Links -->
-[Feature model]: fm
+[Feature models]: fm
 [Constraint Satisfaction Problems]: https://en.wikipedia.org/wiki/Constraint_satisfaction_problem
 [PC Configuration Knowledge Base]: https://www.itu.dk/research/cla/externals/clib/
 [Renault Configuration Knowledge Base]: https://www.itu.dk/research/cla/externals/clib/

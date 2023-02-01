@@ -55,7 +55,7 @@ relationships, and cross-tree constraints. The class accepts three bounded type 
 2. [`AbstractRelationship`] and all its subclasses
 3. [`CTConstraint`] and all its subclasses
 
-Since the class is generic, i.e., the class doesn't know how to build features, relationships, and constraints,
+Since the class is generic, i.e., it doesn't know how to build features, relationships, and constraints,
 it requires _builders_ to create features, relationships, and constraints.
 The package includes [_built-in builders_] for _basic_ features, relationships and constraints.
 These builders conform to the interfaces [`IFeatureBuildable`], [`IRelationshipBuildable`], and [`IConstraintBuildable`].
