@@ -41,7 +41,7 @@ and also used by the following papers:
 ## Connect with us
 
 - For more information about the projects, support requests, and technical questions, do not hesitate to contact us.
-- Report and discuss issues on [CA-CDR-V2 GitHub] and [CECore GitHub].
+- Report and discuss issues on [CA-CDR-V2s's GitHub] and [CECore's GitHub].
 - We welcome contributions from anyone.
 
 ## Citing
@@ -57,8 +57,8 @@ please cite the corresponding papers listed in the [References].
 [Get packages]: get_packages
 [Mẫn]: https://github.com/manleviet
 [Tamim]: https://github.com/taburg
-[CA-CDR-V2 GitHub]: https://github.com/manleviet/CA-CDR-V2/issues
-[CECore GitHub]: https://github.com/manleviet/CECore/issues
+[CA-CDR-V2's GitHub]: https://github.com/manleviet/CA-CDR-V2/issues
+[CECore' GitHub]: https://github.com/manleviet/CECore/issues
 [References]: references
 [FMTesting]: https://github.com/AIG-ist-tugraz/FMTesting
 [FlamaPy]: https://flamapy.github.io

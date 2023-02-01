@@ -5,7 +5,7 @@ parent: Algorithms
 grand_parent: CA-CDR-V2
 nav_order: 1
 permalink: ca-cdr-v2/algorithms/quickxplain
-nav_exclude: true
+<!-- nav_exclude: true -->
 ---
 
 # QuickXPlain
