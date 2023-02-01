@@ -6,7 +6,7 @@ nav_order: 1
 permalink: ca-cdr-v2/kb
 ---
 
-# Knowledge bases
+# Knowledge Bases
 {: .no_toc }
 {: .d-inline-block }
 
@@ -20,8 +20,14 @@ v1.3.9-alpha-52
     <dd><em>choco-kb-v2</em></dd>
 </dl>{: .label .label-yellow }
 
-<!-- TBD -->
-<!-- {: .label .label-yellow } -->
+**CA-CDR-V2** allows to represent knowledge bases as [Constraint Satisfaction Problems].
+_choco-kb-v2_ provides classes managing a (Choco) CSP representation of a knowlege base.
+
+{: .highlight }
+Feature model is a type of knowledge represention.
+For more details related to what **CA-CDR-V2** supports for feature models, we refer to [Feature model].
+
+---
 
 ## Table of Contents
 {: .no_toc .text-delta }
@@ -31,76 +37,54 @@ v1.3.9-alpha-52
 
 ---
 
-_choco-kb-v2_ provides classes managing CSP (Choco) representations of a knowlege base.
-
 ## Features
 
-- Provides an abstract `KB` class managing variables, variable domains, and constraints of a knowledge base/feature model
-- Provides the following Configuration Knowledge Bases:
-1. **FMKB** - an implementation for the CSP representation of feature models. The input of **FMKB** is a **FeatureModel** object (from [fm-package](https://github.com/manleviet/CA-CDR-V2/tree/main/fm-package)). So you can use **FMKB** for all feature models you have, i.e., no need to implement a specific **KB** class.
-2. **PCKB** - an implementation of [PC Configuration Knowledge Base](https://www.itu.dk/research/cla/externals/clib/).
-3. **RenaultKB** - an implementation of [Renault Configuration Knowledge Base](https://www.itu.dk/research/cla/externals/clib/).
-- Provides utility functions for constraints
+_choco-kb-v2_ provides the following features:
 
-The package allows to manage a CSP representation of a knowledge base/feature model using an abstract class [**KB**]().
+- An abstract [`KB`] class managing variables ([`Variable`]), variable domains ([`Domain`]), and constraints ([`Constraint`]) of a knowledge base/feature model.
+- Two types of variables:
+    1. Integer variables ([`IntVariable`])
+    2. Boolean variables ([`BoolVariable`])
+- Two interfaces specifying the behaviors of the knowledge base:
+    1. [`IIntVarKB`] returns Choco's [`IntVar`]
+    2. [`IBoolVarKB`] returns Choco's [`BoolVar`]
+- [`Constraint`] manages corresponding Choco constraints, as well as their negation.
+- Two utility builder [`IntVarConstraintBuilder`] and [`BoolVarConstraintBuilder`] help to build a [`Constraint`] object from a list of Choco constraints.
+- Already encoded knowledge bases:
+    1. [`FMKB`] - an implementation for a CSP representation of a feature model.
+    The input of [`FMKB`] is a [`FeatureModel`] object.
+    So you can use [`FMKB`] for any feature models you have, i.e., no need to implement a specific [`KB`] class for an individual feature model.
+    [`FMKB`] uses [`BoolVariable`]s, and conforms [`IBoolVarKB`]. [`FMKB`] uses [`BoolVarConstraintBuilder`] to build constraints.
+    2. [`PCKB`] - an implementation of [PC Configuration Knowledge Base].
+    [`PCKB`] uses [`IntVariable`]s, and conforms [`IIntVarKB`]. [`PCKB`] uses [`IntVarConstraintBuilder`] to build constraints.
+    3. [`RenaultKB`] - an implementation of [Renault Configuration Knowledge Base].
+    [`RenaultKB`] uses [`IntVariable`]s, and conforms [`IIntVarKB`]. [`RenaultKB`] uses [`IntVarConstraintBuilder`] to build constraints.
+    4. [`CameraKB`] - an implementation of [Camera Configuration Knowledge Base].
+    [`CameraKB`] uses [`IntVariable`]s, and conforms [`IIntVarKB`]. [`CameraKB`] uses [`IntVarConstraintBuilder`] to build constraints.
+- [`Assignment`] class represents an assignment of a value to a variable.
+It could represent a CSP assignment or a SAT clause, e.g., `F1 = true`.
+Besides, it could represent a preference of a user requirement, e.g., `Modell = limousine`.
+- Two interfaces [`IAssignmentsTranslatable`] and [`ILogOpCreatable`] specifying the behaviors of a translator from an assignment to Choco constraints.
+[`FMAssignmentsTranslator`] is a specific translator for feature model's assignments.
+- Utility functions for variables ([`VariableUtils`]) and constraints ([`ConstraitUtils`])
 
-It provides the following functionalities:
+{: .highlight }
+Negative constraints are used in the algorithms [WipeOutR_T](wipeoutr_t), [WipeOutR_FM](wipeoutr_fm).
 
+## How tos
 
-You can implement your knowledge base by inheriting the [**KB**]() class.
+### Encoding your own knowledge base
 
-You can find an implementation of **Renault** and **PC** knowledge bases in here and here.
+You can implement your knowledge base by inheriting the [`KB`] class.
 
-You can also find an implementation of a CSP representation for feature models (**FMKB** class) in here.
+{: .important-title }
+> Examples
+>
+> [`PCKB`], [`FMKB`]
 
-The input of **FMKB** is a **FeatureModel** object (from [fm-package]()).
+### Creating a [`FMKB`] object for a feature model readed from a file
 
-So, you can use **FMKB** for all feature models you have, i.e., no need to implement a specific [**KB**]() class compared to **PC** or **Renault**.
-
-
-For each KB (KB class), you will have a list of variables (Variable class), each variable has a domain (Domain class), and a list of constraints (Constraint class). There are two types of variables, i.e., integer variables (IntVariable class) and bool variables (BoolVariable class).
-
-
-For feature models, each feature is a bool variable.
-
-For Renault and PC, each variable is an integer variable.
-
-
-Each Constraint class manages many Choco constraints and maybe many negations of these Choco constraints. Negative Choco constraints are very important to the WipeOutR algorithms.
-
-
-Why does a Constraint object manage many Choco constraints?
-
-A Constraint object represents a CSP constraint. In Choco Solver, a CSP constraint will be translated into many Choco constraints in some cases. For example, in the following figure, line 46 shows a CSP constraint “4wheel = yes => type = xdrive”. After executing line 46, we have 4 Choco constraints in the model (see the panel Debug).
-
-![](img/Picture 1.png)
-
-
-Example – how to use Variable, Domain, and Constraint classes:
-
--	3 unit tests
-
--	PC knowledge base (focus on the functions defineDomains, defineVariables, and defineConstraints)
-
--	FMKB (focus on the functions defineDomains, defineVariables, and defineConstraints)
-
-
-Example – how to create and use an object of FMKB, PCKB, and RenaultKB:
-
--	FMKB
-
--	PCKB
-
--	RenaultKB
-
--	KBStatistics
-
-## `FMKB`
-
-In the current version of this package, the [**FMKB**](https://github.com/manleviet/CA-CDR-V2/blob/21-uses-generics-for-feature-model/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/fm/FMKB.java)
-class is generic.
-
-The following code shows how to create a FMKB object with a feature model as an input.
+The following code shows how to create a [`FMKB`] object for a feature model which is parsed from a file.
 
 {% capture code %}
 {% highlight java linenos %}
@@ -108,73 +92,74 @@ File fileFM = new File("src/test/resources/smartwatch.sxfm");
 
 // create a parser for the given file
 @Cleanup("dispose")
-FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint> parser = FMParserFactory.getInstance().getParser(fileFM.getName());
+FeatureModelParser<Feature, AbstractRelationship<Feature>, CTConstraint>
+    parser = FMParserFactory.getInstance().getParser(fileFM.getName());
 
 // parse the feature model file
-FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint> fm = parser.parse(fileFM);
+FeatureModel<Feature, AbstractRelationship<Feature>, CTConstraint>
+    fm = parser.parse(fileFM);
 
-// create a FMKB object with the given feature model and requires to generate the negation of constraints
-FMKB<Feature, AbstractRelationship<Feature>, CTConstraint> kb = new FMKB<>(fm, true);
-    {% endhighlight %}
-    {% endcapture %}
-    {% include fix_linenos.html code=code %}
-    {% assign code = nil %}
+// create a FMKB object with the given feature model and requires to generate also the negative constraints
+FMKB<Feature, AbstractRelationship<Feature>, CTConstraint>
+    kb = new FMKB<>(fm, true);
+{% endhighlight %}
+{% endcapture %}
+{% include fix_linenos.html code=code %}
+{% assign code = nil %}
 
-## Other examples
+{: .highlight }
+For more examples related to feature models, we refer to [Feature model].
 
-- [Unit tests](https://github.com/manleviet/CA-CDR-V2/tree/21-uses-generics-for-feature-model/chocokb-package/src/test/java/at/tugraz/ist/ase/kb/fm)
+### Creating and using an object of [`FMKB`], [`PCKB`], [`RenaultKB`], and [`CameraKB`]
 
+{: .important-title }
+> Examples
+>
+> [`KBStatistics`], [FMKBTests], [PCKBTest], [RenaultKBTest], and [CameraKBTest]
 
+### Implementing a new assignment translator
 
-[//]: # (The package allows to manage a CSP representation of a knowledge base/feature model using an abstract class [**KB**]&#40;&#41;.)
+{: .important-title }
+> Example
+>
+> [`FMAssignmentsTranslator`]
 
-[//]: # (It provides the following functionalities:)
+### How to for Utility functions
 
-[//]: # ()
-[//]: # (You can implement your knowledge base by inheriting the [**KB**]&#40;&#41; class.)
+TBD
+{: .label .label-yellow }
 
-[//]: # (You can find an implementation of **Renault** and **PC** knowledge bases in here and here.)
-
-[//]: # (You can also find an implementation of a CSP representation for feature models &#40;**FMKB** class&#41; in here.)
-
-[//]: # (The input of **FMKB** is a **FeatureModel** object &#40;from [fm-package]&#40;&#41;&#41;.)
-
-[//]: # (So, you can use **FMKB** for all feature models you have, i.e., no need to implement a specific [**KB**]&#40;&#41; class compared to **PC** or **Renault**.)
-
-[//]: # ()
-[//]: # (For each KB &#40;KB class&#41;, you will have a list of variables &#40;Variable class&#41;, each variable has a domain &#40;Domain class&#41;, and a list of constraints &#40;Constraint class&#41;. There are two types of variables, i.e., integer variables &#40;IntVariable class&#41; and bool variables &#40;BoolVariable class&#41;.)
-
-[//]: # ()
-[//]: # (For feature models, each feature is a bool variable.)
-
-[//]: # (For Renault and PC, each variable is an integer variable.)
-
-[//]: # ()
-[//]: # (Each Constraint class manages many Choco constraints and maybe many negations of these Choco constraints. Negative Choco constraints are very important to the WipeOutR algorithms.)
-
-[//]: # ()
-[//]: # (Why does a Constraint object manage many Choco constraints?)
-
-[//]: # (A Constraint object represents a CSP constraint. In Choco Solver, a CSP constraint will be translated into many Choco constraints in some cases. For example, in the following figure, line 46 shows a CSP constraint “4wheel = yes => type = xdrive”. After executing line 46, we have 4 Choco constraints in the model &#40;see the panel Debug&#41;.)
-
-[//]: # (![]&#40;img/Picture 1.png&#41;)
-
-[//]: # ()
-[//]: # (Example – how to use Variable, Domain, and Constraint classes:)
-
-[//]: # (-	3 unit tests)
-
-[//]: # (-	PC knowledge base &#40;focus on the functions defineDomains, defineVariables, and defineConstraints&#41;)
-
-[//]: # (-	FMKB &#40;focus on the functions defineDomains, defineVariables, and defineConstraints&#41;)
-
-[//]: # ()
-[//]: # (Example – how to create and use an object of FMKB, PCKB, and RenaultKB:)
-
-[//]: # (-	FMKB)
-
-[//]: # (-	PCKB)
-
-[//]: # (-	RenaultKB)
-
-[//]: # (-	KBStatistics)
+<!-- Links -->
+[Feature model]: fm
+[Constraint Satisfaction Problems]: https://en.wikipedia.org/wiki/Constraint_satisfaction_problem
+[PC Configuration Knowledge Base]: https://www.itu.dk/research/cla/externals/clib/
+[Renault Configuration Knowledge Base]: https://www.itu.dk/research/cla/externals/clib/
+[Camera Configuration Knowledge Base]: https://www.itu.dk/research/cla/externals/clib/
+[`KB`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/KB.java
+[`Variable`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/Variable.java
+[`IntVariable`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/IntVariable.java
+[`BoolVariable`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/BoolVariable.java
+[`IIntVarKB`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/IIntVarKB.java
+[`IBoolVarKB`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/IBoolVarKB.java
+[`IntVar`]: https://choco-solver.readthedocs.io/en/latest/2_modelling.html
+[`BoolVar`]: https://choco-solver.readthedocs.io/en/latest/2_modelling.html
+[`Domain`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/Domain.java
+[`Constraint`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/Constraint.java
+[`IntVarConstraintBuilder`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/builder/IntVarConstraintBuilder.java
+[`BoolVarConstraintBuilder`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/builder/BoolVarConstraintBuilder.java
+[`Assignment`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/Assignment.java
+[`FMAssignmentsTranslator`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/translator/fm/FMAssignmentsTranslator.java
+[`IAssignmentsTranslatable`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/translator/IAssignmentsTranslatable.java
+[`ILogOpCreatable`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/core/translator/ILogOpCreatable.java
+[`VariableUtils`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/common/VariableUtils.java
+[`ConstraitUtils`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/common/ConstraintUtils.java
+[`FMKB`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/fm/FMKB.java
+[`CameraKB`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/camera/CameraKB.java
+[`RenaultKB`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/renault/RenaultKB.java
+[`PCKB`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/main/java/at/tugraz/ist/ase/kb/pc/PCKB.java
+[`FeatureModel`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/fm-package/src/main/java/at/tugraz/ist/ase/fm/core/FeatureModel.java
+[`KBStatistics`]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/app-KBStatistics/src/main/java/at/tugraz/ist/ase/kb/app/KBStatistics.java
+[FMKBTests]: https://github.com/manleviet/CA-CDR-V2/tree/third_release/chocokb-package/src/test/java/at/tugraz/ist/ase/kb/fm
+[PCKBTest]: https://github.com/manleviet/CA-CDR-V2/tree/third_release/chocokb-package/src/test/java/at/tugraz/ist/ase/kb/pc
+[RenaultKBTest]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/test/java/at/tugraz/ist/ase/kb/renault/RenaultKBTest.java
+[CameraKBTest]: https://github.com/manleviet/CA-CDR-V2/blob/third_release/chocokb-package/src/test/java/at/tugraz/ist/ase/kb/camera/CameraKBTest.java
