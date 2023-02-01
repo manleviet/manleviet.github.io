@@ -81,22 +81,22 @@ Add the package dependencies to the `dependencies` element of your project `pom.
 {% assign code = nil %}
 
 Replacing `ARTIFACT_ID` and `VERSION` with the corresponding information from the following table.
-_Legend_: <span>stable version</span>{: .label .label-green } <span>latest version</span>{: .label .label-purple }
+_Legend_: <span>stable version</span>{: .label .label-green .fs-1 } <span>latest version</span>{: .label .label-purple .fs-1 }
 
 |*library* | *artifact_id*                                       | *versions* | *description*                            |
 |---|----------------------------------------------|------------------------------------------|---|---|
-| **CA-CDR-V2** | [ca-cdr-v2]  | <span>1.3.8</span>{: .label .label-green } <span>1.3.9-alpha-52</span>{: .label .label-purple } | provides implementations of Consistency-based Algorithms for Conflict Detection and Resolution (CA-CDR) and a ChocoConsistencyChecker |
-| - | [cdrmodel-v2] | <span>1.3.8</span>{: .label .label-green } <span>1.3.9-alpha-52</span>{: .label .label-purple } | provides an programmatic approach to manage/prepare the constraints/test cases for consistency-based algorithms |
-| - | [choco-kb-v2]    | <span>1.3.8</span>{: .label .label-green } <span>1.3.9-alpha-52</span>{: .label .label-purple } | provides classes managing CSP (Choco) representations of a knowlege base/feature model |
-| - | [fm-v2]         | <span>1.3.8</span>{: .label .label-green } <span>1.3.9-alpha-52</span>{: .label .label-purple } | provides the management functionalities for basic feature models |
-| - | [eval-v2]      | <span>1.3.8</span>{: .label .label-green } <span>1.3.9-alpha-52</span>{: .label .label-purple } | provides a performance evaluator, i.e., counters and timers, which could be used to measure the performance of algorithms |
-| - | [csp2choco-v2] | <span>1.3.8</span>{: .label .label-green } <span>1.3.9-alpha-52</span>{: .label .label-purple } | provides a translator which enables converting CSP constraints into Choco Solver commands |
-| - | [common-v2] | <span>1.3.8</span>{: .label .label-green } <span>1.3.9-alpha-52</span>{: .label .label-purple } | a Maven package for utility functions |
-|**CECore** | [ce-core]     | <span>1.1.1</span>{: .label .label-green } <span>1.1.2-alpha-10</span>{: .label .label-purple } | core and utility classes |
-| - | [ce] | <span>1.1.1</span>{: .label .label-green } <span>1.1.2-alpha-10</span>{: .label .label-purple } | provides a compact knolwedge-based configurator |
-| -  | [fma]    | <span>1.1.1</span>{: .label .label-green } <span>1.1.2-alpha-10</span>{: .label .label-purple } | provides a mechnism to automatically generate property-based test cases for feature models and allows the automated determination of faulty constraints in the feature model |
-| - | [heuristics]         | <span>1.1.1</span>{: .label .label-green } <span>1.1.2-alpha-10</span>{: .label .label-purple } | provides an implementation of Matrix Factorization Based Variable and Value Ordering Heuristics for Constraint Solving |
-| - | [mf]      | <span>1.1.1</span>{: .label .label-green } <span>1.1.2-alpha-10</span>{: .label .label-purple } | provides an implementation of Matrix Factorization using the Mahout library. |
+| **CA-CDR-V2** | [ca-cdr-v2]  | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | provides implementations of Consistency-based Algorithms for Conflict Detection and Resolution (CA-CDR) and a ChocoConsistencyChecker |
+| - | [cdrmodel-v2] | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | provides an programmatic approach to manage/prepare the constraints/test cases for consistency-based algorithms |
+| - | [choco-kb-v2]    | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | provides classes managing CSP (Choco) representations of a knowlege base/feature model |
+| - | [fm-v2]         | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | provides the management functionalities for basic feature models |
+| - | [eval-v2]      | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | provides a performance evaluator, i.e., counters and timers, which could be used to measure the performance of algorithms |
+| - | [csp2choco-v2] | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | provides a translator which enables converting CSP constraints into Choco Solver commands |
+| - | [common-v2] | <span>1.3.8</span>{: .label .label-green .fs-1 } <span>1.3.9-alpha-52</span>{: .label .label-purple .fs-1 } | a Maven package for utility functions |
+|**CECore** | [ce-core]     | <span>1.1.1</span>{: .label .label-green .fs-1 } <span>1.1.2-alpha-10</span>{: .label .label-purple .fs-1 } | core and utility classes |
+| - | [ce] | <span>1.1.1</span>{: .label .label-green .fs-1 } <span>1.1.2-alpha-10</span>{: .label .label-purple .fs-1 } | provides a compact knolwedge-based configurator |
+| -  | [fma]    | <span>1.1.1</span>{: .label .label-green .fs-1 } <span>1.1.2-alpha-10</span>{: .label .label-purple .fs-1 } | provides a mechnism to automatically generate property-based test cases for feature models and allows the automated determination of faulty constraints in the feature model |
+| - | [heuristics]         | <span>1.1.1</span>{: .label .label-green .fs-1 } <span>1.1.2-alpha-10</span>{: .label .label-purple .fs-1 } | provides an implementation of Matrix Factorization Based Variable and Value Ordering Heuristics for Constraint Solving |
+| - | [mf]      | <span>1.1.1</span>{: .label .label-green .fs-1 } <span>1.1.2-alpha-10</span>{: .label .label-purple .fs-1 } | provides an implementation of Matrix Factorization using the Mahout library. |
 
 ## Dependency of two libraries
 
