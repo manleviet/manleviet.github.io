@@ -36,14 +36,14 @@ _ca-cdr-v2_ provides the following algorithms:
 8. [DirectDiag](directdiag)
 9. [WipeOutR_T](wipeoutr_t) [12, 13]
 10. [WipeOutR_FM](wipeoutr_fm) [12, 13]
-11. (coming soon) AggregatedTest [14]
-12. (coming soon) LevelWiseParallelHSDAG [10, 11]
-13. (coming soon) FullParallelHSDAG [10, 11]
-14. (coming soon) FastDiagP [15] - [Python implementation]
-15. (coming soon) KBDiag [the related paper submitted on January 2023]
-16. (coming soon) InformedQX
-17. (coming soon) ParallelWipeOutR_T
-18. (coming soon) ParallelWipeOutR_FM
+11. AggregatedTest [14] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
+12. LevelWiseParallelHSDAG [10, 11] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
+13. FullParallelHSDAG [10, 11] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
+14. FastDiagP [15] - [Python implementation] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
+15. KBDiag [the related paper submitted on January 2023] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
+16. InformedQX <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
+17. ParallelWipeOutR_T <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
+18. ParallelWipeOutR_FM <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
 
 ### Examples
 {: .no_toc }
