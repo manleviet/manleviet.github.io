@@ -13,17 +13,87 @@ permalink: ca-cdr-v2/kb
 v1.3.9-alpha-52
 {: .label .label-purple }
 
-<dl style="background:#FEFBE7; border:solid 1px black; width:400px;">
+<dl style="width:400px;">
     <dt><strong>groupID</strong></dt>
     <dd><em>at.tugraz.ist.ase</em></dd>
     <dt><strong>artifactID</strong></dt>
     <dd><em>choco-kb-v2</em></dd>
-</dl>
+</dl>{: .label .label-yellow }
+
+<!-- TBD -->
+<!-- {: .label .label-yellow } -->
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ---
 
-TBD
-{: .label .label-yellow }
+_choco-kb-v2_ provides classes managing CSP (Choco) representations of a knowlege base.
+
+## Features
+
+- Provides an abstract `KB` class managing variables, variable domains, and constraints of a knowledge base/feature model
+- Provides the following Configuration Knowledge Bases:
+1. **FMKB** - an implementation for the CSP representation of feature models. The input of **FMKB** is a **FeatureModel** object (from [fm-package](https://github.com/manleviet/CA-CDR-V2/tree/main/fm-package)). So you can use **FMKB** for all feature models you have, i.e., no need to implement a specific **KB** class.
+2. **PCKB** - an implementation of [PC Configuration Knowledge Base](https://www.itu.dk/research/cla/externals/clib/).
+3. **RenaultKB** - an implementation of [Renault Configuration Knowledge Base](https://www.itu.dk/research/cla/externals/clib/).
+- Provides utility functions for constraints
+
+The package allows to manage a CSP representation of a knowledge base/feature model using an abstract class [**KB**]().
+
+It provides the following functionalities:
+
+
+You can implement your knowledge base by inheriting the [**KB**]() class.
+
+You can find an implementation of **Renault** and **PC** knowledge bases in here and here.
+
+You can also find an implementation of a CSP representation for feature models (**FMKB** class) in here.
+
+The input of **FMKB** is a **FeatureModel** object (from [fm-package]()).
+
+So, you can use **FMKB** for all feature models you have, i.e., no need to implement a specific [**KB**]() class compared to **PC** or **Renault**.
+
+
+For each KB (KB class), you will have a list of variables (Variable class), each variable has a domain (Domain class), and a list of constraints (Constraint class). There are two types of variables, i.e., integer variables (IntVariable class) and bool variables (BoolVariable class).
+
+
+For feature models, each feature is a bool variable.
+
+For Renault and PC, each variable is an integer variable.
+
+
+Each Constraint class manages many Choco constraints and maybe many negations of these Choco constraints. Negative Choco constraints are very important to the WipeOutR algorithms.
+
+
+Why does a Constraint object manage many Choco constraints?
+
+A Constraint object represents a CSP constraint. In Choco Solver, a CSP constraint will be translated into many Choco constraints in some cases. For example, in the following figure, line 46 shows a CSP constraint “4wheel = yes => type = xdrive”. After executing line 46, we have 4 Choco constraints in the model (see the panel Debug).
+
+![](img/Picture 1.png)
+
+
+Example – how to use Variable, Domain, and Constraint classes:
+
+-	3 unit tests
+
+-	PC knowledge base (focus on the functions defineDomains, defineVariables, and defineConstraints)
+
+-	FMKB (focus on the functions defineDomains, defineVariables, and defineConstraints)
+
+
+Example – how to create and use an object of FMKB, PCKB, and RenaultKB:
+
+-	FMKB
+
+-	PCKB
+
+-	RenaultKB
+
+-	KBStatistics
 
 ## `FMKB`
 

@@ -13,12 +13,12 @@ permalink: ce-core/heuristics
 v1.1.2-alpha-10
 {: .label .label-purple }
 
-<dl style="background:#FEFBE7; border:solid 1px black; width:400px;">
+<dl style="width:400px;">
     <dt><strong>groupID</strong></dt>
     <dd><em>at.tugraz.ist.ase</em></dd>
     <dt><strong>artifactID</strong></dt>
     <dd><em>heuristics</em></dd>
-</dl>
+</dl>{: .label .label-yellow }
 
 TBD
 {: .label .label-yellow }
