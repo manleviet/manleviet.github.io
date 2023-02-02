@@ -44,7 +44,7 @@ Other types of feature models should be implemented in other packages to keep th
 
 ---
 
-## What the package provide
+## What the package provides
 
 ### Generic [`FeatureModel`] class
 
