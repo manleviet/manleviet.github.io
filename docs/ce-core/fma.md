@@ -10,14 +10,14 @@ permalink: ce-core/fma
 {: .no_toc }
 {: .d-inline-block }
 
-v1.1.2-alpha-10
+<span style = "text-transform: lowercase">v1.1.2-alpha-10</span>
 {: .label .label-purple }
 
 <dl style="width:400px;">
     <dt><strong>groupID</strong></dt>
-    <dd><em>at.tugraz.ist.ase</em></dd>
+    <dd style = "text-transform: lowercase"><em>at.tugraz.ist.ase</em></dd>
     <dt><strong>artifactID</strong></dt>
-    <dd><em>fma</em></dd>
+    <dd style = "text-transform: lowercase"><em>fma</em></dd>
 </dl>{: .label .label-yellow }
 
 ---

@@ -8,7 +8,7 @@ permalink: kbstatistics
 # A Knowledge Base Statistics Tool
 {: .d-inline-block }
 
-v1.3.1
+<span style = "text-transform: lowercase">v1.3.1</span>
 {: .label .label-green }
 
 `kbstatistics` is a Java `jar` tool that calculates statistics of given knowledge bases.

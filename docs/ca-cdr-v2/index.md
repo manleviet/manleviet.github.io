@@ -11,7 +11,7 @@ has_toc: true
 {: .no_toc }
 {: .d-inline-block }
 
-v1.3.9-alpha-52
+<span style = "text-transform: lowercase">v1.3.9-alpha-52</span>
 {: .label .label-purple }
 
 **CA-CDR-V2** is a Java library for **Consistency-based Algorithms for Conflict Detection and Resolution** (CA-CDR).

@@ -12,7 +12,7 @@ nav_exclude: true
 {: .no_toc }
 {: .d-inline-block }
 
-v1.3.9-alpha-52
+<span style = "text-transform: lowercase">v1.3.9-alpha-52</span>
 {: .label .label-purple }
 
 TBD

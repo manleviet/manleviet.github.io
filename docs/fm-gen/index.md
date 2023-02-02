@@ -8,7 +8,7 @@ permalink: fm-gen
 # Synthesized Feature Model Generator
 {: .d-inline-block }
 
-v1.3
+<span style = "text-transform: lowercase">v1.3</span>
 {: .label .label-green }
 
 `fm_gen` is a Java `jar` tool that generates synthesized feature models on the basis of the [Betty framework].

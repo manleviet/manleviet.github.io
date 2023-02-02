@@ -10,7 +10,7 @@ has_toc: true
 # CECore
 {: .d-inline-block }
 
-v1.1.2-alpha-10
+<span style = "text-transform: lowercase">v1.1.2-alpha-10</span>
 {: .label .label-purple }
 
 **CECore** is a Java library providing core components of [knowledge-based configuration systems].
