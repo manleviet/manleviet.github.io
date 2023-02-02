@@ -276,7 +276,7 @@ fm.addExcludes(ABtesting, root);
 {% include fix_linenos.html code=code %}
 {% assign code = nil %}
 
-### Using the _**generic**_ feature model with your custom features, relationships, and constraints
+### Using the _generic_ feature model with your custom features, relationships, and constraints
 
 There are two requirements to use the _**generic**_ feature model:
 
