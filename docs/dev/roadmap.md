@@ -3,7 +3,7 @@ layout: default
 title: Roadmap
 parent: For developers
 nav_order: 1
-permalink: developers/roadmap
+permalink: dev/roadmap
 ---
 
 # Roadmaps
