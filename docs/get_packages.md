@@ -8,7 +8,7 @@ permalink: get_packages
 # How to get the packages
 {: .no_toc }
 
-We publish **CA-CDR-V2** and **CECore** libraries in Maven packages hosted by GitHub Packages.
+We publish **CA-CDR-V2** and **CECore** libraries in Maven packages hosted by [GitHub Packages].
 In this page, you'll find how to import these Maven packages into your Java project.
 
 ## Table of Contents
@@ -137,3 +137,4 @@ flowchart BT
 [heuristics]: https://github.com/manleviet/CECore/packages/1538660
 [mf]: https://github.com/manleviet/CECore/packages/1538658
 [Creating a personal access token]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+[GitHub Packages]: https://github.com/features/packages
