@@ -22,4 +22,4 @@ permalink: references
 13. An evaluation of WipeOutR algorithms in [https://github.com/AIG-ist-tugraz/WipeOutR](https://github.com/AIG-ist-tugraz/WipeOutR).
 14. V.M. Le, A. Felfernig, and T.N.T. Tran, Test Case Aggregation for Efficient Feature Model Testing, 26th ACM International Systems and Software Product Line Conference (SPLC 2022) - Volume B, 2022. [https://doi.org/10.1145/3503229.3547046](https://doi.org/10.1145/3503229.3547046)
 15. V.M. Le, C.V. Silva, A. Felfernig, T.N.T. Tran, J. Galindo, D. Benavides. FastDiagP: An Algorithm for Parallelized Direct Diagnosis. In 37th AAAI Conference on Artificial Intelligence. AAAI’23, Washington, DC, USA. 2023. (to appear)
-16. An evaluation of FastDiagP algorith in [https://github.com/AIG-ist-tugraz/FastDiagP](https://github.com/AIG-ist-tugraz/FastDiagP).
+16. An evaluation of FastDiagP algorithm in [https://github.com/AIG-ist-tugraz/FastDiagP](https://github.com/AIG-ist-tugraz/FastDiagP).
