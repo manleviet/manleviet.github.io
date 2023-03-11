@@ -39,7 +39,7 @@ _ca-cdr-v2_ provides the following algorithms:
 11. AggregatedTest [14] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
 12. LevelWiseParallelHSDAG [10, 11] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
 13. FullParallelHSDAG [10, 11] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
-14. FastDiagP [15] - [Python implementation] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
+14. FastDiagP [15, 16] - [Python implementation] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
 15. KBDiag [the related paper submitted on January 2023] <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
 16. InformedQX <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
 17. ParallelWipeOutR_T <span>COMING SOON</span>{: .label .label-yellow .fs-1 }
