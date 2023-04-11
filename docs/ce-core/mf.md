@@ -10,7 +10,7 @@ permalink: ce-core/mf
 {: .no_toc }
 {: .d-inline-block }
 
-<span style = "text-transform: lowercase">v1.1.2-alpha-10</span>
+<span style = "text-transform: lowercase">v1.1.2-alpha-11</span>
 {: .label .label-purple }
 
 <dl style="width:400px;">

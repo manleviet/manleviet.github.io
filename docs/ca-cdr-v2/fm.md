@@ -20,19 +20,7 @@ permalink: ca-cdr-v2/fm
     <dd style = "text-transform: lowercase"><em>fm-v2</em></dd>
 </dl>{: .label .label-yellow }
 
----
-
-_fm-v2_ follows the following objectives:
-
-1. Provides a _generic_ mechanism that helps to easily obtain custom feature models, e.g., attribute-based feature models,
-cardinality-based feature models, anomaly-aware feature models, etc.
-2. Base classes (e.g., `Feature`, `Relationship`, `CTConstraint`, etc.) are immutable.
-Mutable versions of these classes should be implemented in other packages to keep this package clean.
-3. Supports only to _basic_ feature models, i.e., feature models with four relationships (_mandatory_, _optional_, _or_,
-and _alternative_) and two cross-tree constraints (_requires_ and _excludes_).
-Other types of feature models should be implemented in other packages to keep this package simple.
-4. Supports to arbitrary constraints with complex operators (e.g., /\\, \\/, not, ->, <->).
-5. Supports common feature model formats found in the literature, i.e., [SPLOT], [FeatureIDE].
+_fm-v2_ provides the management functionalities for _basic_ feature models.
 
 ---
 
@@ -314,8 +302,6 @@ and the class [`AnomalyAwareFeatureBuilder`] is inherited from the base class [`
 For more details related to anomaly-aware feature model, please refer to **CECore**'s [Feature Model Analysis].
 
 <!-- Links -->
-[SPLOT]: http://www.splot-research.org
-[FeatureIDE]: https://featureide.github.io
 [_built-in builders_]: #feature-relationship-and-constraint-builders
 [Unit tests of 5 parsers]: https://github.com/manleviet/CA-CDR-V2/tree/21-uses-generics-for-feature-model/fm-package/src/test/java/at/tugraz/ist/ase/fm/parser
 [function _processFM_ in `KBStatistics`]: https://github.com/manleviet/CA-CDR-V2/blob/6b140f7dc922d14e8066f122f187738adc3c6433/app-KBStatistics/src/main/java/at/tugraz/ist/ase/kb/app/KBStatistics.java#L162
