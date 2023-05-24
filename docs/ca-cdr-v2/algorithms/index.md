@@ -12,7 +12,7 @@ has_toc: false
 {: .no_toc }
 {: .d-inline-block }
 
-<span style = "text-transform: lowercase">v1.3.9-alpha-53</span>
+<span style = "text-transform: lowercase">v1.3.9-alpha-54</span>
 {: .label .label-purple }
 
 <dl style="width:400px;">
