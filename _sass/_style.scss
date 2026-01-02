@@ -127,5 +127,24 @@ hr {
 	}
 }
 
+/* Bigger spacing between papers */
+.pubs .pub { 
+  margin: 0 0 1.2rem 0;
+}
+
+/* Small (or zero) spacing within a paper */
+.pubs .pub p {
+  margin: 0.15rem 0;   /* try 0, 0.1rem, 0.2rem */
+}
+
+/* Optional: make the title stand out without extra spacing */
+.pubs .pub p:first-child {
+  margin-top: 0;
+}
+.pubs .pub p:last-child {
+  margin-bottom: 0;
+}
+
+
 @import "typography";
 @import "tables";

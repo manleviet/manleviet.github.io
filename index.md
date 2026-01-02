@@ -7,11 +7,13 @@ title: Ruben Branco
 
 <img class="profile-picture" src="me.jpg">
 
-Hi👋! I am a PhD student at the <a target="_blank" href="https://ciencias.ulisboa.pt/">Faculty of Sciences of the University of Lisbon</a> (FCUL), conducting research at <a target="_blank" href="https://www.lasige.pt/">LASIGE</a>. I am supervised by <a target="_blank" href="https://saracmadeira.wordpress.com/">Professor Sara Madeira</a> from FCUL and <a target="_blank" href="http://www.biocomp.unibo.it/piero/">Professor Piero Fariselli</a> from the <a target="_blank" href="https://dms.campusnet.unito.it/do/home.pl">Department of Medical Sciences of the University of Turin</a>.
+Hi👋! I am a researcher specializing in Deep Learning and Deep Generative Modeling, currently finishing my PhD at the <a target="_blank" href="https://ciencias.ulisboa.pt/">Faculty of Sciences of the University of Lisbon</a> (FCUL) and <a target="_blank" href="https://www.lasige.pt/">LASIGE</a>. My research journey has taken me from Natural Language Processing and commonsense reasoning to generative modeling.
 
-I am interested in Deep Learning as a field overall and its applicability to many problems. My current research focuses on improving neurodegenerative disease prognosis, with particular attention to ALS and MS, using Deep Learning. More specifically, I am developing Generative Modeling methods for longitudinal medical datasets to enhance the available resources for low-resource chronic diseases.
+During my PhD, supervised by <a target="_blank" href="https://saracmadeira.wordpress.com/">Professor Sara Madeira</a> (FCUL) and <a target="_blank" href="http://www.biocomp.unibo.it/piero/">Professor Piero Fariselli</a> (University of Turin), I have developed advanced Deep Generative Modeling methods for mixed-type longitudinal clinical data. Unlocking generative models for complex clinical data can help create more targeted synthetic data for speciﬁc clinical scenarios and helps address imbalanced event distributions that are common in healthcare settings. For instance, rare diseases or uncommon patient phenotypes are often underrepresented in real datasets, making it diﬃcult to develop robust predictive models for these populations.
 
-I have previously conducted research in Natural Language Processing, at the <a target="_blank" href="http://nlx.di.fc.ul.pt/">NLX-Group</a>. My <a target="_blank" href="https://github.com/nlx-group/study-of-commonsense-reasoning">Msc Dissertation</a>, supervised by <a target="_blank" href="http://www.di.fc.ul.pt/~ahb/">Professor António Branco</a> to obtain a Masters in Data Science, focused on a particular problem named <a target="_blank" href="https://aclanthology.org/2021.emnlp-main.113/">Shortcut Learning, specifically when learning commonsense reasoning</a>.
+My earlier research at the <a target="_blank" href="http://nlx.di.fc.ul.pt/">NLX-Group</a> focused on understanding and mitigating fundamental challenges in neural networks, particularly <a target="_blank" href="https://aclanthology.org/2021.emnlp-main.113/">Shortcut Learning in commonsense reasoning tasks</a>. This work, completed as part of my Masters in Data Science under <a target="_blank" href="http://www.di.fc.ul.pt/~ahb/">Professor António Branco</a>, laid the foundation for my current interests in understanding how LLMs learn and reason.
+
+I am now transitioning toward Research Scientist roles, with particular interest in LLM development, code generation, and mechanistic interpretability.
 
 For a more thorough and structured description of my work, you may check <a target="_blank" href="https://drive.google.com/file/d/1IkYwV90qBOrX6z_5EVxYhzMBOBnBBZLO/view">my CV</a>.
 
@@ -25,12 +27,13 @@ Links:
 
 ## Research Interests
 
-I am interested in many topics beyond these (like Physics, Psychology, etc.) and am always looking forward to collaborations (given the time). If you have a problem you would like to collaborate on, feel free to [contact me](#contact).
+I am interested in many topics beyond these and am always looking forward to collaborations (given the time). If you have a problem you would like to collaborate on, feel free to [contact me](#contact).
 
 * Deep Learning
-* Natural Language Processing
-* Bioinformatics
-* Cognition
+* Deep Generative Modeling
+* Large Language Models (LLMs)
+* Code Generation
+* Mechanistic Interpretability
 
 ## Teaching
 
@@ -74,29 +77,210 @@ This invited talk focused on my Masters' Dissertation and EMNLP 2021 Paper, rega
 
 This invited talk focused on my Masters' Dissertation and EMNLP 2021 Paper: Shortcut Learning and Commonsense Reasoning. If you want to learn a bit more about Shortcut Learning, its presence in Commonsense Reasoning and what it could mean for NLP and cognitive AI, might be worth a watch.
 
-## Publications
+## Selected Publications
 
-1. Andreia Martins, Daniela Amaral, Eduardo Castanho, Diogo Soares, **Ruben Branco**, Sara Madeira and Helena Aidos, 2024, "Predicting the Functional Rating Scale and Self-Assessment Status of ALS Patients with Sensor Data", In Working Notes of CLEF 2024 -- Conference and Labs of the Evaluation Forum.
-2. **Ruben Branco**, Diogo Soares, Andreia Martins, Joana Valente, Eduardo Castanho, Sara C. Madeira and Helena Aidos, 2023, "Investigating the impact of environmental data on ALS prognosis with survival analysis", In Working Notes of CLEF 2023 -- Conference and Labs of the Evaluation Forum.
-3. **Ruben Branco**, Joana Valente, Andreia Martins, Diogo Soares, Eduardo Castanho, Sara C. Madeira and Helena Aidos, 2023, "Survival analysis for multiple sclerosis: predicting risk of disease worsening", In Working Notes of CLEF 2023 -- Conference and Labs of the Evaluation Forum.
-4. Erica Tavazzi, Enrico Longato, [and 23 others, including **Ruben Branco**], 2023, "Artificial intelligence and statistical methods for stratification and prediction of progression in amyotrophic lateral sclerosis: A systematic review", Artificial Intelligence in Medicine, 102588.
-5. João Rodrigues, **Ruben Branco**, António Branco, 2022, "Transfer Learning of Lexical Semantic Families for Argumentative Discourse Units Identification", arXiv preprint arXiv:2209.02495.
-6. Luís Gomes, **Ruben Branco**, João Silva and António Branco, "Open and Inclusive Language Processing", in D. Fišer & A. Witt (Ed.), CLARIN: The Infrastructure for Language Resources (pp. 107-132) (book). doi: 10.1515/9783110767377-005
-7. **Ruben Branco**, Diogo F. Soares, Andreia S. Martins, Eleonora Auletta, Eduardo N. Castanho, Susana Nunes, Filipa Serrano, Rita T. Sousa, Catia Pesquita, Sara C. Madeira and Helena Aidos, "Hierarchical Modelling for ALS Prognosis: Predicting the Progression Towards Critical Events", In Working Notes of CLEF 2022 -- Conference and Labs of the Evaluation Forum.
-8. Susana Nunes, Rita T. Sousa, Filipa Serrano, **Ruben Branco**, Diogo F. Soares, Andreia S. Martins, Eleonora Auletta, Eduardo N. Castanho, Sara C. Madeira, Helena Aidos and Catia Pesquita, "Explaining Artificial Intelligence Predictions of Disease Progression with Semantic Similarity", In Working Notes of CLEF 2022 -- Conference and Labs of the Evaluation Forum.
-9. **Ruben Branco**, António Branco, João Silva and António Rodrigues, 2021, "Shortcutted Commonsense: Data Spuriousness in Deep Learning of Commonsense Reasoning", In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP).
-10. **Ruben Branco**, António Branco, João Silva and António Rodrigues, 2021, "Commonsense Reasoning: how do Neuro-only and hybrid Neuro-Symbolic approaches compare?", In Proceedings of the CIKM 2021 Workshops.
-11. António Branco, João Rodrigues, Malgorzata Salawa, **Ruben Branco** and Chakaveh Saedi, 2020, "Comparative Probing of Lexical Semantics Theories for Cognitive Plausibility and Technological Usefulness", In Proceedings of the 28th International Conference on Computational Linguistics. doi: 10.18653/v1/2020.coling-main.354
-12. Beatriz Lima, **Ruben Branco**, João Castanheira, Gustavo Fonseca and Catia Pesquita, 2020, "Learning reference alignments for ontology matching within and across domains", In OM@ISWC. 2020.
-13. João Rodrigues, **Ruben Branco**, João Silva and António Branco, 2020, "Reproduction and Revival of the Argument Reasoning Comprehension Task", In Proceedings, 12th Language Resources and Evaluation Conference (LREC2020), European Language Resources Association, Marseílle, France, 13-15 May 2020.
-14. António Branco, Sara Grilo, Márcia Bolrinha, Chakaveh Saedi, **Ruben Branco**, João Silva, Andreia Querido, Rita de Carvalho, Rosa Gaudio, Mariana Avelãs and Clara Pinto, 2020, "The MWN.PT WordNet for Portuguese: Projection, Validation, Cross-lingual Alignment and Distribution", In Proceedings, 12th Language Resources and Evaluation Conference (LREC2020), European Language Resources Association, Marseílle, France, 13-15 May 2020.
-15. Thierry Etchegoyhen, Borja Porras, [and 20 others, including **Ruben Branco**], 2020, "ELRI: A Decentralised Network of National Relay Stations to Collect, Prepare and Share Language Resources", in Proceedings of the 1st International Workshop on Language Technology Platforms, European Language Resources Association, Maseílle, France, May 2020.
-16. Małgorzata Salawa, António Branco, **Ruben Branco**, João Rodrigues and Chakaveh Saedi, 2019, "Whom to Learn From? Graph- vs. Text-based Word Embeddings", In Proceedings of the International Conference Recent Advances in Natural Language Processing, RANLP 2019. doi: 10.26615/978-954-452-056-4_120
-17. **Ruben Branco**, João Rodrigues, Chakaveh Saedi and António Branco, 2019, "Assessing Wordnets with WordNet Embeddings", In Proceedings, 10th Global WordNet Conference (GWC2019), Poland, 23-27 July 2019.
-18. Luís Gomes, Frederico Apolónia, **Ruben Branco**, João Ricardo Silva, António Branco, 2018, "Setting up the PORTULAN / CLARIN repository", In Proceedings, CLARIN Annual Conference (CLARIN2018), Pisa, 9 October 2018, pp.108-111.
-19. João Rodrigues, **Ruben Branco**, João Silva, Chakaveh Saedi, António Branco, 2018, "Predicting Brain Activation with WordNet Embeddings", In Proceedings, 56th Annual Meeting of the Association for Computational Linguistics (ACL2018), Workshop on Cognitive Aspects of Computational Language Learning and Processing (CogACLL), Melbourne, 19 July 2018. doi: 10.18653/v1/W18-2801
-20. Thierry Etchegoyhen, Borja Porras, [and 18 others, including **Ruben Branco**], 2018, "ELRI. European Language Resource Infrastructure", In Proceedings of the 21st Annual Conference of the European Association for Machine Translation, Alicante, Spain, 28-30 May 2018.
-21. António Branco, **Ruben Branco**, Chakaveh Saedi and João Silva 2018, "Browsing and Supporting Pluricentric Global Wordnet, or just your Wordnet of Interest", In Proceedings, 11th Language Resources and Evaluation Conference (LREC2018), European Language Resources Association, Myazaki, Japan, 9-11 May 2018, pp. 4562-4569.
+<div markdown="1" class="pubs">
+<div class="pub" markdown="1">
+**PatientFlow: Learning to Generate Mixed-Type Longitudinal Clinical Data with Flow Matching**
+
+Ruben Branco, Marta Gromicho, Mamede de Carvalho, Piero Fariselli, Sara C. Madeira
+
+Under Review @ Artificial Intelligence in Medicine Journal. **SCIMAGO Q1** (2026)
+</div>
+
+<div class="pub" markdown="1">
+**TimeHealthGAN: Adversarial Generation of Mixed-Type Longitudinal Clinical Data**
+
+Ruben Branco, Marta Gromicho, Mamede de Carvalho, Piero Fariselli, Sara C. Madeira
+
+Pre-Submission (2026)
+</div>
+
+<div class="pub" markdown="1">
+**Guiding Patient Flows: Event-Conditioned Flow Matching for Longitudinal Clinical Data**
+
+Ruben Branco, Marta Gromicho, Mamede de Carvalho, Piero Fariselli, Sara C. Madeira
+
+Pre-Submission (2026)
+</div>
+
+<div class="pub" markdown="1">
+**Shortcutted commonsense: Data spuriousness in deep learning of commonsense reasoning**
+
+Ruben Branco, António Branco, João Rodrigues, João Silva
+
+Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP). **CORE A*, Outstanding Paper Award** (2021)
+</div>
+
+</div>
+
+<details markdown="1">
+<summary><strong>Other Publications</strong> (click to expand)</summary>
+
+<div markdown="1" class="pubs">
+
+<div class="pub" markdown="1">
+**From greatest simplicity to full power: Research-Infrastructure-as-a-Service for language science and technology**
+
+Luís Gomes, António Branco, João Silva, Ruben Branco
+
+Language Resources and Evaluation (Journal). **SCIMAGO Q1** (2024)
+</div>
+
+<div class="pub" markdown="1">
+**Predicting the Functional Rating Scale and Self-Assessment Status of ALS Patients with Sensor Data**
+
+Andreia S. Martins, Daniela M. Amaral, Eduardo N. Castanho, Diogo F. Soares, Ruben Branco, Sara C. Madeira, Helena Aidos
+
+CLEF (2024)
+</div>
+
+<div class="pub" markdown="1">
+**Artificial intelligence and statistical methods for stratification and prediction of progression in amyotrophic lateral sclerosis: A systematic review**
+
+Erica Tavazzi, Enrico Longato, …, [including Ruben Branco], Barbara Di Camillo
+
+Artificial Intelligence in Medicine, 102588. **SCIMAGO Q1** (2023)
+</div>
+
+<div class="pub" markdown="1">
+**Investigating the impact of environmental data on ALS prognosis with survival analysis**
+
+Ruben Branco, Diogo F. Soares, Andreia S. Martins, Joana B. Valente, Eduardo N. Castanho, Sara C. Madeira, Helena Aidos
+
+CLEF (2023)
+</div>
+
+<div class="pub" markdown="1">
+**Survival analysis for multiple sclerosis: predicting risk of disease worsening**
+
+Ruben Branco, Joana B. Valente, Andreia S. Martins, Diogo F. Soares, Eduardo N. Castanho, Sara C. Madeira, Helena Aidos
+
+CLEF (2023)
+</div>
+
+<div class="pub" markdown="1">
+**Transfer Learning of Lexical Semantic Families for Argumentative Discourse Units Identification**
+
+João Rodrigues, Ruben Branco, António Branco
+
+arXiv preprint arXiv:2209.02495 (2022)
+</div>
+
+<div class="pub" markdown="1">
+**Open and inclusive language processing: Language processing services by PORTULAN to meet the widest needs of CLARIN users**
+
+Luís Gomes, Ruben Branco, João Silva, António Branco
+
+CLARIN. The infrastructure for language resources. Berlin: De Gruyter (Book chapter) (2022)
+</div>
+
+<div class="pub" markdown="1">
+**Hierarchical modelling for ALS prognosis: predicting the progression towards critical events**
+
+Ruben Branco, Diogo F. Soares, Andreia S. Martins, Eleonora Auletta, Eduardo N. Castanho, Susana Nunes, Filipa Serrano, Rita T. Sousa, Cátia Pesquita, Sara C. Madeira, Helena Aidos
+
+CLEF (2022)
+</div>
+
+<div class="pub" markdown="1">
+**Explaining artificial intelligence predictions of disease progression with semantic similarity**
+
+Susana Nunes, Rita Torres Sousa, Filipa Serrano, Ruben Branco, Diogo F. Soares, Andreia S. Martins, Eleonora Auletta, Eduardo N. Castanho, Sara C. Madeira, Helena Aidos, Cátia Pesquita
+
+CLEF (2022)
+</div>
+
+<div class="pub" markdown="1">
+**Commonsense Reasoning: how do Neuro-Symbolic and Neuro-only approaches compare?**
+
+Ruben Branco, António Branco, João Silva, João Rodrigues
+
+CIKM Workshops (2021)
+</div>
+
+<div class="pub" markdown="1">
+**Reproduction and revival of the argument reasoning comprehension task**
+
+João Rodrigues, Ruben Branco, João Silva, António Branco
+
+Proceedings of the Twelfth Language Resources and Evaluation Conference (LREC). **CORE B** (2020)
+</div>
+
+<div class="pub" markdown="1">
+**Comparative probing of lexical semantics theories for cognitive plausibility and technological usefulness**
+
+António Branco, João Rodrigues, Małgorzata Salawa, Ruben Branco, Chakaveh Saedi
+
+arXiv preprint arXiv:2011.07997 (2020)
+</div>
+
+<div class="pub" markdown="1">
+**Learning reference alignments for ontology matching within and across domains**
+
+Beatriz Lima, Ruben Branco, João Castanheira, Gustavo Fonseca, Cátia Pesquita
+
+OM@ISWC (2020)
+</div>
+
+<div class="pub" markdown="1">
+**The MWN.PT WordNet for Portuguese: Projection, Validation, Cross-lingual Alignment and Distribution**
+
+António Branco, Sara Grilo, Márcia Bolrinha, Chakaveh Saedi, Ruben Branco, João Silva, Andreia Querido, Rita de Carvalho, Rosa Gaudio, Mariana Avelãs, Clara Pinto
+
+Proceedings of the 12th Language Resources and Evaluation Conference. **CORE B** (2020)
+</div>
+
+<div class="pub" markdown="1">
+**ELRI: A Decentralised Network of National Relay Stations to Collect, Prepare and Share Language Resources**
+
+Thierry Etchegoyhen, Borja Anza Porras, Andoni Azpeitia, …, [including Ruben Branco], Luís Gomes
+
+Proceedings of the 1st International Workshop on Language Technology Platforms (2020)
+</div>
+
+<div class="pub" markdown="1">
+**Whom to learn from? graph-vs. text-based word embeddings**
+
+Małgorzata Salawa, António Branco, Ruben Branco, João Rodrigues, Chakaveh Saedi
+
+Proceedings of the International Conference on Recent Advances in Natural Language Processing (RANLP 2019) (2019)
+</div>
+
+<div class="pub" markdown="1">
+**Assessing wordnets with wordnet embeddings**
+
+Ruben Branco, João Rodrigues, Chakaveh Saedi, António Branco
+
+Proceedings of the 10th Global Wordnet Conference. **CORE C** (2019)
+</div>
+
+<div class="pub" markdown="1">
+**Setting up the PORTULAN/CLARIN repository**
+
+Luís Gomes, Frederico Apolónia, Ruben Branco, João Silva, António Branco
+
+CLARIN Annual Conference 2018 (2018)
+</div>
+
+<div class="pub" markdown="1">
+**Predicting brain activation with WordNet embeddings**
+
+João Rodrigues, Ruben Branco, João Silva, Chakaveh Saedi, António Branco
+
+Proceedings of the Eight Workshop on Cognitive Aspects of Computational Language Learning and Processing (2018)
+</div>
+
+<div class="pub" markdown="1">
+**Browsing and Supporting Pluricentric Global Wordnet, or just your Wordnet of Interest**
+
+António Branco, Ruben Branco, Chakaveh Saedi, João Silva
+
+Proceedings of the Eleventh International Conference on Language Resources and Evaluation (LREC 2018). **CORE B** (2018)
+</div>
+</div>
+
+</details>
 
 ## Contact
 
