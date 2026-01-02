@@ -11,21 +11,25 @@ html {
 }
 body {
     margin: 0;
-    font-family: "Inconsolata";
+    font-family: "Inconsolata", monospace;
     height: 100%;
+    color: $text-primary;
 }
 a {
     text-decoration: none;
     color: $accent;
+    transition: color 0.2s ease;
 }
 a:hover {
     text-decoration: underline;
+    color: $accent-hover;
 }
 hr {
     border: 0;
     height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid $border-light;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 1.5em 0;
 }
 
 /*
@@ -33,18 +37,29 @@ hr {
  */
 
 #author-name {
-    font-size: 30px;
-    color: #272727;
+    font-size: 32px;
+    color: $text-primary;
     display: inline-block;
+    font-weight: 600;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $accent;
+        text-decoration: none;
+    }
 }
 .navbar {
-    padding: 50px 0 50px 0;
+    padding: 50px 0 40px 0;
 }
 .navbar-ul {
     display: inline-block;
     margin: 0;
     padding: 5px 0 5px 0;
     margin-left: 20px;
+
+    a {
+        font-weight: 500;
+    }
 }
 .nav-list {
     list-style-type: none;
@@ -97,6 +112,29 @@ hr {
     .navbar-ul {
         margin-top: 5px;
     }
+
+    // Mobile-optimized publication cards
+    .content {
+        .pub {
+            padding: 0.8em;
+            margin-bottom: 1.2em;
+        }
+
+        h2 {
+            margin-top: 1.5em;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            margin-top: 1em;
+            font-size: 1.2em;
+        }
+
+        details summary {
+            padding: 0.6em 0.8em;
+            font-size: 0.95em;
+        }
+    }
 }
 
 @media (max-width: 500px) {
@@ -107,6 +145,7 @@ hr {
 	#author-name {
 		width: 100%;
 		float: none;
+		font-size: 28px;
 	}
 	#navlist {
 		padding: 10px 0 10px 0;
@@ -124,6 +163,34 @@ hr {
 	}
 	#navlist li.nav-list {
 		margin: 0;
+	}
+
+	// Extra small screens
+	.content {
+		.pub {
+			padding: 0.7em;
+			margin-bottom: 1em;
+			border-left-width: 2px;
+		}
+
+		h2 {
+			font-size: 1.3em;
+		}
+
+		h3 {
+			font-size: 1.15em;
+		}
+
+		// Larger tap targets for mobile
+		details summary {
+			padding: 0.7em;
+			min-height: 44px; // iOS recommended tap target
+			display: flex;
+			align-items: center;
+		}
+
+		// Reduce line-height slightly on mobile for compactness
+		line-height: 1.6;
 	}
 }
 

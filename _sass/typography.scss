@@ -1,8 +1,34 @@
 @import "vars";
 
 .content {
+    line-height: 1.7;
+    color: $text-primary;
+
+    h2 {
+        margin-top: 1.8em;
+        margin-bottom: 0.6em;
+        font-weight: 600;
+        color: $text-primary;
+    }
+
+    h3 {
+        margin-top: 1.2em;
+        margin-bottom: 0.5em;
+        font-weight: 600;
+        color: $text-primary;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    a {
+        transition: color 0.2s ease;
+    }
+
     a:hover {
         text-decoration: underline;
+        color: $accent-hover;
     }
     ol {
         counter-reset: list;
@@ -48,13 +74,81 @@
             margin: 0;
         }
         @media (max-width: $small-width) {
+            // On mobile, don't float - display as centered block
+            float: none;
+            margin: 0 auto 1.5em auto;
+            display: block;
+            max-width: 200px;
+            height: auto;
+            width: 100%;
+
             img {
-                margin-top: -5px;
+                margin-top: 0;
             }
         }
     }
     img {
         text-align: center;
         width: 100%;
+    }
+
+    // Publication sections styling
+    .pubs {
+        margin-top: 1em;
+    }
+
+    .pub {
+        margin-bottom: 1.5em;
+        padding: 1em;
+        background: $bg-light;
+        border-left: 3px solid $accent;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: darken($bg-light, 2%);
+            border-left-color: $accent-hover;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        strong:first-child {
+            color: $text-primary;
+            font-size: 1.05em;
+        }
+    }
+
+    // Details/summary for collapsible sections
+    details {
+        margin-top: 1.5em;
+
+        summary {
+            cursor: pointer;
+            padding: 0.7em 1em;
+            background: $bg-light;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+            font-weight: 600;
+
+            &:hover {
+                background: darken($bg-light, 3%);
+            }
+        }
+
+        &[open] summary {
+            margin-bottom: 1.2em;
+        }
+    }
+
+    // Research interests list
+    ul li {
+        color: $text-primary;
     }
 }
