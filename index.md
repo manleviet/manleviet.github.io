@@ -80,6 +80,15 @@ This invited talk focused on my Masters' Dissertation and EMNLP 2021 Paper: Shor
 ## Selected Publications
 
 <div markdown="1" class="pubs">
+
+<div class="pub" markdown="1">
+**LGTM! Characteristics of Auto-Merged LLM-based Agentic Pull Requests**
+
+**Ruben Branco**<sup>*</sup>, Paulo Canelas<sup>*</sup>, Catarina Gamboa<sup>*</sup>, Alcides Fonseca
+
+23rd International Conference on Mining Software Repositories (Mining Challenge)
+</div>
+
 <div class="pub" markdown="1">
 **PatientFlow: Learning to Generate Mixed-Type Longitudinal Clinical Data with Flow Matching**
 
