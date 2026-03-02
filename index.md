@@ -94,7 +94,7 @@ This invited talk focused on my Masters' Dissertation and EMNLP 2021 Paper: Shor
 
 Ruben Branco, Marta Gromicho, Mamede de Carvalho, Piero Fariselli, Sara C. Madeira
 
-Under Review @ Artificial Intelligence in Medicine Journal. **SCIMAGO Q1** (2026)
+Artificial Intelligence in Medicine Journal. **SCIMAGO Q1** (2026)
 </div>
 
 <div class="pub" markdown="1">
