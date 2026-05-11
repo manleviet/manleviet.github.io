@@ -22,7 +22,7 @@ External profiles:
 <div markdown="1" class="pubs">
 
 <div class="pub" markdown="1">
-**Early-Stage Product Line Validation Using LLMs: A Study on Semi-Formal Blueprint Analysis**
+**[Early-Stage Product Line Validation Using LLMs: A Study on Semi-Formal Blueprint Analysis](https://arxiv.org/abs/2604.20523)**
 
 **Viet-Man Le**, Thi Ngoc Trang Tran, Sebastian Lubos, Alexander Felfernig, Damian Garber
 
@@ -30,7 +30,7 @@ External profiles:
 </div>
 
 <div class="pub" markdown="1">
-**Robust Lazy Conflict Detection via Multi-Conflict Extraction and Genetic Diversity Control**
+**[Robust Lazy Conflict Detection via Multi-Conflict Extraction and Genetic Diversity Control](https://ojs.aaai.org/index.php/AAAI/article/view/38995)**
 
 **Viet-Man Le**, Lukas A. Feldgrill, Alexander Felfernig
 
@@ -38,7 +38,7 @@ External profiles:
 </div>
 
 <div class="pub" markdown="1">
-**QuickXPlain Explanations for Feature Model Configuration**
+**[QuickXPlain Explanations for Feature Model Configuration](https://ceur-ws.org/Vol-4149/paper1.pdf)**
 
 Alexander Felfernig, Damian Garber, **Viet-Man Le**, Sebastian Lubos, Thi Ngoc Trang Tran
 
@@ -46,7 +46,7 @@ Alexander Felfernig, Damian Garber, **Viet-Man Le**, Sebastian Lubos, Thi Ngoc T
 </div>
 
 <div class="pub" markdown="1">
-**Towards LLM-Enhanced Product Line Scoping**
+**[Towards LLM-Enhanced Product Line Scoping](https://ceur-ws.org/Vol-4149/paper11.pdf)**
 
 Alexander Felfernig, Damian Garber, **Viet-Man Le**, Sebastian Lubos, Thi Ngoc Trang Tran
 
@@ -60,7 +60,7 @@ Alexander Felfernig, Damian Garber, **Viet-Man Le**, Sebastian Lubos, Thi Ngoc T
 <div markdown="1" class="pubs">
 
 <div class="pub" markdown="1">
-**Learning Constraint Orderings for Direct Diagnosis**
+**[Learning Constraint Orderings for Direct Diagnosis](https://doi.org/10.1007/s10844-025-00962-4)**
 
 Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Denis Helic
 
@@ -68,7 +68,7 @@ Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Denis Helic
 </div>
 
 <div class="pub" markdown="1">
-**Causality-based Explanations for Feature Model Configuration**
+**[Causality-based Explanations for Feature Model Configuration](https://doi.org/10.1145/3715340.3715438)**
 
 Alexander Felfernig, Damian Garber, **Viet-Man Le**, Sebastian Lubos
 
@@ -82,7 +82,7 @@ Alexander Felfernig, Damian Garber, **Viet-Man Le**, Sebastian Lubos
 <div markdown="1" class="pubs">
 
 <div class="pub" markdown="1">
-**Semantics-Preserving Merging of Feature Models**
+**[Semantics-Preserving Merging of Feature Models](https://ceur-ws.org/Vol-3812/paper11.pdf)**
 
 Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Damian Garber, Gottfried Schenner, Thi Ngoc Trang Tran
 
@@ -90,7 +90,7 @@ Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Damian Garber, Gottfried Sche
 </div>
 
 <div class="pub" markdown="1">
-**InformedQX: Informed Conflict Detection for Over-Constrained Problems**
+**[InformedQX: Informed Conflict Detection for Over-Constrained Problems](https://doi.org/10.1609/aaai.v38i9.28932)**
 
 **Viet-Man Le**, Alexander Felfernig, Thi Ngoc Trang Tran, Mathias Uta
 
@@ -104,7 +104,7 @@ Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Damian Garber, Gottfried Sche
 <div markdown="1" class="pubs">
 
 <div class="pub" markdown="1">
-**FMTesting: A FeatureIDE Plug-in for Automated Feature Model Analysis and Diagnosis**
+**[FMTesting: A FeatureIDE Plug-in for Automated Feature Model Analysis and Diagnosis](https://doi.org/10.3233/FAIA230640)**
 
 Tamim Burgstaller, **Viet-Man Le**, Thi Ngoc Trang Tran, Alexander Felfernig
 
@@ -112,7 +112,7 @@ Tamim Burgstaller, **Viet-Man Le**, Thi Ngoc Trang Tran, Alexander Felfernig
 </div>
 
 <div class="pub" markdown="1">
-**Conjunctive Query Based Constraint Solving for Feature Model Configuration**
+**[Conjunctive Query Based Constraint Solving for Feature Model Configuration](https://doi.org/10.1007/978-3-031-36886-8_30)**
 
 Alexander Felfernig, **Viet-Man Le**, Sebastian Lubos
 
@@ -120,7 +120,7 @@ Alexander Felfernig, **Viet-Man Le**, Sebastian Lubos
 </div>
 
 <div class="pub" markdown="1">
-**FastDiagP: An Algorithm for Parallelized Direct Diagnosis**
+**[FastDiagP: An Algorithm for Parallelized Direct Diagnosis](https://doi.org/10.1609/aaai.v37i5.25792)**
 
 **Viet-Man Le**, Cristian Vidal Silva, Alexander Felfernig, David Benavides, José Galindo, Thi Ngoc Trang Tran
 
@@ -142,7 +142,7 @@ Alexander Felfernig, Bernhard Ortner, **Viet-Man Le**
 </div>
 
 <div class="pub" markdown="1">
-**Test Case Aggregation for Efficient Feature Model Testing**
+**[Test Case Aggregation for Efficient Feature Model Testing](https://doi.org/10.1145/3503229.3547046)**
 
 **Viet-Man Le**, Alexander Felfernig, Thi Ngoc Trang Tran
 
@@ -150,7 +150,7 @@ Alexander Felfernig, Bernhard Ortner, **Viet-Man Le**
 </div>
 
 <div class="pub" markdown="1">
-**WipeOutR: Automated Redundancy Detection for Feature Models**
+**[WipeOutR: Automated Redundancy Detection for Feature Models](https://doi.org/10.1145/3546932.3546992)**
 
 **Viet-Man Le**, Alexander Felfernig, Mathias Uta, Thi Ngoc Trang Tran, Cristian Vidal Silva
 
@@ -164,7 +164,7 @@ Alexander Felfernig, Bernhard Ortner, **Viet-Man Le**
 <div markdown="1" class="pubs">
 
 <div class="pub" markdown="1">
-**DirectDebug: A Software Package for the Automated Testing and Debugging of Feature Models**
+**[DirectDebug: A Software Package for the Automated Testing and Debugging of Feature Models](https://doi.org/10.1016/j.simpa.2021.100085)**
 
 **Viet-Man Le**, Alexander Felfernig, Thi Ngoc Trang Tran, Müslüm Atas, Mathias Uta, David Benavides, José Galindo
 
@@ -172,7 +172,7 @@ Alexander Felfernig, Bernhard Ortner, **Viet-Man Le**
 </div>
 
 <div class="pub" markdown="1">
-**DirectDebug: Automated Testing and Debugging of Feature Models**
+**[DirectDebug: Automated Testing and Debugging of Feature Models](https://doi.org/10.1109/ICSE-NIER52604.2021.00025)**
 
 **Viet-Man Le**, Alexander Felfernig, Mathias Uta, David Benavides, José Galindo, Thi Ngoc Trang Tran
 
@@ -180,7 +180,7 @@ Alexander Felfernig, Bernhard Ortner, **Viet-Man Le**
 </div>
 
 <div class="pub" markdown="1">
-**A Conversion of Feature Models into an Executable Representation in Microsoft Excel**
+**[A Conversion of Feature Models into an Executable Representation in Microsoft Excel](https://doi.org/10.1007/978-3-030-67148-8_12)**
 
 **Viet-Man Le**, Thi Ngoc Trang Tran, Alexander Felfernig
 
@@ -194,7 +194,7 @@ Alexander Felfernig, Bernhard Ortner, **Viet-Man Le**
 <div markdown="1" class="pubs">
 
 <div class="pub" markdown="1">
-**Supporting Feature Model-Based Configuration in Microsoft Excel**
+**[Supporting Feature Model-Based Configuration in Microsoft Excel](https://www.researchgate.net/publication/344375671_Supporting_Feature_Model-Based_Configuration_in_Microsoft_Excel)**
 
 Alexander Felfernig, **Viet-Man Le**, Thi Ngoc Trang Tran
 

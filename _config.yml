@@ -29,6 +29,8 @@ nav:
    link: "/publications.html"
  - name: "Service"
    link: "/service.html"
+ - name: "Awards & Grants"
+   link: "/awards.html"
 # - name: "Teaching"
 #   link: "/teaching.html"
  - name: "CV"

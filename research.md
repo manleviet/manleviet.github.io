@@ -30,7 +30,7 @@ My research centers on **Knowledge-based Diagnosis**, **Configuration Systems**,
 
 **[FMTesting](https://github.com/AIG-ist-tugraz/FMTesting)** *(Java, FeatureIDE plug-in)* — Eclipse plug-in for feature model testing and debugging, built on top of **hiconfit-core**. Integrates **DirectDebug**, **WipeOutR**, and **AggregatedTest**.
 
-**Restful Configurator Webservice** *(Java, REST API)* — REST API for developing product configurators, built on top of **hiconfit-core**. Provides domain reduction, matrix factorization-based configuration and recommendation, option reordering via Value Variable Heuristics, and conflict and diagnosis detection.
+**Restful Configurator Webservice** *(Java, REST API, Spring Boot)* — REST API for developing product configurators, built on top of **hiconfit-core**. Provides domain reduction, matrix factorization-based configuration and recommendation, option reordering via Value Variable Heuristics, and conflict and diagnosis detection.
 
 **[DirectDebug](https://github.com/AIG-ist-tugraz/DirectDebug)** *(Java)* — software package for the automated testing and debugging of variability models. Published in *Software Impacts* (2021).
 

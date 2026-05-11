@@ -25,12 +25,12 @@ I am now looking forward to research positions in academia and industry where I 
 
 - **October 2025** — Chaired the [**27th International Workshop on Configuration (ConfWS 2025)**](https://confws.github.io/2025/), co-located with the [28th European Conference on Artificial Intelligence (ECAI 2025)](https://ecai2025.org), Bologna, Italy.
 
-## Selected Publications
+## Featured Publications
 
 <div markdown="1" class="pubs">
 
 <div class="pub" markdown="1">
-**Robust Lazy Conflict Detection via Multi-Conflict Extraction and Genetic Diversity Control**
+**[Robust Lazy Conflict Detection via Multi-Conflict Extraction and Genetic Diversity Control](https://ojs.aaai.org/index.php/AAAI/article/view/38995)**
 
 **Viet-Man Le**, Lukas A. Feldgrill, Alexander Felfernig
 
@@ -38,7 +38,7 @@ I am now looking forward to research positions in academia and industry where I 
 </div>
 
 <div class="pub" markdown="1">
-**Learning Constraint Orderings for Direct Diagnosis**
+**[Learning Constraint Orderings for Direct Diagnosis](https://doi.org/10.1007/s10844-025-00962-4)**
 
 Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Denis Helic
 
@@ -46,7 +46,7 @@ Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Denis Helic
 </div>
 
 <div class="pub" markdown="1">
-**InformedQX: Informed Conflict Detection for Over-Constrained Problems**
+**[InformedQX: Informed Conflict Detection for Over-Constrained Problems](https://doi.org/10.1609/aaai.v38i9.28932)**
 
 **Viet-Man Le**, Alexander Felfernig, Thi Ngoc Trang Tran, Mathias Uta
 
@@ -54,7 +54,7 @@ Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Denis Helic
 </div>
 
 <div class="pub" markdown="1">
-**FastDiagP: An Algorithm for Parallelized Direct Diagnosis**
+**[FastDiagP: An Algorithm for Parallelized Direct Diagnosis](https://doi.org/10.1609/aaai.v37i5.25792)**
 
 **Viet-Man Le**, Cristian Vidal Silva, Alexander Felfernig, David Benavides, José Galindo, Thi Ngoc Trang Tran
 
@@ -62,7 +62,7 @@ Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Denis Helic
 </div>
 
 <div class="pub" markdown="1">
-**DirectDebug: Automated Testing and Debugging of Feature Models**
+**[DirectDebug: Automated Testing and Debugging of Feature Models](https://doi.org/10.1109/ICSE-NIER52604.2021.00025)**
 
 **Viet-Man Le**, Alexander Felfernig, Mathias Uta, David Benavides, José Galindo, Thi Ngoc Trang Tran
 
@@ -71,4 +71,4 @@ Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Denis Helic
 
 </div>
 
-See the [full list of publications](publications.html).
+See the [selected publications](publications.html) for the full curated list.
