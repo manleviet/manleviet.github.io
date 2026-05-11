@@ -1,14 +1,20 @@
 ---
 layout: default
-title: Publications – Viet-Man Le
+title: Selected Publications – Viet-Man Le
 ---
 
-## Publications
+## Selected Publications
+
+I have authored and co-authored **more than 50 peer-reviewed papers**, including **3 publications at AAAI** (CORE A*) and contributions at **ICSE-NIER**, **SAC**, **PAIS/ECAI**, **SPLC**, **VaMoS**, **JIIS**, and **Software Impacts**. According to <a target="_blank" href="https://scholar.google.com/citations?user=l2UTi1MAAAAJ&hl=en">Google Scholar</a> (as of May 2026), my work has received **775 citations**, with an **h-index of 13** and **i10-index of 17**. My most cited paper has accumulated **105 citations**.
+
+Below is a selection of my peer-reviewed publications, listed in reverse chronological order. The complete publication record is available on the external profiles below.
 
 External profiles:
 <a target="_blank" href="https://scholar.google.com/citations?user=l2UTi1MAAAAJ&hl=en">**Google Scholar**</a> ·
 <a target="_blank" href="https://orcid.org/0000-0001-5778-975X">**ORCID**</a> ·
 <a target="_blank" href="https://dblp.org/pid/242/4566.html">**DBLP**</a> ·
+<a target="_blank" href="https://tugraz.elsevierpure.com/en/persons/viet-man-le/publications/">**PURE**</a> ·
+<a target="_blank" href="https://www.scopus.com/authid/detail.uri?authorId=57209535168">**Scopus**</a> ·
 <a target="_blank" href="https://www.researchgate.net/profile/Viet-Man-Le">**ResearchGate**</a>
 
 ### 2026

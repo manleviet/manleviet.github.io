@@ -23,7 +23,7 @@ I am now looking forward to research positions in academia and industry where I 
 
 - **January 2026** — Presented [**Robust Lazy Conflict Detection via Multi-Conflict Extraction and Genetic Diversity Control**](https://ojs.aaai.org/index.php/AAAI/article/view/38995) at the *40th AAAI Conference on Artificial Intelligence* ([AAAI 2026](https://aaai.org/conference/aaai/aaai-26/)), Singapore.
 
-- **October 2025** — Chaired the [**27th International Workshop on Configuration (ConfWS 2025)**](https://confws.github.io/2025/), co-located with the [**28th European Conference on Artificial Intelligence (ECAI 2025)**](https://ecai2025.org), Bologna, Italy.
+- **October 2025** — Chaired the [**27th International Workshop on Configuration (ConfWS 2025)**](https://confws.github.io/2025/), co-located with the [28th European Conference on Artificial Intelligence (ECAI 2025)](https://ecai2025.org), Bologna, Italy.
 
 ## Selected Publications
 

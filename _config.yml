@@ -13,7 +13,7 @@ favicon_location: favicon.ico
 
 footer: true
 footer_url: "https://github.com/manleviet"
-footer_copyright: "© 2026"
+footer_copyright: "©2026"
 footer_text: "Viet-Man Le"
 
 sass:
