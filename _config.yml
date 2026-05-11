@@ -1,6 +1,7 @@
-title: "Ruben Branco"
-url: "https://rubenbranco.github.io"
-baseurl: "./"
+title: "Viet-Man Le"
+tagline: "Researcher in Knowledge-Based AI | PhD Candidate at TU Graz | Open-Source Developer"
+url: "https://manleviet.github.io"
+baseurl: ""
 
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
@@ -11,8 +12,9 @@ favicon: true
 favicon_location: favicon.ico
 
 footer: true
-footer_url: "https://github.com/RubenBranco"
-footer_text: ""
+footer_url: "https://github.com/manleviet"
+footer_copyright: "© 2026"
+footer_text: "Viet-Man Le"
 
 sass:
     style: compressed
@@ -20,6 +22,14 @@ sass:
 
 nav:
  - name: "About"
-   link: "./"
+   link: "/"
+ - name: "Research"
+   link: "/research.html"
+ - name: "Publications"
+   link: "/publications.html"
+ - name: "Service"
+   link: "/service.html"
+# - name: "Teaching"
+#   link: "/teaching.html"
  - name: "CV"
-   link: "https://drive.google.com/file/d/1IkYwV90qBOrX6z_5EVxYhzMBOBnBBZLO/view"
+   link: "/cv.pdf"

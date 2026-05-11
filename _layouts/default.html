@@ -56,17 +56,29 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="navbar container">
+        <div class="navbar container" style="padding-bottom: 10px;">
             {% if site.ins_logo %}
                 <img id="ins-logo" src="{{ site.ins_logo }}" />
             {% endif %}
-            <a id="author-name" class="alignable pull-left" href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a>
-            <ul id="navlist" class="alignable pull-right navbar-ul">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px;">
+                <a id="author-name" href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a>
+                <span class="header-icons" style="font-size: 1.1em; line-height: 1;">
+                    <a target="_blank" href="mailto:v.m.le@tugraz.at" title="Email"><i class="fas fa-envelope"></i></a> &nbsp;
+                    <a target="_blank" href="https://scholar.google.com/citations?user=l2UTi1MAAAAJ&hl=en" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a> &nbsp;
+                    <a target="_blank" href="https://orcid.org/0000-0001-5778-975X" title="ORCID"><i class="fab fa-orcid"></i></a> &nbsp;
+                    <a target="_blank" href="https://github.com/manleviet/" title="GitHub"><i class="fab fa-github"></i></a> &nbsp;
+                    <a target="_blank" href="https://www.linkedin.com/in/viet-man-le-a6474829/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </span>
+            </div>
+            {% if site.tagline %}
+                <p class="site-tagline" style="font-style: italic; color: #666; font-size: 0.95em; margin: 6px 0 14px 0;">{{ site.tagline }}</p>
+            {% endif %}
+            <ul id="navlist" class="navbar-ul" style="margin-left: 0; padding: 0;">
                 {% for x in site.nav %}
                     {% if x.name == "CV" %}
-                        <li class="alignable pull-left nav-list"><a target="_blank" href="{{ x.link }}">{{ x.name }}</a>
+                        <li class="nav-list" style="display: inline-block; margin-left: 0;"><a target="_blank" href="{{ x.link }}">{{ x.name }}</a>
                     {% else %}
-                        <li class="alignable pull-left nav-list"><a href="{{ x.link }}">{{ x.name }}</a>
+                        <li class="nav-list" style="display: inline-block; margin-left: 0;"><a href="{{ x.link }}">{{ x.name }}</a>
                     {% endif %}
                     {% if forloop.last == false %}
                         /
@@ -75,8 +87,7 @@
                 {% endfor %}
             </ul>
         </div>
-        <div style="clear:both"></div>
-        <hr>
+        <hr style="margin-top: 0.6em;">
         {% if page.is_contact == true %}
             <div class="container content contact">
         {% else %}
@@ -84,9 +95,9 @@
         {% endif %}
                 {{ content }}
                 {% if site.footer == true %}
-                    <hr />
-                    <p style="text-align: center; margin-bottom: 10px">
-                    <a href="{{ site.footer_url }}" style="color: black"><small>{{ site.footer_text }}</small></a>
+                    <hr style="margin-bottom: 0.6em;" />
+                    <p style="text-align: center; margin: 0; padding-bottom: 2.5em; font-size: 0.95em; color: #888;">
+                        {{ site.footer_copyright }} <a href="{{ site.footer_url }}" style="color: inherit;">{{ site.footer_text }}</a>
                     </p>
                 {% endif %}
             </div>
