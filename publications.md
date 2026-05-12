@@ -204,6 +204,8 @@ Alexander Felfernig, **Viet-Man Le**, Thi Ngoc Trang Tran
 
 ## Theses
 
+*All theses listed below were formally defended before an academic committee: a 3-member committee for the Bachelor's thesis and the Master 1 TPE, and a 5-member committee for the Master's thesis.*
+
 <div markdown="1" class="pubs">
 
 <!-- <div class="pub" markdown="1">
