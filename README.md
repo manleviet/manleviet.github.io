@@ -1,58 +1,80 @@
-# Researcher
+# manleviet.github.io
 
-### [Demo Website](http://ankitsultana.com/researcher)
+Personal academic website of **Viet-Man Le** — PhD candidate at TU Graz, Austria, working on knowledge-based diagnosis, configuration systems, and explanations in AI.
 
-A clean, single column, monospace resume template built for jekyll
+Live site: **<https://manleviet.github.io>**
 
-### Installation
+## Stack
 
-Simply fork the repository and edit away.
+- [Jekyll](https://jekyllrb.com/) static site generator, built and deployed by **GitHub Pages** (vanilla pipeline — no GitHub Actions needed)
+- Plugins: `jekyll-remote-theme`, `jekyll-seo-tag` (both in GH Pages whitelist)
+- Theme: customized fork of the [Researcher](https://github.com/ankitsultana/researcher) Jekyll theme — see [Credits](#credits) below.
 
-#### Installation via remote themes
+## Pages
 
-* Just setting `remote_theme: ankitsultana/researcher@gem` in `_config.yml` should work. Although in that case, I am not sure how
-you would build your site locally for testing. If you know how, open up an issue and let me know.
-* For more info, [refer this](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/).
+| File | URL | Content |
+|---|---|---|
+| `index.md` | `/` | About + bio + News + Featured publications |
+| `research.md` | `/research.html` | Research interests + ongoing projects |
+| `publications.md` | `/publications.html` | Selected publications + theses |
+| `service.md` | `/service.html` | Academic service (reviewing, organizing, chairing) |
+| `teaching.md` | `/teaching.html` | Courses taught + thesis supervision |
+| `awards.md` | `/awards.html` | Awards & grants |
+| `assets/pdf/cv.pdf` | `/CV` | Full CV (PDF) |
 
-### Customization
+## Local development
 
-* You can edit the `.md` (markdown) files as you see fit. You can also add some other markdown file, say `foo.md` in the root directory of the repository. It will then be accessible like so `{{ url of your website }}/foo`.
-
-* You can of course remove `contact.md` if you don't want it
-
-* To set the heading, edit the `title` variable in `_config.yml`
-
-* To edit the `links` mentioned on the navigation bar, you can edit `_config.yml`. For example:
-
-```
-nav:
- - name: "About"
-   link: "/researcher/"
- - name: "Resume"
-   link: "resume.pdf"
- - name: "Contact"
-   link: "contact"
+```bash
+bundle install
+bundle exec jekyll serve
 ```
 
-* You can change the accent (color of hyperlinks) by editing the `accent` variable in `_sass/vars.scss`
+The site renders at `http://localhost:4000`. Edit any `.md` file and Jekyll regenerates on save.
 
-* You can setup google analytics, by setting `tracking_id` in `_config.yml`
+## Features customized in this fork
 
-* To add a profile picture, make sure to give the image tag the class `profile-picture`. In other words,do it like so:
+- **Dark / light mode toggle.** Sun/moon button in the navbar (right of the social icons). Honors `prefers-color-scheme` on first visit; the user's explicit choice persists via `localStorage` and overrides the OS preference thereafter. An inline boot script in `<head>` sets the theme attribute *before* `<body>` renders to prevent a flash of the wrong theme.
+- **Theme palette.** GitHub Primer "dimmed" family for dark mode (warmer neutral gray, not slate). All color tokens live as CSS custom properties on `:root` (light) and inside `@mixin dark-palette` (dark), applied to both `[data-theme="dark"]` and `@media (prefers-color-scheme: dark)`. Defined in `_sass/vars.scss`.
+- **Social-icons header.** Email, Google Scholar, ORCID, GitHub, LinkedIn rendered as FontAwesome icons in the navbar (right side), replacing the upstream template's plain text links.
+- **Hand-curated `.pub` cards** in `publications.md`. Each card carries venue/ranking annotations (CORE A*, SCIMAGO Q2, etc.). Year sections are grouped under `### YEAR` headings inside `<div markdown="1" class="pubs"> … </div>` wrappers.
+- **External-link auto-targeting.** A small script in `_layouts/default.html` adds `target="_blank" rel="noopener noreferrer"` to every off-domain link at `DOMContentLoaded`.
+
+## Adding a new publication
+
+Edit `publications.md` and append a card under the right year section:
 
 ```html
-<img class="profile-picture" src="sherlock.jpg">
+<div class="pub" markdown="1">
+**[Paper Title](URL){:target="_blank"}**
+
+**Viet-Man Le**, Co-author 1, Co-author 2
+
+*Venue full name*, vol. X, pp. Y. **CORE A*** (Year)
+</div>
 ```
 
-* You can remove/customize the footer as you like by setting the
-appropriate variables in `_config.yml`
+If the year section doesn't exist yet, create it before the next-newer section:
 
-* (New in v1.2.0) You can add institute logo at the top, by setting `ins_logo` in `_config.yml`. If you want
-to adjust the logo's size, try setting `max-height` in `#ins-logo` in file `./_sass/_style.scss` to the desired
-value
+```html
+### YYYY
 
-**Note:** Customizing the accent color might cause merge conflicts if you later try to merge from `bk2dcradle/researcher` to fetch updates/patches etc. (applicable only if you have forked).
+<div markdown="1" class="pubs">
 
-### License
+  ...cards here...
 
-[GNU GPL v3](https://github.com/bk2dcradle/researcher/blob/gh-pages/LICENSE)
+</div>
+```
+
+## Credits
+
+This site is a customized fork of:
+
+- [Ruben Branco's personal site](https://github.com/RubenBranco/rubenbranco.github.io), which itself customizes
+- The [Researcher Jekyll theme](https://github.com/ankitsultana/researcher) by [Ankit Sultana](http://ankitsultana.com) — *"A clean, single-column, monospace resume template built for Jekyll"* — originally derived from
+- [bk2dcradle/researcher](https://github.com/bk2dcradle/researcher).
+
+The Researcher theme provides the underlying single-column layout, the Inconsolata monospace typography, and the configuration conventions (`_config.yml` keys: `title`, `tagline`, `nav`, `tracking_id`, `favicon`, `ins_logo`, `footer`, etc.). For the upstream README and theme-level customization options, see the [Researcher repository](https://github.com/ankitsultana/researcher#readme).
+
+## License
+
+[GNU GPL v3](https://github.com/bk2dcradle/researcher/blob/gh-pages/LICENSE) — inherited from upstream.
