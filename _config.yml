@@ -20,6 +20,70 @@ sass:
     style: compressed
     sass_dir: _sass
 
+# ---------------------------------------------------------------------------
+# Plugins
+# ---------------------------------------------------------------------------
+plugins:
+  - jekyll-seo-tag
+  - jekyll-scholar
+
+# ---------------------------------------------------------------------------
+# jekyll-scholar configuration
+# Renders the `.pub` cards on publications.md and the Featured Publications
+# block on index.md from a single source of truth: assets/bibliography/papers.bib
+# ---------------------------------------------------------------------------
+scholar:
+  style: apa                    # CSL style (only used by fallback `{{reference}}`)
+  locale: en
+
+  source: ./assets/bibliography
+  bibliography: papers.bib
+
+  # bibliography_template: name of a layout in _layouts/ (without extension).
+  # jekyll-scholar loads _layouts/pub_card.html as the per-entry template.
+  # The file MUST start with `---\n---\n` YAML front matter so Jekyll
+  # processes its Liquid (otherwise jekyll-scholar emits the filename as
+  # a literal string — symptom: every entry on the page renders as the
+  # word "pub_card").
+  bibliography_template: pub_card
+
+  # Sort newest-first: year first, then month within year.
+  # NOTE: jekyll-scholar's Liquid-tag option parser does NOT recognize
+  # `--sort_by` / `--order`, so these MUST live at config level.
+  # On publications.md (group_by year), entries within each year group
+  # have the same year — so the secondary `month` key effectively sorts
+  # within the group. On index.md (group_by none), the primary `year`
+  # key gives the desired year-descending order for the featured set.
+  sort_by: year,month
+  order: descending,descending
+
+  # publications.md groups year-by-year, latest year on top. Year headings
+  # render as <h3 class="bibliography">YYYY</h3> to match the previous
+  # publications.md hand-written `### YYYY` markdown.
+  group_by: year
+  group_order: descending
+  bibliography_group_tag: h3
+
+  # Emit <div class="pubs"> ... <div>pub_card</div> ... </div> instead of the
+  # default <ol class="bibliography"><li>...</li></ol>. Keeps the .pub card
+  # styling working without rewriting the SCSS rules in _sass/_style.scss.
+  bibliography_class: pubs
+  bibliography_list_tag: div
+  bibliography_item_tag: div
+
+  query: "@*"
+
+# ---------------------------------------------------------------------------
+# Exclude build artifacts / scaffolding from the published site
+# ---------------------------------------------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - README.md
+  - .github/
+  - scripts/
+
 nav:
  - name: "About"
    link: "/"

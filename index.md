@@ -27,48 +27,6 @@ I am now looking forward to research positions in academia and industry where I 
 
 ## Featured Publications
 
-<div markdown="1" class="pubs">
-
-<div class="pub" markdown="1">
-**[Robust Lazy Conflict Detection via Multi-Conflict Extraction and Genetic Diversity Control](https://ojs.aaai.org/index.php/AAAI/article/view/38995){:target="_blank"}**
-
-**Viet-Man Le**, Lukas A. Feldgrill, Alexander Felfernig
-
-*Proceedings of the AAAI Conference on Artificial Intelligence*, vol. 40, no. 23, pp. 19208–19215. **CORE A*** (2026)
-</div>
-
-<div class="pub" markdown="1">
-**[Learning Constraint Orderings for Direct Diagnosis](https://doi.org/10.1007/s10844-025-00962-4){:target="_blank"}**
-
-Mathias Uta, **Viet-Man Le**, Alexander Felfernig, Denis Helic
-
-*Journal of Intelligent Information Systems*, vol. 63, no. 5, pp. 1753–1777. **SCIMAGO Q2** (2025)
-</div>
-
-<div class="pub" markdown="1">
-**[InformedQX: Informed Conflict Detection for Over-Constrained Problems](https://doi.org/10.1609/aaai.v38i9.28932){:target="_blank"}**
-
-**Viet-Man Le**, Alexander Felfernig, Thi Ngoc Trang Tran, Mathias Uta
-
-*Proceedings of the 38th AAAI Conference on Artificial Intelligence*, vol. 38, no. 9, pp. 10616–10623. **CORE A*** (2024)
-</div>
-
-<div class="pub" markdown="1">
-**[FastDiagP: An Algorithm for Parallelized Direct Diagnosis](https://doi.org/10.1609/aaai.v37i5.25792){:target="_blank"}**
-
-**Viet-Man Le**, Cristian Vidal Silva, Alexander Felfernig, David Benavides, José Galindo, Thi Ngoc Trang Tran
-
-*Proceedings of the 37th AAAI Conference on Artificial Intelligence*, vol. 37, no. 5, pp. 6442–6449. **CORE A*** (2023)
-</div>
-
-<div class="pub" markdown="1">
-**[DirectDebug: Automated Testing and Debugging of Feature Models](https://doi.org/10.1109/ICSE-NIER52604.2021.00025){:target="_blank"}**
-
-**Viet-Man Le**, Alexander Felfernig, Mathias Uta, David Benavides, José Galindo, Thi Ngoc Trang Tran
-
-*Proceedings of the ACM/IEEE 43rd International Conference on Software Engineering: New Ideas and Emerging Results (ICSE-NIER 2021)*, pp. 81–85. **CORE A*** (2021)
-</div>
-
-</div>
+{% bibliography -f papers --query @*[featured=true] --group_by none %}
 
 See the [selected publications](publications.html) for the full curated list.

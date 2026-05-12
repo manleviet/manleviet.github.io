@@ -3,3 +3,13 @@ _site
 .sass-cache/
 .DS_Store
 .jekyll-cache
+
+# Python (scripts/papers_bib.py runtime artifacts)
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor scratch
+*.swp
+*.swo
+*~

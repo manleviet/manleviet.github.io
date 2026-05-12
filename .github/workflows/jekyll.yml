@@ -1,0 +1,63 @@
+name: Build and Deploy Jekyll site
+
+# We can't rely on the default GitHub Pages builder because jekyll-scholar
+# (and bibtex-ruby / citeproc) aren't on the GH Pages plugin whitelist.
+# Instead we build the site ourselves with Bundler and publish the
+# rendered _site/ to GitHub Pages via the official Pages actions.
+
+on:
+  push:
+    branches: [main, gh-pages]
+  workflow_dispatch:
+
+# GitHub Pages needs these permissions to publish
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Avoid concurrent deploys clobbering each other
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # ------------------------------------------------------------------ build --
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true   # caches gems based on Gemfile.lock
+
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        env:
+          JEKYLL_ENV: production
+        run: |
+          bundle exec jekyll build \
+            --baseurl "${{ steps.pages.outputs.base_path }}" \
+            --destination ./_site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
+  # ----------------------------------------------------------------- deploy --
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

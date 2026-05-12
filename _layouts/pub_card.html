@@ -1,0 +1,39 @@
+---
+# Empty YAML front matter is REQUIRED so Jekyll processes the Liquid below.
+# Without it, jekyll-scholar emits the filename ("pub_card") as a literal
+# string for every entry on the page.
+#
+# This file is the bibliography_template referenced from _config.yml
+# (scholar.bibliography_template: pub_card → _layouts/pub_card.html).
+#
+# Custom .bib fields consumed: html_venue, rank.
+# Standard fields used:        author, title, url, year.
+# (Theses live as hand-curated markdown in publications.md.)
+---
+{%- comment -%}
+  Author rendering: split `entry.author` on " and ", normalize each
+  "Last, First" → "First Last", and wrap the user's name in <strong>.
+  This avoids needing a per-entry `author_html` override.
+{%- endcomment -%}
+{%- assign me = "Viet-Man Le" -%}
+{%- assign authors = entry.author | split: " and " -%}
+{%- capture authors_html -%}
+  {%- for raw in authors -%}
+    {%- assign a = raw | strip -%}
+    {%- assign parts = a | split: ", " -%}
+    {%- if parts.size == 2 -%}
+      {%- assign full = parts[1] | strip | append: " " | append: parts[0] | strip -%}
+    {%- else -%}
+      {%- assign full = a -%}
+    {%- endif -%}
+    {%- if full == me -%}<strong>{{ full }}</strong>{%- else -%}{{ full }}{%- endif -%}
+    {%- unless forloop.last %}, {% endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+<div class="pub">
+  <p><strong>{%- if entry.url -%}<a href="{{ entry.url }}" target="_blank">{{ entry.title }}</a>{%- else -%}{{ entry.title }}{%- endif -%}</strong></p>
+
+  <p>{{ authors_html }}</p>
+
+  <p>{{ entry.html_venue }}{% if entry.rank %}. <strong>{{ entry.rank }}</strong>{% endif %} ({{ entry.year }})</p>
+</div>

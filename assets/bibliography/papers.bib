@@ -1,0 +1,373 @@
+@comment{
+  Selected Publications — Viet-Man Le
+
+  Single source of truth for the .pub cards rendered on publications.html
+  (full year-grouped list) and index.html (Featured Publications block,
+  filtered to entries with featured = true).
+
+  Custom non-standard fields (consumed by _layouts/pub_card.html):
+    selected    = "true" if the entry should appear on publications.html.
+                  Set to "false" (or remove the field) to hide an entry
+                  without deleting it.
+    featured    = "true" if the entry should also appear on index.html
+                  Featured Publications block (subset of selected).
+    rank        = ranking tag rendered to the right of the venue line
+                  (e.g. CORE A*, CORE A, CORE B, SCIMAGO Q2). Optional.
+    month       = numeric (1-12) — within-year sort key, descending.
+    html_venue  = pre-rendered HTML for the venue line. Used instead of
+                  auto-building from booktitle/journal/series/volume/
+                  number/publisher because the venue format varies a lot
+                  across CEUR / FAIA / LNNS / SCI / AAAI / SPLC / VaMoS
+                  / Software Impacts — no single rule handles all cases.
+
+  Authors render via Liquid in the template: it splits entry.author on
+  " and ", normalizes "Last, First" -> "First Last", and wraps "Viet-Man
+  Le" in <strong>. No author_html field needed.
+
+  Entries were cross-checked against the master vault references.bib at
+  Everything/references.bib (JabRef-managed).
+}
+
+% =================================================================== 2026 ===
+
+@inproceedings{le2026sac,
+  title      = {Early-Stage Product Line Validation Using {LLMs}: A Study on Semi-Formal Blueprint Analysis},
+  author     = {Le, Viet-Man and Tran, Thi Ngoc Trang and Lubos, Sebastian and Felfernig, Alexander and Garber, Damian},
+  booktitle  = {Proceedings of the 41st ACM/SIGAPP Symposium on Applied Computing (SAC 2026)},
+  year       = {2026},
+  month      = {3},
+  pages      = {1620--1627},
+  publisher  = {ACM},
+  doi        = {10.1145/3748522.3779903},
+  url        = {https://arxiv.org/abs/2604.20523},
+  rank       = {CORE B},
+  selected   = {true},
+  html_venue = {<em>Proceedings of the 41st ACM/SIGAPP Symposium on Applied Computing (SAC 2026)</em>, pp. 16201627}
+}
+
+
+
+@inproceedings{le2026robust,
+  title      = {Robust Lazy Conflict Detection via Multi-Conflict Extraction and Genetic Diversity Control},
+  author     = {Le, Viet-Man and Feldgrill, Lukas A. and Felfernig, Alexander},
+  booktitle  = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year       = {2026},
+  month      = {1},
+  volume     = {40},
+  number     = {23},
+  pages      = {19208--19215},
+  publisher  = {AAAI Press},
+  doi        = {10.1609/aaai.v40i23.38995},
+  url        = {https://ojs.aaai.org/index.php/AAAI/article/view/38995},
+  rank       = {CORE A*},
+  selected   = {true},
+  featured   = {true},
+  html_venue = {<em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, vol. 40, no. 23, pp. 19208–19215}
+}
+
+
+
+@inproceedings{felfernig2026qxp,
+  title      = {{QuickXPlain} Explanations for Feature Model Configuration},
+  author     = {Felfernig, Alexander and Garber, Damian and Le, Viet-Man and Lubos, Sebastian and Tran, Thi Ngoc Trang},
+  booktitle  = {Proceedings of the 27th International Workshop on Configuration (ConfWS 2025) co-located with ECAI 2025},
+  year       = {2026},
+  month      = {1},
+  series     = {CEUR Workshop Proceedings},
+  volume     = {4149},
+  pages      = {8--17},
+  publisher  = {CEUR-WS.org},
+  url        = {https://ceur-ws.org/Vol-4149/paper1.pdf},
+  selected   = {true},
+  html_venue = {<em>Proceedings of the 27th International Workshop on Configuration (ConfWS 2025) co-located with ECAI 2025</em>. CEUR Workshop Proceedings, vol. 4149, pp. 8–17}
+}
+
+
+
+@inproceedings{felfernig2026scoping,
+  title      = {Towards {LLM}-Enhanced Product Line Scoping},
+  author     = {Felfernig, Alexander and Garber, Damian and Le, Viet-Man and Lubos, Sebastian and Tran, Thi Ngoc Trang},
+  booktitle  = {Proceedings of the 27th International Workshop on Configuration (ConfWS 2025) co-located with ECAI 2025},
+  year       = {2026},
+  month      = {1},
+  series     = {CEUR Workshop Proceedings},
+  volume     = {4149},
+  pages      = {128--134},
+  publisher  = {CEUR-WS.org},
+  url        = {https://ceur-ws.org/Vol-4149/paper11.pdf},
+  selected   = {true},
+  html_venue = {<em>Proceedings of the 27th International Workshop on Configuration (ConfWS 2025) co-located with ECAI 2025</em>. CEUR Workshop Proceedings, vol. 4149, pp. 128–134}
+}
+
+
+
+% =================================================================== 2025 ===
+
+@article{uta2025jiis,
+  title      = {Learning Constraint Orderings for Direct Diagnosis},
+  author     = {Uta, Mathias and Le, Viet-Man and Felfernig, Alexander and Helic, Denis},
+  journal    = {Journal of Intelligent Information Systems},
+  year       = {2025},
+  month      = {8},
+  volume     = {63},
+  number     = {5},
+  pages      = {1753--1777},
+  publisher  = {Springer},
+  doi        = {10.1007/s10844-025-00962-4},
+  url        = {https://doi.org/10.1007/s10844-025-00962-4},
+  rank       = {SCIMAGO Q2},
+  selected   = {true},
+  featured   = {true},
+  html_venue = {<em>Journal of Intelligent Information Systems</em>, vol. 63, no. 5, pp. 1753–1777}
+}
+
+
+
+@inproceedings{felfernig2025causality,
+  title      = {Causality-based Explanations for Feature Model Configuration},
+  author     = {Felfernig, Alexander and Garber, Damian and Le, Viet-Man and Lubos, Sebastian},
+  booktitle  = {Proceedings of the 19th International Working Conference on Variability Modelling of Software-Intensive Systems (VaMoS 2025)},
+  year       = {2025},
+  month      = {2},
+  pages      = {86--90},
+  publisher  = {ACM},
+  doi        = {10.1145/3715340.3715438},
+  url        = {https://doi.org/10.1145/3715340.3715438},
+  selected   = {true},
+  html_venue = {<em>Proceedings of the 19th International Working Conference on Variability Modelling of Software-Intensive Systems (VaMoS 2025)</em>. ACM, pp. 86–90}
+}
+
+
+
+% =================================================================== 2024 ===
+
+@inproceedings{uta2024merging,
+  title      = {Semantics-Preserving Merging of Feature Models},
+  author     = {Uta, Mathias and Le, Viet-Man and Felfernig, Alexander and Garber, Damian and Schenner, Gottfried and Tran, Thi Ngoc Trang},
+  booktitle  = {Proceedings of the 26th International Workshop on Configuration (ConfWS 2024) co-located with CP 2024},
+  year       = {2024},
+  month      = {9},
+  series     = {CEUR Workshop Proceedings},
+  volume     = {3812},
+  pages      = {74--80},
+  publisher  = {CEUR-WS.org},
+  url        = {https://ceur-ws.org/Vol-3812/paper11.pdf},
+  selected   = {true},
+  html_venue = {<em>Proceedings of the 26th International Workshop on Configuration (ConfWS 2024) co-located with CP 2024</em>. CEUR Workshop Proceedings, vol. 3812, pp. 74–80}
+}
+
+
+
+@inproceedings{le2024informedqx,
+  title      = {{InformedQX}: Informed Conflict Detection for Over-Constrained Problems},
+  author     = {Le, Viet-Man and Felfernig, Alexander and Tran, Thi Ngoc Trang and Uta, Mathias},
+  booktitle  = {Proceedings of the 38th AAAI Conference on Artificial Intelligence},
+  year       = {2024},
+  month      = {2},
+  volume     = {38},
+  number     = {9},
+  pages      = {10616--10623},
+  publisher  = {AAAI Press},
+  doi        = {10.1609/aaai.v38i9.28932},
+  url        = {https://doi.org/10.1609/aaai.v38i9.28932},
+  rank       = {CORE A*},
+  selected   = {true},
+  featured   = {true},
+  html_venue = {<em>Proceedings of the 38th AAAI Conference on Artificial Intelligence</em>, vol. 38, no. 9, pp. 10616–10623}
+}
+
+
+
+% =================================================================== 2023 ===
+
+@inproceedings{burgstaller2023fmtesting,
+  title      = {{FMTesting}: A {FeatureIDE} Plug-in for Automated Feature Model Analysis and Diagnosis},
+  author     = {Burgstaller, Tamim and Le, Viet-Man and Tran, Thi Ngoc Trang and Felfernig, Alexander},
+  booktitle  = {ECAI 2023 — 26th European Conference on Artificial Intelligence, including PAIS 2023},
+  year       = {2023},
+  month      = {9},
+  series     = {Frontiers in Artificial Intelligence and Applications},
+  volume     = {372},
+  pages      = {3190--3195},
+  publisher  = {IOS Press},
+  doi        = {10.3233/FAIA230640},
+  url        = {https://doi.org/10.3233/FAIA230640},
+  rank       = {CORE A},
+  selected   = {true},
+  html_venue = {<em>ECAI 2023 — 26th European Conference on Artificial Intelligence, including PAIS 2023</em>. Frontiers in Artificial Intelligence and Applications, vol. 372. IOS Press, pp. 3190–3195}
+}
+
+
+
+@inproceedings{felfernig2023cita,
+  title      = {Conjunctive Query Based Constraint Solving for Feature Model Configuration},
+  author     = {Felfernig, Alexander and Le, Viet-Man and Lubos, Sebastian},
+  booktitle  = {The 12th Conference on Information Technology and Its Applications (CITA 2023)},
+  year       = {2023},
+  month      = {7},
+  series     = {Lecture Notes in Networks and Systems},
+  volume     = {734},
+  pages      = {357--367},
+  publisher  = {Springer},
+  doi        = {10.1007/978-3-031-36886-8_30},
+  url        = {https://doi.org/10.1007/978-3-031-36886-8_30},
+  selected   = {true},
+  html_venue = {<em>The 12th Conference on Information Technology and Its Applications (CITA 2023)</em>. Lecture Notes in Networks and Systems, vol. 734. Springer, pp. 357–367}
+}
+
+
+
+@inproceedings{le2023fastdiagp,
+  title      = {{FastDiagP}: An Algorithm for Parallelized Direct Diagnosis},
+  author     = {Le, Viet-Man and Vidal Silva, Cristian and Felfernig, Alexander and Benavides, David and Galindo, Jos{\'e} and Tran, Thi Ngoc Trang},
+  booktitle  = {Proceedings of the 37th AAAI Conference on Artificial Intelligence},
+  year       = {2023},
+  month      = {2},
+  volume     = {37},
+  number     = {5},
+  pages      = {6442--6449},
+  publisher  = {AAAI Press},
+  doi        = {10.1609/aaai.v37i5.25792},
+  url        = {https://doi.org/10.1609/aaai.v37i5.25792},
+  rank       = {CORE A*},
+  selected   = {true},
+  featured   = {true},
+  html_venue = {<em>Proceedings of the 37th AAAI Conference on Artificial Intelligence</em>, vol. 37, no. 5, pp. 6442–6449}
+}
+
+
+
+% =================================================================== 2022 ===
+
+@inproceedings{felfernig2022splctable,
+  title      = {Table-based Knowledge Representations for Industrial Feature Models},
+  author     = {Felfernig, Alexander and Ortner, Bernhard and Le, Viet-Man},
+  booktitle  = {26th ACM International Systems and Software Product Line Conference (SPLC 2022)},
+  year       = {2022},
+  month      = {9},
+  volume     = {B},
+  pages      = {245--248},
+  publisher  = {ACM},
+  doi        = {10.1145/3503229.3547047},
+  url        = {https://dl.acm.org/doi/10.1145/3503229.3547047},
+  rank       = {CORE A},
+  selected   = {true},
+  html_venue = {<em>26th ACM International Systems and Software Product Line Conference (SPLC 2022)</em>, vol. B, pp. 245–248}
+}
+
+
+
+@inproceedings{le2022aggregation,
+  title      = {Test Case Aggregation for Efficient Feature Model Testing},
+  author     = {Le, Viet-Man and Felfernig, Alexander and Tran, Thi Ngoc Trang},
+  booktitle  = {26th ACM International Systems and Software Product Line Conference (SPLC 2022)},
+  year       = {2022},
+  month      = {9},
+  volume     = {B},
+  pages      = {174--177},
+  publisher  = {ACM},
+  doi        = {10.1145/3503229.3547046},
+  url        = {https://doi.org/10.1145/3503229.3547046},
+  rank       = {CORE A},
+  selected   = {true},
+  html_venue = {<em>26th ACM International Systems and Software Product Line Conference (SPLC 2022)</em>, vol. B, pp. 174–177}
+}
+
+
+
+@inproceedings{le2022wipeoutr,
+  title      = {{WipeOutR}: Automated Redundancy Detection for Feature Models},
+  author     = {Le, Viet-Man and Felfernig, Alexander and Uta, Mathias and Tran, Thi Ngoc Trang and Vidal Silva, Cristian},
+  booktitle  = {26th ACM International Systems and Software Product Line Conference (SPLC 2022)},
+  year       = {2022},
+  month      = {9},
+  volume     = {A},
+  pages      = {164--169},
+  publisher  = {ACM},
+  doi        = {10.1145/3546932.3546992},
+  url        = {https://doi.org/10.1145/3546932.3546992},
+  rank       = {CORE A},
+  selected   = {true},
+  html_venue = {<em>26th ACM International Systems and Software Product Line Conference (SPLC 2022)</em>, vol. A, pp. 164–169}
+}
+
+
+
+% =================================================================== 2021 ===
+
+@article{le2021directdebugimpacts,
+  title      = {{DirectDebug}: A Software Package for the Automated Testing and Debugging of Feature Models},
+  author     = {Le, Viet-Man and Felfernig, Alexander and Tran, Thi Ngoc Trang and Atas, M{\"u}sl{\"u}m and Uta, Mathias and Benavides, David and Galindo, Jos{\'e}},
+  journal    = {Software Impacts},
+  year       = {2021},
+  month      = {8},
+  volume     = {9},
+  pages      = {100085},
+  publisher  = {Elsevier},
+  doi        = {10.1016/j.simpa.2021.100085},
+  url        = {https://doi.org/10.1016/j.simpa.2021.100085},
+  selected   = {true},
+  html_venue = {<em>Software Impacts</em>, vol. 9, p. 100085}
+}
+
+
+
+@inproceedings{le2021directdebugicse,
+  title      = {{DirectDebug}: Automated Testing and Debugging of Feature Models},
+  author     = {Le, Viet-Man and Felfernig, Alexander and Uta, Mathias and Benavides, David and Galindo, Jos{\'e} and Tran, Thi Ngoc Trang},
+  booktitle  = {Proceedings of the ACM/IEEE 43rd International Conference on Software Engineering: New Ideas and Emerging Results (ICSE-NIER 2021)},
+  year       = {2021},
+  month      = {5},
+  pages      = {81--85},
+  publisher  = {IEEE},
+  doi        = {10.1109/ICSE-NIER52604.2021.00025},
+  url        = {https://doi.org/10.1109/ICSE-NIER52604.2021.00025},
+  rank       = {CORE A*},
+  selected   = {true},
+  featured   = {true},
+  html_venue = {<em>Proceedings of the ACM/IEEE 43rd International Conference on Software Engineering: New Ideas and Emerging Results (ICSE-NIER 2021)</em>, pp. 81–85}
+}
+
+
+
+@inproceedings{le2021excel,
+  title      = {A Conversion of Feature Models into an Executable Representation in Microsoft Excel},
+  author     = {Le, Viet-Man and Tran, Thi Ngoc Trang and Felfernig, Alexander},
+  booktitle  = {Intelligent Systems in Industrial Applications: International Symposium on Methodologies for Intelligent Systems (ISMIS 2020)},
+  year       = {2021},
+  month      = {1},
+  series     = {Studies in Computational Intelligence},
+  volume     = {949},
+  pages      = {153--168},
+  publisher  = {Springer, Cham},
+  doi        = {10.1007/978-3-030-67148-8_12},
+  url        = {https://doi.org/10.1007/978-3-030-67148-8_12},
+  selected   = {true},
+  html_venue = {<em>Intelligent Systems in Industrial Applications: International Symposium on Methodologies for Intelligent Systems (ISMIS 2020)</em>. Studies in Computational Intelligence, vol. 949. Springer, Cham, pp. 153–168}
+}
+
+
+
+% =================================================================== 2020 ===
+
+@inproceedings{felfernig2020excel,
+  title      = {Supporting Feature Model-Based Configuration in Microsoft Excel},
+  author     = {Felfernig, Alexander and Le, Viet-Man and Tran, Thi Ngoc Trang},
+  booktitle  = {22nd International Configuration Workshop (ConfWS 2020)},
+  year       = {2020},
+  month      = {9},
+  pages      = {35--38},
+  url        = {https://www.researchgate.net/publication/344375671_Supporting_Feature_Model-Based_Configuration_in_Microsoft_Excel},
+  selected   = {true},
+  html_venue = {<em>22nd International Configuration Workshop (ConfWS 2020)</em>, pp. 35–38}
+}
+
+
+
+
+
+% Note: theses are NOT in this .bib. They live as hand-curated markdown
+% in publications.md under the "Theses" heading. Reason: theses include
+% biographical content (supervisor link, French original title, score
+% notes, description paragraph) that doesn't map cleanly to standard
+% BibTeX fields, and the list rarely changes (oldest 2004, newest 2011).
