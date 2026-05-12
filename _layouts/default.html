@@ -102,6 +102,23 @@
                 {% endif %}
             </div>
     </div>
+    <!-- Auto-add target="_blank" to all external links -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var currentHost = window.location.hostname;
+        document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+            try {
+                var linkHost = new URL(link.href).hostname;
+                if (linkHost && linkHost !== currentHost) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+            } catch (e) {
+                // Invalid URL, skip
+            }
+        });
+    });
+    </script>
     {% if site.tracking_id %}
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{site.tracking_id}}"></script>
