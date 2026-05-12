@@ -79,7 +79,23 @@ hr {
     float: right;
 }
 
+/* Navbar header row: author name on the left, social icons on the right.
+   On narrow screens (≤500px) the row stacks into a column with both
+   elements centered, matching the centering already applied to the
+   tagline and navlist by `.navbar { text-align: center }` below. */
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 /* Header icons + theme toggle */
+.header-icons {
+    font-size: 1.1em;
+    line-height: 1;
+}
 .header-icons a {
     color: var(--text-primary);
 
@@ -175,6 +191,11 @@ hr {
 	.navbar {
 		text-align: center;
 		padding: 50px 0px 0px 0px;
+	}
+	.navbar-header {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	#author-name {
 		width: 100%;
