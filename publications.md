@@ -41,7 +41,7 @@ Develops solver-agnostic algorithms for conflict detection, diagnosis, and quali
 
 Supervisor: [Professor Michel Verleysen](https://www.uclouvain.be/en/people/michel.verleysen){:target="_blank"}, [Catholic University of Louvain](https://uclouvain.be/){:target="_blank"}, Belgium.
 
-Score: **15.4/20** (Très bien, French grading). 
+Score: **15.4/20** (Très bien, French grading).
 
 Presents an image browser based on Self-Organizing Maps (SOM) that arranges images on a 2D grid where visually similar images are placed close together.
 </div>
@@ -51,7 +51,6 @@ Presents an image browser based on Self-Organizing Maps (SOM) that arranges imag
 
 **Master 1 TPE** (Travail Personnel Encadré, 2010, in French — *Visualisation de graphes pour la recherche interactive d'images*)
 
-Supervisor: [Professor Alain Boucher](https://www.linkedin.com/in/alain-boucher-6ba3792/){:target="_blank”}, [Institute for Informatics in French-speaking areas](https://ifi.vnu.edu.vn/en/about/){:target="_blank"}, Vietnam.
 Supervisor: [Professor Alain Boucher](https://www.linkedin.com/in/alain-boucher-6ba3792/){:target="_blank"}, [Institute for Informatics in French-speaking areas](https://ifi.vnu.edu.vn/en/about/){:target="_blank"}, Vietnam.
 
 Score: **15/20** (ranked 1st in class).
