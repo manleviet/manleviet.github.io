@@ -206,7 +206,7 @@ Alexander Felfernig, **Viet-Man Le**, Thi Ngoc Trang Tran
 
 <div markdown="1" class="pubs">
 
-<div class="pub" markdown="1">
+<!-- <div class="pub" markdown="1">
 **Intelligent Techniques for Efficient Diagnostic Reasoning in Constraint-Based Systems**
 
 **PhD Thesis** (in progress, expected 2026)
@@ -214,7 +214,7 @@ Alexander Felfernig, **Viet-Man Le**, Thi Ngoc Trang Tran
 Supervisor: [Professor Alexander Felfernig](https://ase.ist.tugraz.at/staff/alexander-felfernig/){:target="_blank”}, [Graz University of Technology](https://www.tugraz.at/){:target="_blank"}, Austria. 
 
 Develops solver-agnostic algorithms for Conflict Detection, Direct Diagnosis, and automated Debugging in constraint-based systems, with applications to industrial-scale Configuration Systems and Feature Models.
-</div>
+</div> -->
 
 <div class="pub" markdown="1">
 **[Navigation System in Image Databases](/pdf/2011-Le-MSc-Thesis-Navigation-Image-Databases.pdf){:target="_blank"}**
