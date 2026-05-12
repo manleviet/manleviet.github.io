@@ -5,13 +5,14 @@ title: Research – Viet-Man Le
 
 ## Research
 
-My research centers on **Knowledge-based Diagnosis**, **Configuration Systems**, **Software Product Lines**, and **Explanations in AI**. The goal is to make knowledge-based systems faster, more transparent, and more useful for end users, by combining classical constraint reasoning with modern learning-based techniques.
+My research centers on **Knowledge-based Diagnosis**, **Constraint Acquisition**, **Configuration Systems**, **Software Product Lines**, and **Explanations in AI**, with recent work extending these foundations to **Large Language Models for Software Product Line Engineering**. The goal is to make knowledge-based systems — such as configuration systems and recommender systems — faster, more transparent, and more useful for end users, by combining classical constraint reasoning with modern learning-based techniques.
 
 ### Research Interests
 
 * Knowledge-based Diagnosis and Conflict Detection
 * Constraint Acquisition and Constraint Solving
 * Feature Models and Software Product Lines
+* Large Language Models for Software Product Line Engineering
 * Explanations in AI for Configuration Systems and Recommender Systems
 
 ### Projects

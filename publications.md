@@ -213,11 +213,11 @@ Alexander Felfernig, **Viet-Man Le**, Thi Ngoc Trang Tran
 
 Supervisor: [Professor Alexander Felfernig](https://ase.ist.tugraz.at/staff/alexander-felfernig/){:target="_blank”}, [Graz University of Technology](https://www.tugraz.at/){:target="_blank"}, Austria. 
 
-Develops solver-agnostic algorithms for Conflict Detection, Direct Diagnosis, and automated Debugging in constraint-based systems, with applications to industrial-scale Configuration Systems and Feature Models.
+Develops solver-agnostic algorithms for conflict detection, diagnosis, and quality assurance in constraint-based systems, such as configuration systems and recommender systems.
 </div> -->
 
 <div class="pub" markdown="1">
-**[Navigation System in Image Databases](/pdf/2011-Le-MSc-Thesis-Navigation-Image-Databases.pdf){:target="_blank"}**
+**[Navigation System in Image Databases](/assets/pdf/2011-Le-MSc-Thesis-Navigation-Image-Databases.pdf){:target="_blank"}**
 
 **Master's Thesis** (2011, in French — *Système de navigation dans des bases de données d'images*)
 
@@ -229,11 +229,11 @@ Presents an image browser based on Self-Organizing Maps (SOM) that arranges imag
 </div>
 
 <div class="pub" markdown="1">
-**[Graph Visualization for Interactive Image Search](/pdf/2010-Le-M1-TPE-Graph-Visualization-Image-Search.pdf){:target="_blank"}**
+**[Graph Visualization for Interactive Image Search](/assets/pdf/2010-Le-M1-TPE-Graph-Visualization-Image-Search.pdf){:target="_blank"}**
 
 **Master 1 TPE** (Travail Personnel Encadré, 2010, in French — *Visualisation de graphes pour la recherche interactive d'images*)
 
-Supervisor: [Professor Alain Boucher](https://www.linkedin.com/in/alain-boucher-6ba3792/){:target="_blank”}, [Institute for Informatics in French-speaking areas](https://ifi.vnu.edu.vn/en/about/){:target="_blank"} (IFI), Vietnam.
+Supervisor: [Professor Alain Boucher](https://www.linkedin.com/in/alain-boucher-6ba3792/){:target="_blank”}, [Institute for Informatics in French-speaking areas](https://ifi.vnu.edu.vn/en/about/){:target="_blank"}, Vietnam.
 
 Score: **15/20** (ranked 1st in class).
 

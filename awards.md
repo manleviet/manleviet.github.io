@@ -15,7 +15,7 @@ title: Honors, Awards & Grants – Viet-Man Le
 
 - **2011** — *Internship Grant*, [Wallonie-Bruxelles International](https://www.wbi.be/), supporting a 7-month research internship at the [Catholic University of Louvain](https://uclouvain.be/){:target="_blank"}, Belgium (Apr–Nov 2011).
 
-- **2008–2011** — *Master's Scholarship*, [Agence Universitaire de la Francophonie (AUF)](https://www.auf.org/), for the Master of Computer Science program at the [Institute for Informatics in French-speaking areas](https://ifi.vnu.edu.vn/en/about/){:target="_blank"} (IFI), Vietnam.
+- **2008–2011** — *Master's Scholarship*, [Agence Universitaire de la Francophonie (AUF)](https://www.auf.org/), for the Master of Computer Science program at the [Institute for Informatics in French-speaking areas](https://ifi.vnu.edu.vn/en/about/){:target="_blank"}, Vietnam.
 
 - **2006** — *Research Grant*, [University of Economics, Hue University](https://hce.edu.vn/){:target="_blank"}, for designing and developing *A multiple-choice test system*.
 
