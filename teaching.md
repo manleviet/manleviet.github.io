@@ -25,7 +25,7 @@ Position: **University Assistant** — responsible for designing assignments on 
 
 **2023** — Co-supervisor of the Bachelor thesis *"PWipeOutR: Parallelized Redundancy Detection for Feature Models"* by **Yunus Emre Akca**.
 
-**2022** — Co-supervisor of the Bachelor thesis by **Tamim Burgstaller**. Outcome: [*"FMTesting: A FeatureIDE Plug-in for Automated Feature Model Analysis and Diagnosis"*](https://doi.org/10.3233/FAIA230640){:target="_blank"} at the *12th Conference on Prestigious Applications of Intelligent Systems* (PAIS / ECAI 2023).
+**2022** — Co-supervisor of the Bachelor thesis by **Tamim Burgstaller**. Outcome: [*"FMTesting: A FeatureIDE Plug-in for Automated Feature Model Analysis and Diagnosis"*](https://doi.org/10.3233/FAIA230640){:target="_blank"} at the *12th Conference on Prestigious Applications of Intelligent Systems* (PAIS/ECAI 2023).
 
 ### Past Teaching at Hue University
 
