@@ -53,6 +53,19 @@
         <meta name="twitter:image" content="{{ site.profile_picture }}">
     {% endif %}
     <script src="https://kit.fontawesome.com/3b178f67a6.js" crossorigin="anonymous"></script>
+    <!-- Theme boot — runs before <body> renders to avoid a flash of the wrong theme.
+         Precedence: user override in localStorage > system preference (prefers-color-scheme). -->
+    <script>
+    (function() {
+        try {
+            var saved = localStorage.getItem('theme');
+            if (saved === 'dark' || saved === 'light') {
+                document.documentElement.setAttribute('data-theme', saved);
+            }
+            // If no saved choice, CSS handles it via @media (prefers-color-scheme: dark).
+        } catch (e) { /* localStorage disabled — fall back to system preference */ }
+    })();
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -67,11 +80,14 @@
                     <a target="_blank" href="https://scholar.google.com/citations?user=l2UTi1MAAAAJ&hl=en" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a> &nbsp;
                     <a target="_blank" href="https://orcid.org/0000-0001-5778-975X" title="ORCID"><i class="fab fa-orcid"></i></a> &nbsp;
                     <a target="_blank" href="https://github.com/manleviet/" title="GitHub"><i class="fab fa-github"></i></a> &nbsp;
-                    <a target="_blank" href="https://www.linkedin.com/in/viet-man-le-a6474829/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/viet-man-le-a6474829/" title="LinkedIn"><i class="fab fa-linkedin"></i></a> &nbsp;
+                    <button id="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i><i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+                    </button>
                 </span>
             </div>
             {% if site.tagline %}
-                <p class="site-tagline" style="font-style: italic; color: #666; font-size: 0.95em; margin: 6px 0 14px 0;">{{ site.tagline }}</p>
+                <p class="site-tagline" style="font-style: italic; font-size: 0.95em; margin: 6px 0 14px 0;">{{ site.tagline }}</p>
             {% endif %}
             <ul id="navlist" class="navbar-ul" style="margin-left: 0; padding: 0;">
                 {% for x in site.nav %}
@@ -96,10 +112,10 @@
                 {{ content }}
                 {% if site.footer == true %}
                     <hr style="margin-bottom: 0.6em;" />
-                    <p style="text-align: center; margin: 0; font-size: 0.95em; color: #888;">
+                    <p class="footer-copyright" style="text-align: center; margin: 0; font-size: 0.95em;">
                         {{ site.footer_copyright }} <a href="{{ site.footer_url }}" style="color: inherit;">{{ site.footer_text }}</a>
                     </p>
-                    <p style="text-align: center; margin: 4px 0 0 0; padding-bottom: 2.5em; font-size: 0.8em; color: #aaa;">
+                    <p class="footer-credits" style="text-align: center; margin: 4px 0 0 0; padding-bottom: 2.5em; font-size: 0.8em;">
                         Built with the <a href="https://github.com/ankitsultana/researcher" style="color: inherit;">Jekyll Researcher theme</a> by Ankit Sultana, customized from <a href="https://github.com/RubenBranco/rubenbranco.github.io" style="color: inherit;">Ruben Branco</a>.
                     </p>
                 {% endif %}
@@ -120,6 +136,40 @@
                 // Invalid URL, skip
             }
         });
+    });
+    </script>
+    <!-- Theme toggle: flips between light/dark and persists choice. -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('theme-toggle');
+        var mql = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+        function currentTheme() {
+            var attr = document.documentElement.getAttribute('data-theme');
+            if (attr === 'dark' || attr === 'light') return attr;
+            return (mql && mql.matches) ? 'dark' : 'light';
+        }
+
+        if (btn) {
+            btn.addEventListener('click', function() {
+                var next = currentTheme() === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+            });
+        }
+
+        // Reflect OS theme changes live for visitors who haven't overridden.
+        if (mql) {
+            var onChange = function(e) {
+                try {
+                    if (localStorage.getItem('theme')) return; // user has an explicit choice
+                } catch (err) { /* ignore */ }
+                // No override: let CSS @media handle it by clearing any attribute.
+                document.documentElement.removeAttribute('data-theme');
+            };
+            if (mql.addEventListener) mql.addEventListener('change', onChange);
+            else if (mql.addListener) mql.addListener(onChange);
+        }
     });
     </script>
     {% if site.tracking_id %}

@@ -1,19 +1,95 @@
 /*
- * Customization Variables
+ * Theme tokens — exposed as CSS custom properties so the active
+ * theme can be switched at runtime (light ⇄ dark) without recompiling SCSS.
+ *
+ * - `:root` holds the light palette (default).
+ * - `[data-theme="dark"]` overrides everything for the dark palette.
+ * - `@media (prefers-color-scheme: dark)` mirrors the dark palette
+ *    when the user has NOT made an explicit choice yet (no `data-theme`
+ *    attribute set). The inline boot script in `_layouts/default.html`
+ *    sets `data-theme="dark"` early to prevent FOUC.
  */
 
-$accent: #2563eb;
-$accent-hover: #1d4ed8;
-$text-primary: #1f2937;
-$text-secondary: #6b7280;
-$border-light: #e5e7eb;
-$bg-light: #f9fafb;
-$image-size: 260px;
+:root {
+    /* Brand */
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+
+    /* Text */
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #888888;
+    --text-faint: #aaaaaa;
+
+    /* Surfaces */
+    --bg-page: #ffffff;
+    --bg-card: #f9fafb;
+    --bg-card-hover: #f3f4f6;       /* pre-computed darken($bg-card, 2%) */
+    --bg-summary-hover: #eef0f3;    /* pre-computed darken($bg-card, 3%) */
+
+    /* Borders & dividers */
+    --border-light: #e5e7eb;
+    --hr-bottom: rgba(255, 255, 255, 0.3);
+
+    /* Tables */
+    --table-row-bg: #ffffff;
+    --table-row-alt-bg: #f8f8f8;
+    --table-border: #cccccc;
+
+    /* Misc */
+    --blockquote-border: #333333;
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    /* Theme-toggle icon visibility (overridden in dark) */
+    --icon-light-display: none;
+    --icon-dark-display: inline;
+}
+
+/* Dark palette — GitHub Primer "dimmed" family.
+   Distinctly lighter (~13% lightness) and warmer than slate-900, so the
+   shift from light → dark is visibly a *different* surface, not just
+   slate at lower saturation. The brighter page bg also gives publication
+   cards (one step lighter again) clear separation. */
+@mixin dark-palette {
+    --accent: #539bf5;
+    --accent-hover: #6cb6ff;
+
+    --text-primary: #e6edf3;
+    --text-secondary: #909dab;
+    --text-muted: #909dab;
+    --text-faint: #768390;
+
+    --bg-page: #22272e;
+    --bg-card: #2d333b;
+    --bg-card-hover: #373e47;
+    --bg-summary-hover: #373e47;
+
+    --border-light: #444c56;
+    --hr-bottom: rgba(0, 0, 0, 0.3);
+
+    --table-row-bg: #2d333b;
+    --table-row-alt-bg: #22272e;
+    --table-border: #444c56;
+
+    --blockquote-border: #909dab;
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+    --icon-light-display: inline;
+    --icon-dark-display: none;
+}
+
+[data-theme="dark"] { @include dark-palette; }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { @include dark-palette; }
+}
 
 /*
- * Build Variables, don't touch
+ * Build Variables (compile-time only — used in media queries
+ * and other places where CSS custom properties cannot be used).
  */
 
+$image-size: 260px;
 $max-width: 700px;
 $med-width: 600px;
 $small-width: 480px;
