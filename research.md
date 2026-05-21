@@ -27,6 +27,10 @@ I am a team member of the following projects, led by [Professor Alexander Felfer
 
 **[ParXCel](https://ase.sai.tugraz.at/research-projects/parxcel-ffg-bridge/)** — *Machine Learning and Parallelization for Scalable Constraint Solving.* An FFG Bridge project (2020–2023) integrating machine learning into constraint-based reasoning to enable personalized configuration, and parallelizing analysis operations such as conflict detection and diagnosis to boost performance. Industry partner: Combeenation GmbH.
 
+I also contribute as an external AI expert (doctoral researcher) from the Felfernig group at TU Graz to the following industry-led project:
+
+**Kickscale: KI-Engine** — *Development of a Sales-Specialized Large Language Model and Integration into the Kickscale SaaS Platform.* An FFG Basisprogramm project (2023–2025) led by [Kickscale GmbH](https://www.kickscale.com){:target="_blank"} (Vienna), with the Felfernig group at TU Graz acting as scientific know-how transfer partner. Contributes LLM-based methods for analyzing sales conversations and extracting Ideal Customer Profiles from CRM data, together with frameworks for evaluating LLM and RAG outputs.
+
 ### Software & Tools
 
 I have developed (and contributed to) the following software and tools:
