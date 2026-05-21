@@ -67,7 +67,7 @@ Supervisor: Professor Nguyen Gia Dinh, [University of Sciences, Hue University](
 
 Score: **10/10** (one of three students with the maximum thesis score).
 
-Develops a Vietnamese spell-checking application based on natural language grammar analysis. Published as [*Some improvements for the Earley parser in natural language processing*](https://csdlkhoahoc.hueuni.edu.vn/data/article/25_bai06.doc){:target="_blank"} in [*Hue University Journal of Science*](https://jos.hueuni.edu.vn){:target="_blank"} (in Vietnamese).
+Develops a Vietnamese spell-checking application based on natural language grammar analysis. Published as [*Some improvements for the Earley parser in natural language processing*](https://csdlkhoahoc.hueuni.edu.vn/data/article/25_bai06.doc){:target="_blank"} (in Vietnamese) in [*Hue University Journal of Science*](https://jos.hueuni.edu.vn){:target="_blank"}.
 </div>
 
 </div>
