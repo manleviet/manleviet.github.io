@@ -5,7 +5,7 @@ title: Selected Publications – Viet-Man Le
 
 ## Selected Publications
 
-I have authored and co-authored **more than 50 peer-reviewed papers**, including **3 publications at AAAI** (CORE A*) and contributions at **ICSE-NIER**, **SAC**, **PAIS/ECAI**, **SPLC**, **VaMoS**, **JIIS**, and **Software Impacts**. According to [Google Scholar](https://scholar.google.com/citations?user=l2UTi1MAAAAJ&hl=en){:target="_blank"} (as of May 2026), my work has received **775 citations**, with an **h-index of 13** and **i10-index of 17**. My most cited paper has accumulated **105 citations**.
+I have authored and co-authored **more than 50 peer-reviewed papers**, including **3 publications at AAAI** (CORE A*) and contributions at **ICSE-NIER**, **SAC**, **PAIS/ECAI**, **SPLC**, **VaMoS**, **JAIR** (SCIMAGO Q1), **JIIS**, and **Software Impacts**. According to [Google Scholar](https://scholar.google.com/citations?user=l2UTi1MAAAAJ&hl=en){:target="_blank"} (as of May 2026), my work has received **775 citations**, with an **h-index of 13** and **i10-index of 17**. My most cited paper has accumulated **105 citations**.
 
 Below is a selection of my peer-reviewed publications, listed in reverse chronological order. The complete publication record is available on the external profiles below.
 

@@ -15,6 +15,8 @@ I am now looking forward to research positions in academia and industry where I 
 
 ## News
 
+- **May 2026** — Our paper *Machine Learning for Constraint-based Configuration: A Survey* has been accepted for publication in the [*Journal of Artificial Intelligence Research*](https://www.jair.org/){:target="_blank"} (JAIR), a SCImago Q1 venue in Artificial Intelligence.
+
 - **May 2026** — Received funding from the *Projektfonds Lehre 2026* (TU Graz Vice-Rectorate for Teaching) for our project, which uses LLMs to analyze anonymized student submissions from the *Introduction to Structured Programming* course and propose targeted didactic improvements for the upcoming summer semester.
 
 - **March 2026** — Presented our paper [Early-Stage Product Line Validation Using LLMs: A Study on Semi-Formal Blueprint Analysis](#) at the *41st ACM/SIGAPP Symposium on Applied Computing* ([SAC 2026](https://www.sigapp.org/sac/sac2026/){:target="_blank"}), Thessaloniki, Greece.
