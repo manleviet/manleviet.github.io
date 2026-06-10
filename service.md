@@ -14,18 +14,19 @@ My services, organisation, and volunteering activities for the research communit
 
 ### Program Committee Member
 
+- **2026**: [ConfWS 2026](https://confws.github.io/)
 - **2025**: [RecSys 2025](https://recsys.acm.org/recsys25/), [SPLC 2025](https://2025.splc.net), [ECAI 2025](https://ecai2025.org), [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/)
 - **2024**: [ConfWS 2024](https://confws.github.io/2024/), [IntRS 2024](https://recsys.acm.org/recsys24/intrs/), [SPLC 2024](https://splc.net)
 
 ### Conference and Journal Reviewer
 
-- **2026**: 1 × [SoSyM](https://www.sosym.org/), 1 × [JIIS](https://link.springer.com/journal/10844)
+- **2026**: 1 × [SoSyM](https://www.sosym.org/), 1 × [JIIS](https://link.springer.com/journal/10844), 2 × [ConfWS 2026](https://confws.github.io/)
 - **2025**: 2 × [RecSys 2025](https://recsys.acm.org/recsys25/), 2 × [SPLC 2025](https://2025.splc.net), 4 × [ECAI 2025](https://ecai2025.org), 7 × [JIIS](https://link.springer.com/journal/10844), 5 × [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/)
 - **2024**: 2 × [ConfWS 2024](https://confws.github.io/2024/), 2 × [IntRS 2024](https://recsys.acm.org/recsys24/intrs/), 3 × [SPLC 2024](https://splc.net), 2 × [ESWA](https://www.sciencedirect.com/journal/expert-systems-with-applications)
 
 ### Conference Presentations
 
-- [SAC 2026](https://www.sigapp.org/sac/sac2026/) — Presented [*Early-Stage Product Line Validation Using LLMs: A Study on Semi-Formal Blueprint Analysis*](#) at the *41st ACM/SIGAPP Symposium on Applied Computing*, Thessaloniki, Greece, March 2026.
+- [SAC 2026](https://www.sigapp.org/sac/sac2026/) — Presented [*Early-Stage Product Line Validation Using LLMs: A Study on Semi-Formal Blueprint Analysis*](https://doi.org/10.1145/3748522.3779903) at the *41st ACM/SIGAPP Symposium on Applied Computing*, Thessaloniki, Greece, March 2026.
 - [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/) — Presented [*Robust Lazy Conflict Detection via Multi-Conflict Extraction and Genetic Diversity Control*](https://ojs.aaai.org/index.php/AAAI/article/view/38995) at the *40th AAAI Conference on Artificial Intelligence*, January 23, 2026.
 - [ConfWS 2025](https://confws.github.io/2025/) — Presented [*QuickXPlain Explanations for Feature Model Configuration*](https://ceur-ws.org/Vol-4149/paper1.pdf) at the *27th International Workshop on Configuration*, co-located with [ECAI 2025](https://ecai2025.org), Bologna, Italy, October 25, 2025.
 - [ACSD 2024](https://acsd2024.univie.ac.at) — Presented [*Intelligent Techniques for Efficient Diagnostic Reasoning*](https://acsd2024.univie.ac.at/program/#c1104269) in the *Young Experts: Minute Madness* session — a 1-minute overview talk followed by a poster session for excellent doctoral students in Computer Science at Austrian universities — at the *Austrian Computer Science Day 2024*, University of Vienna, Austria, June 14, 2024.

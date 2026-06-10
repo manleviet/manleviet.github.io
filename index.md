@@ -19,7 +19,7 @@ I am now looking forward to research positions in academia and industry where I 
 
 - **May 2026** — Received funding from the *Projektfonds Lehre 2026* (TU Graz Vice-Rectorate for Teaching) for our project, which uses LLMs to analyze anonymized student submissions from the *Introduction to Structured Programming* course and propose targeted didactic improvements for the upcoming summer semester.
 
-- **March 2026** — Presented our paper [Early-Stage Product Line Validation Using LLMs: A Study on Semi-Formal Blueprint Analysis](#) at the *41st ACM/SIGAPP Symposium on Applied Computing* ([SAC 2026](https://www.sigapp.org/sac/sac2026/){:target="_blank"}), Thessaloniki, Greece.
+- **March 2026** — Presented our paper [Early-Stage Product Line Validation Using LLMs: A Study on Semi-Formal Blueprint Analysis](https://doi.org/10.1145/3748522.3779903) at the *41st ACM/SIGAPP Symposium on Applied Computing* ([SAC 2026](https://www.sigapp.org/sac/sac2026/){:target="_blank"}), Thessaloniki, Greece.
 
 - **March 2026** — Our paper [Robust Lazy Conflict Detection via Multi-Conflict Extraction and Genetic Diversity Control](https://ojs.aaai.org/index.php/AAAI/article/view/38995){:target="_blank"} is published in the *Proceedings of the AAAI Conference on Artificial Intelligence* (vol. 40, no. 23).
 
