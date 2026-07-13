@@ -100,13 +100,6 @@ Don't forget to update `index.md` News with a new entry. The News list is hand-c
 - Theses block in `publications.md`
 - `_layouts/`, `_sass/`, `_config.yml`
 
-## Related projects
-
-- The user's Obsidian vault at `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Everything` has the **master `references.bib`** managed via JabRef. That bib uses different citekey conventions and is the authoritative source for paper metadata.
-- `~/.../Everything/CLAUDE.md` documents the vault structure and the cs-research plugin commands for managing the master bib.
-- `~/.../Everything/CV/CV/CLAUDE.md` is the parent project that orchestrates CV ↔ website ↔ vault consistency, including the Harvard GSAS CV rules.
-- `~/.../Everything/CV/CV/progress.md` is the append-only log of website + CV changes — read it for historical context, append new entries when making non-trivial changes.
-
 ## Don't
 
 - Don't propose migrating away from jekyll-scholar back to hand-written `.pub` blocks. That migration was completed on 2026-05-12 and the script-driven workflow replaces the earlier hand-curation preference.
