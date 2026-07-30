@@ -14,12 +14,21 @@ to insert a new publication. Changes are auto-saved on exit.
 Non-interactive subcommands (for scripting):
 
   add  <DOI|URL|TITLE>      Fetch via CrossRef (DOI given) or DBLP search
-                            (interactive picker). If the DOI matches an
-                            existing entry, merge — preserving user-curated
-                            fields (selected, featured, rank, month,
-                            html_venue). Otherwise insert a new entry with
-                            an al-folio citekey (lastnameYEARfirstword),
-                            `selected = {true}`, and auto html_venue.
+                            (interactive picker), then match against the file
+                            by DOI first, falling back to normalised title.
+                            On a match, merge — preserving user-curated fields
+                            (selected, featured, rank, month, html_venue).
+                            Otherwise insert a new entry with an al-folio
+                            citekey (lastnameYEARfirstword), `selected =
+                            {true}`, and auto html_venue.
+
+                            Special case — "accepted, to appear" → published:
+                            a hand-written accepted-stage entry has no `doi`
+                            yet, so it is found by title. Because its `month`
+                            was a guess and its `html_venue` says "(to
+                            appear)", those two are refreshed from the fetched
+                            record; `rank` / `selected` / `featured` are still
+                            preserved. No follow-up `venue` call needed.
 
   update <citekey>          Re-fetch the entry via its stored DOI, merge.
 
@@ -50,8 +59,16 @@ BIB_PATH = Path(__file__).resolve().parent.parent / "assets/bibliography/papers.
 STOPWORDS = {"a", "an", "the", "and", "or", "of", "to", "for", "in", "on",
              "with", "is", "are", "as", "at", "by", "from", "into"}
 
-SUPPRESS_PUBLISHERS = {"CEUR-WS.org", "AAAI Press", "AAAI", "IEEE", "Elsevier"}
-ACK_PUBLISHERS_NO_VOL = {"ACM"}
+# Publishers never shown: the venue name already identifies them (CEUR / AAAI)
+# or the imprint adds nothing to a journal line (Elsevier).
+SUPPRESS_PUBLISHERS = {"CEUR-WS.org", "AAAI Press", "AAAI", "Elsevier"}
+
+# Publishers always acknowledged, with or without a volume. ACM and IEEE are
+# treated identically — see the "publisher rules" note in CLAUDE.md. The
+# publisher goes after series/volume/number and before pages, matching the
+# ordering the `series` branch already used
+# (". Studies in Computational Intelligence, vol. 949. Springer, Cham, pp. …").
+ACK_PUBLISHERS = {"ACM", "IEEE"}
 
 USER_FIELDS = {"selected", "featured", "rank", "month", "html_venue"}
 
@@ -60,10 +77,50 @@ STANDARD_FIELD_ORDER = [
     "booktitle", "journal",
     "year", "month",
     "series", "volume", "number", "pages",
+    "articleno", "numpages", "issn",
     "publisher", "doi", "url",
     "rank", "selected", "featured",
     "html_venue",
 ]
+
+MONTHS = {
+    "jan": 1, "january": 1, "feb": 2, "february": 2, "mar": 3, "march": 3,
+    "apr": 4, "april": 4, "may": 5, "jun": 6, "june": 6, "jul": 7, "july": 7,
+    "aug": 8, "august": 8, "sep": 9, "sept": 9, "september": 9,
+    "oct": 10, "october": 10, "nov": 11, "november": 11, "dec": 12, "december": 12,
+}
+
+# papers.bib stores non-ASCII letters as LaTeX escapes (`B{\"a}hnisch`), which
+# bibtex-ruby decodes back to `Bähnisch` when jekyll-scholar renders the page.
+# CrossRef and DBLP hand back raw UTF-8, so fetched values get folded into the
+# file's convention rather than mixing the two styles in one .bib.
+UNICODE_TO_LATEX = {
+    "á": r"{\'a}", "à": r"{\`a}", "ä": r'{\"a}', "â": r"{\^a}", "ã": r"{\~a}",
+    "å": r"{\aa}", "æ": r"{\ae}",
+    "é": r"{\'e}", "è": r"{\`e}", "ë": r'{\"e}', "ê": r"{\^e}",
+    "í": r"{\'i}", "ì": r"{\`i}", "ï": r'{\"i}', "î": r"{\^i}",
+    "ó": r"{\'o}", "ò": r"{\`o}", "ö": r'{\"o}', "ô": r"{\^o}", "õ": r"{\~o}",
+    "ø": r"{\o}", "œ": r"{\oe}", "ő": r"{\H{o}}",
+    "ú": r"{\'u}", "ù": r"{\`u}", "ü": r'{\"u}', "û": r"{\^u}", "ű": r"{\H{u}}",
+    "ů": r"{\r{u}}",
+    "ý": r"{\'y}", "ÿ": r'{\"y}',
+    "ñ": r"{\~n}", "ç": r"{\c{c}}", "ß": r"{\ss}",
+    "ł": r"{\l}", "ż": r"{\.z}", "ź": r"{\'z}", "ś": r"{\'s}", "ć": r"{\'c}",
+    "ę": r"{\k{e}}", "ą": r"{\k{a}}",
+    "š": r"{\v{s}}", "č": r"{\v{c}}", "ž": r"{\v{z}}", "ř": r"{\v{r}}",
+    "ě": r"{\v{e}}", "ď": r"{\v{d}}", "ť": r"{\v{t}}", "ň": r"{\v{n}}",
+}
+UNICODE_TO_LATEX.update({
+    u.upper(): esc.replace(u, u.upper()) if u in esc else esc
+    for u, esc in list(UNICODE_TO_LATEX.items())
+    if u.upper() != u
+})
+
+# Fields whose text is prose/names and should be LaTeX-escaped. Deliberately
+# excludes doi/url (escaping would corrupt them) and html_venue (hand-curated
+# HTML, never fetched).
+TEXT_FIELDS = {"title", "author", "editor", "journal", "booktitle",
+               "series", "publisher", "school", "institution", "note"}
 
 UA = "papers_bib.py (https://manleviet.github.io; mailto:manleviet@gmail.com)"
 
@@ -233,6 +290,57 @@ def normalize_doi(s: str):
     return m.group(0).rstrip("/.") if m else None
 
 
+def to_latex_escapes(s: str) -> str:
+    return "".join(UNICODE_TO_LATEX.get(ch, ch) for ch in s)
+
+
+def normalize_fetched(entry: Entry) -> Entry:
+    """Fold a freshly fetched entry into this file's conventions.
+
+    CrossRef and DBLP are both loose about formatting in ways that show up
+    directly on the rendered page, so every fetch is squeezed through here
+    before it touches papers.bib:
+
+      * whitespace collapsed  — CrossRef doubles spaces inside titles
+        ("Machine Learning for  Constraint-based Configuration")
+      * month  → numeric 1-12 — CrossRef emits `jul` / `July`, but `month`
+        is the within-year sort key and jekyll-scholar sorts it as a string
+      * pages  → `A--B`       — CrossRef sometimes uses a single hyphen
+      * url    → https://doi.org/…  (CrossRef returns http://dx.doi.org/…)
+      * non-ASCII letters → LaTeX escapes, matching the rest of the file
+    """
+    f = OrderedDict()
+    for k, v in entry.fields.items():
+        v = re.sub(r"\s+", " ", v).strip()
+
+        if k == "month":
+            key = re.sub(r"[^a-z]", "", v.lower())
+            if key in MONTHS:
+                v = str(MONTHS[key])
+            else:
+                digits = re.sub(r"[^0-9]", "", v)
+                v = digits.lstrip("0") or v
+        elif k == "pages":
+            # 1620-1627 / 1620–1627 / 1620 - 1627  →  1620--1627
+            v = re.sub(r"\s*(?:–|—|--|-)\s*", "--", v)
+        elif k == "url":
+            doi = normalize_doi(v)
+            if doi and re.match(r"https?://(dx\.)?doi\.org/", v):
+                v = f"https://doi.org/{doi}"
+        elif k in TEXT_FIELDS:
+            v = to_latex_escapes(v)
+
+        f[k] = v
+    return Entry(entry.type, entry.key, f)
+
+
+def normalize_title(s: str) -> str:
+    """Aggressive fold for title comparison: strip LaTeX, punctuation, case."""
+    s = re.sub(r"\\[a-zA-Z]+", "", s)
+    s = re.sub(r"[^0-9A-Za-z]+", " ", s)
+    return " ".join(s.lower().split())
+
+
 def fetch_bib(arg: str):
     doi = normalize_doi(arg)
     if doi:
@@ -290,16 +398,21 @@ def gen_html_venue(entry: Entry) -> str:
             out += f", vol. {volume}"
         if publisher and publisher not in SUPPRESS_PUBLISHERS:
             out += f". {publisher}"
-    elif volume:
-        out += f", vol. {volume}"
-        if number:
-            out += f", no. {number}"
-    elif publisher and publisher in ACK_PUBLISHERS_NO_VOL:
-        out += f". {publisher}"
+    else:
+        if volume:
+            out += f", vol. {volume}"
+            if number:
+                out += f", no. {number}"
+        if publisher and publisher in ACK_PUBLISHERS:
+            out += f". {publisher}"
     pages = f.get("pages", "")
     if pages:
-        norm = pages.replace("--", "–").strip()
+        # Accept `--`, a bare hyphen, or an already-converted en-dash.
+        norm = re.sub(r"\s*(?:--|—|-)\s*", "–", pages.strip())
         out += f", pp. {norm}" if "–" in norm else f", p. {norm}"
+    elif f.get("articleno"):
+        # Article-number journals (JAIR and friends) have no page range.
+        out += f", article {f['articleno']}"
     return out
 
 
@@ -323,18 +436,37 @@ def gen_citekey(entry: Entry) -> str:
 
 # ───────────────────────────────────────────────────────────────── Merging ──
 
-def merge(existing: Entry, fetched: Entry) -> Entry:
+def merge(existing: Entry, fetched: Entry, stub: bool = False) -> Entry:
+    """Fold `fetched` into `existing`, keeping the hand-curated fields.
+
+    `stub=True` marks the "accepted, to appear → published" case: the existing
+    entry was written by hand before a DOI existed, so its `month` was a guess
+    and its `html_venue` says "(to appear)". Preserving those (the normal rule)
+    would leave the page claiming the paper is unpublished, so both are taken
+    from the fetched record instead. `rank`, `selected` and `featured` are
+    still preserved — no amount of CrossRef metadata knows the venue ranking.
+    """
+    keep = USER_FIELDS - {"month", "html_venue"} if stub else USER_FIELDS
+
     merged = OrderedDict()
     for k, v in fetched.fields.items():
-        if k not in USER_FIELDS:
+        if k not in keep:
             merged[k] = v
-    for k in USER_FIELDS:
+    for k in keep:
         if k in existing.fields:
             merged[k] = existing.fields[k]
         elif k in fetched.fields:
             merged[k] = fetched.fields[k]
+    # Carry over any hand-added fields the upstream record simply lacks
+    # (e.g. articleno / numpages, which CrossRef omits for JAIR).
+    for k, v in existing.fields.items():
+        if k not in merged and k not in fetched.fields:
+            merged[k] = v
+
     merged = order_fields(merged)
     merged.setdefault("selected", "true")
+    if stub:
+        merged.pop("html_venue", None)
     if "html_venue" not in merged:
         merged["html_venue"] = gen_html_venue(Entry(fetched.type, existing.key, merged))
     return Entry(fetched.type, existing.key, merged)
@@ -359,20 +491,28 @@ def save_bib(entries, trailing: str):
         if header:
             parts.append(header)
         parts.append(format_entry(entry))
-    # Ensure file ends with a single newline.
-    if parts and not parts[-1].endswith("\n"):
-        parts.append("\n")
+    text = "".join(parts)
+
+    # `trailing` is everything after the last entry (blank lines + the closing
+    # comment block) and already carries its own leading newlines.
     if trailing:
-        parts.append(trailing if trailing.endswith("\n") else trailing + "\n")
-    BIB_PATH.write_text("".join(parts), encoding="utf-8")
+        text += trailing if trailing.startswith("\n") else "\n" + trailing
+
+    # Exactly one terminating newline. The previous version appended "\n" to
+    # BOTH the entry text and the trailing block unconditionally, so every
+    # save/load cycle grew the end of the file by one blank line without bound.
+    BIB_PATH.write_text(text.rstrip("\n") + "\n", encoding="utf-8")
 
 
-def find(entries, citekey=None, doi=None):
+def find(entries, citekey=None, doi=None, title=None):
     doi_norm = doi.lower().rstrip("/.") if doi else None
+    title_norm = normalize_title(title) if title else None
     for i, (_, e) in enumerate(entries):
         if citekey and e.key == citekey:
             return i, e
         if doi_norm and e.fields.get("doi", "").lower().rstrip("/.") == doi_norm:
+            return i, e
+        if title_norm and normalize_title(e.fields.get("title", "")) == title_norm:
             return i, e
     return None, None
 
@@ -384,7 +524,12 @@ def insert_in_year_section(entries, new_entry: Entry):
         if e.fields.get("year", "") == year:
             last = i
     if last >= 0:
-        entries.insert(last + 1, ("", new_entry))
+        # Each entry carries the whitespace BEFORE it as its header, so an
+        # inserted entry needs its own separator. With header="" the entry got
+        # emitted flush against the previous entry's closing brace, producing
+        # `}@article{...` — parseable by this script but not valid BibTeX.
+        # Four newlines = the blank-line spacing used between entries already.
+        entries.insert(last + 1, ("\n\n\n\n", new_entry))
     else:
         entries.append((f"\n% =========== {year} (new section, please add divider) ===\n\n", new_entry))
 
@@ -420,6 +565,7 @@ def cmd_add(arg: str):
     if not fetched_list:
         sys.exit("✗ Fetched data has no valid BibTeX entries")
     _, fetched = fetched_list[0]
+    fetched = normalize_fetched(fetched)
     sys.stderr.write(f"✓ Fetched from {source}\n")
     sys.stderr.write(f"  title : {fetched.fields.get('title', '')[:80]}\n")
     sys.stderr.write(f"  author: {fetched.fields.get('author', '')[:80]}\n")
@@ -427,9 +573,28 @@ def cmd_add(arg: str):
     entries, trailing = load_bib()
     fetched_doi = fetched.fields.get("doi", "")
     idx, existing = find(entries, doi=fetched_doi) if fetched_doi else (None, None)
+
+    # An "accepted, to appear" entry is written by hand and has NO doi field --
+    # which is precisely the field the DOI match above needs. Without this
+    # fallback, publishing a previously-accepted paper silently inserts a
+    # duplicate instead of upgrading the existing entry.
+    stub = False
+    if existing is None:
+        idx, existing = find(entries, title=fetched.fields.get("title", ""))
+        if existing is not None:
+            stub = not existing.fields.get("doi")
+            sys.stderr.write(
+                f"  ↪ Title matches existing entry: {existing.key}"
+                f"{' (no DOI — treating as accepted-stage stub)' if stub else ''}\n")
+
     if existing:
-        sys.stderr.write(f"  ↪ Existing entry found: {existing.key} — merging\n")
-        entries[idx] = (entries[idx][0], merge(existing, fetched))
+        old_venue = existing.fields.get("html_venue", "")
+        sys.stderr.write(f"  ↪ Merging into {existing.key}\n")
+        entries[idx] = (entries[idx][0], merge(existing, fetched, stub=stub))
+        new_venue = entries[idx][1].fields.get("html_venue", "")
+        if new_venue != old_venue:
+            sys.stderr.write(f"    html_venue old: {old_venue}\n")
+            sys.stderr.write(f"    html_venue new: {new_venue}\n")
     else:
         key = gen_citekey(fetched)
         keys = {e.key for _, e in entries}
@@ -464,7 +629,7 @@ def cmd_update(citekey: str):
     if not fetched_list:
         sys.exit("✗ Fetched data has no valid BibTeX entries")
     _, fetched = fetched_list[0]
-    entries[idx] = (entries[idx][0], merge(existing, fetched))
+    entries[idx] = (entries[idx][0], merge(existing, normalize_fetched(fetched)))
     save_bib(entries, trailing)
     sys.stderr.write(f"✓ {citekey} updated\n")
 

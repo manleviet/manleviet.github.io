@@ -88,7 +88,30 @@ When the paper actually publishes and gets a DOI, run:
 python3 scripts/papers_bib.py add <doi>
 ```
 
-The script will detect the DOI matches the existing entry, merge fresh CrossRef metadata (volume, issue, pages, doi, url), and **preserve** the user-curated `selected`, `featured`, `rank`, `month`, and `html_venue`. Then run `venue <citekey>` to regenerate `html_venue` so `(to appear)` is replaced with the actual volume/pages.
+The accepted-stage entry has no `doi` yet, so the script can't match on DOI — it falls back to matching the **normalised title** (LaTeX, punctuation and case stripped). A title match on an entry with no `doi` is recognised as an accepted-stage stub, which changes the merge rule:
+
+- `rank`, `selected`, `featured` — **preserved** (CrossRef doesn't know venue rankings).
+- `month` and `html_venue` — **refreshed from the fetched record**, because at the accepted stage the month was a placeholder and `html_venue` says "(to appear)". Preserving them would leave the page claiming the paper is still unpublished.
+- Hand-added fields that CrossRef omits (e.g. `articleno`, `numpages` for JAIR) are carried over.
+
+No follow-up `venue` call is needed — the script prints the old and new `html_venue` so you can eyeball it. Re-running `add <doi>` afterwards is idempotent.
+
+Every fetched record is normalised before it lands in the file: whitespace collapsed (CrossRef doubles spaces inside titles), `month` → numeric 1–12 (CrossRef emits `jul`/`July`, but `month` is the sort key), `pages` → `A--B`, `url` → `https://doi.org/…` (CrossRef returns `http://dx.doi.org/…`), and non-ASCII letters → LaTeX escapes (`Bähnisch` → `B{\"a}hnisch`) to match the rest of the file. bibtex-ruby decodes those escapes back to accented characters when the page renders.
+
+### Publisher rules in `html_venue`
+
+Settled 2026-07-30: **ACM and IEEE are both shown**, and treated identically.
+
+ACM and IEEE (`ACK_PUBLISHERS`) are **always** acknowledged, with or without a volume. The publisher goes after series/volume/number and before pages — the ordering the `series` branch already used.
+
+| Entry shape | Rendered venue line |
+|---|---|
+| ACM / IEEE proceedings, no `volume` | `…(VaMoS 2025)</em>. ACM, pp. 86–90` |
+| ACM proceedings **with** `volume` (SPLC `vol. A` / `vol. B`) | `…(SPLC 2023)</em>, vol. A. ACM, pp. 111–116` |
+| With `series` | `…(ISMIS 2020)</em>. Studies in Computational Intelligence, vol. 949. Springer, Cham, pp. 153–168` |
+| CEUR / AAAI Press / Elsevier | publisher always omitted (`SUPPRESS_PUBLISHERS`) — the venue name already says it |
+
+`venue-all` is a **true no-op** on the current file — it reports `0 entries regenerated`. Keep it that way: if a future edit makes it want to rewrite entries, that is a signal the tables and the file have drifted apart again, not a licence to bulk-rewrite.
 
 Don't forget to update `index.md` News with a new entry. The News list is hand-curated markdown — no CLI for it.
 

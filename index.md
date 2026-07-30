@@ -15,7 +15,7 @@ I am now looking forward to research positions in academia and industry where I 
 
 ## News
 
-- **May 2026** — Our paper *Machine Learning for Constraint-based Configuration: A Survey* has been accepted for publication in the [*Journal of Artificial Intelligence Research*](https://www.jair.org/){:target="_blank"} (JAIR), a SCImago Q1 venue in Artificial Intelligence.
+- **July 2026** — Our paper [Machine Learning for Constraint-based Configuration: A Survey](https://doi.org/10.1613/jair.1.21207){:target="_blank"} is published in the [*Journal of Artificial Intelligence Research*](https://www.jair.org/){:target="_blank"} (JAIR, vol. 86), a SCImago Q1 venue in Artificial Intelligence.
 
 - **May 2026** — Received funding from the *Projektfonds Lehre 2026* (TU Graz Vice-Rectorate for Teaching) for our project, which uses LLMs to analyze anonymized student submissions from the *Introduction to Structured Programming* course and propose targeted didactic improvements for the upcoming summer semester.
 
