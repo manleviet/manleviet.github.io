@@ -48,6 +48,8 @@ Stdlib only, Python 3.10+. Run from repo root.
 
 In those cases, after manual edit, run `python3 scripts/papers_bib.py venue <citekey>` to normalize `html_venue`.
 
+**Exception — never do this on an "accepted, to appear" entry.** `gen_html_venue` builds the venue line from the bibliographic fields and has no notion of "(to appear)", so normalising strips the marker and the page starts claiming the paper is published. Leave the hand-written `html_venue` alone until the paper has a DOI; `add <doi>` then refreshes it correctly.
+
 ## Bibliography conventions
 
 **Custom fields consumed by `_layouts/pub_card.html`:**
@@ -112,6 +114,8 @@ ACM and IEEE (`ACK_PUBLISHERS`) are **always** acknowledged, with or without a v
 | CEUR / AAAI Press / Elsevier | publisher always omitted (`SUPPRESS_PUBLISHERS`) — the venue name already says it |
 
 `venue-all` is a **true no-op** on the current file — it reports `0 entries regenerated`. Keep it that way: if a future edit makes it want to rewrite entries, that is a signal the tables and the file have drifted apart again, not a licence to bulk-rewrite.
+
+**One expected exception:** an "accepted, to appear" entry always shows up as wanting a rewrite, because its hand-written `html_venue` carries a `(to appear)` marker that `gen_html_venue` cannot reproduce. Do not act on it — rewriting would delete the marker. Count those entries out before reading the result; the no-op invariant applies to the rest of the file, and is restored in full once the paper publishes and `add <doi>` upgrades the entry.
 
 Don't forget to update `index.md` News with a new entry. The News list is hand-curated markdown — no CLI for it.
 
